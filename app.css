@@ -22,7 +22,7 @@ nav {
     line-height: 2;
 }
 
-i {
+.icon-big {
     color: white;
     font-size: 40px;
     margin: 2rem;
@@ -40,6 +40,10 @@ a {
     font-size: 1.125rem;
     line-height: 2;
     text-decoration: none;
+}
+
+.repo {
+    color: #333333;
 }
 
 a:hover {
