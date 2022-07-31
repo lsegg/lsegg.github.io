@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/static/css/main.314c6bda.css",
+    "main.js": "/static/js/main.53aa6f65.js",
+    "static/js/787.109add10.chunk.js": "/static/js/787.109add10.chunk.js",
+    "static/media/site-in-construction.png": "/static/media/site-in-construction.f24473c0f05b0bb356c8.png",
+    "static/media/Raleway-ExtraLight.ttf": "/static/media/Raleway-ExtraLight.e19d39bd2c0c5f58ffea.ttf",
+    "static/media/Raleway-Light.ttf": "/static/media/Raleway-Light.58bcdae09d89ccd8d086.ttf",
+    "static/media/Raleway-Medium.ttf": "/static/media/Raleway-Medium.601cda68c7b7bbcc9a12.ttf",
+    "static/media/Raleway-Regular.ttf": "/static/media/Raleway-Regular.3927fa2a37e6f7f4c7c0.ttf",
+    "static/media/Raleway-SemiBold.ttf": "/static/media/Raleway-SemiBold.cc770b2afb65067aae51.ttf",
+    "static/media/Raleway-ExtraBold.ttf": "/static/media/Raleway-ExtraBold.8b7015f87bd9859e1382.ttf",
+    "static/media/Raleway-Bold.ttf": "/static/media/Raleway-Bold.18960343b3da49bfd353.ttf",
+    "static/media/Raleway-Thin.ttf": "/static/media/Raleway-Thin.37b903083fc82c0bdc17.ttf",
+    "static/media/Raleway-Black.ttf": "/static/media/Raleway-Black.6d75f2b870b0a5df344d.ttf",
+    "static/media/Raleway-SemiBoldItalic.ttf": "/static/media/Raleway-SemiBoldItalic.87b2cd29a7cb14781cae.ttf",
+    "static/media/Raleway-ExtraBoldItalic.ttf": "/static/media/Raleway-ExtraBoldItalic.1d536482cdbec07cc8e9.ttf",
+    "static/media/Raleway-LightItalic.ttf": "/static/media/Raleway-LightItalic.a673b3ada3531cd8e8a8.ttf",
+    "static/media/Raleway-ExtraLightItalic.ttf": "/static/media/Raleway-ExtraLightItalic.73a96eeb3d29f3c6a657.ttf",
+    "static/media/Raleway-BoldItalic.ttf": "/static/media/Raleway-BoldItalic.1eebed4b223d1adc34ae.ttf",
+    "static/media/Raleway-MediumItalic.ttf": "/static/media/Raleway-MediumItalic.74d4db62e93d0f988ea3.ttf",
+    "static/media/Raleway-Italic.ttf": "/static/media/Raleway-Italic.a0018c8a791a6d9b8e3e.ttf",
+    "static/media/Raleway-ThinItalic.ttf": "/static/media/Raleway-ThinItalic.5af7853a591baaa237ba.ttf",
+    "static/media/Raleway-BlackItalic.ttf": "/static/media/Raleway-BlackItalic.3245b2a2e189bfb7619b.ttf",
+    "index.html": "/index.html",
+    "main.314c6bda.css.map": "/static/css/main.314c6bda.css.map",
+    "main.53aa6f65.js.map": "/static/js/main.53aa6f65.js.map",
+    "787.109add10.chunk.js.map": "/static/js/787.109add10.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.314c6bda.css",
+    "static/js/main.53aa6f65.js"
+  ]
+}
