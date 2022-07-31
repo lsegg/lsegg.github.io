@@ -1,0 +1,31 @@
+// Fonts
+$font-primary-light: 'RalewayLight', sans-serif;
+$font-primary-regular: 'RalewayRegular', sans-serif;
+$font-primary-medium: 'RalewaySemiBold', sans-serif;
+$font-primary-bold: 'RalewayBold', sans-serif;
+
+// Colors
+$color-primary: #313349;
+$color-secondary: #81b29a;
+$color-tertiary: #e07a5f;
+$color-quaternary: #f2cc8f;
+$color-quinary: #f4f1de;
+
+$color-neutral-1: #ffffff;
+$color-neutral-2: #a5a5a5;
+$color-neutral-3: #000000;
+
+// Default pixel size
+$root-px-size: 16px;
+
+// PX to rems
+@function toRem($value) {
+  $remValue: calc($value / $root-px-size) + rem;
+  @return $remValue;
+}
+
+// Breakpoints
+$breakpoint-mobile: toRem(320px);
+$breakpoint-sm-tablet: toRem(768px);
+$breakpoint-lg-tablet: toRem(1024px); 
+$breakpoint-desktop: toRem(1440px);

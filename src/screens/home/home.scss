@@ -1,0 +1,18 @@
+@import "../../vars";
+
+.Home {
+  display: flex;
+  flex-direction: column;
+  margin: toRem(20px);
+  &-img {
+    align-self: center;
+    width: 75%;
+  }
+  &-paragraph {
+    margin-bottom: toRem(10px);
+  }
+
+  @media screen and (min-width: $breakpoint-lg-tablet) {
+    align-items: center;
+  }
+}
