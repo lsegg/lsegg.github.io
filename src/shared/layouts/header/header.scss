@@ -1,6 +1,62 @@
 @import "../../../vars";
 
 .Header {
-    height: toRem(50px);
-    background-color: $color-primary;
+  position: sticky;
+  height: toRem(50px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $color-primary;
+
+  &-nav {
+    &-button {
+      padding: toRem(15px);
+      background-color: $color-primary;
+      &-icon {
+        color: $color-neutral-1;
+        &:hover {
+          color: $color-tertiary;
+        }
+      }
+    }
+    &-list {
+      position: absolute;
+      top: toRem(50px);
+      background-color: $color-primary;
+      list-style: none;
+      width: 100%;
+      height: calc(100vh - toRem(50px));
+      padding: toRem(50px) 0 0 toRem(50px);
+      &-item {
+        padding: toRem(10px);
+        &-link {
+          color: $color-neutral-1;
+          text-decoration: none;
+          &:hover {
+            color: $color-tertiary;
+          }
+        }
+      }
+    }
+  }
+
+  &-copyright {
+    padding: toRem(15px);
+    vertical-align: center;
+  }
+
+  @media screen and (min-width: $breakpoint-sm-tablet) {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: toRem(15px);
+    height: 100vh;
+
+    &-nav {
+      &-list {
+        position: static;
+        padding: 0;
+        height: auto;
+      }
+    }
+  }
 }

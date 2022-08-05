@@ -1,18 +1,29 @@
 @import "../../vars";
 
 .Home {
+  align-items: center;
   display: flex;
   flex-direction: column;
   margin: toRem(20px);
+  height: 75%;
+
   &-img {
     align-self: center;
     width: 75%;
   }
+
   &-paragraph {
     margin-bottom: toRem(10px);
+
+    &-link {
+      text-decoration: none;
+      &:hover {
+        color: $color-tertiary;
+      }
+    }
   }
 
-  @media screen and (min-width: $breakpoint-lg-tablet) {
-    align-items: center;
+  @media screen and (min-width: $breakpoint-sm-tablet) {
+    justify-content: center;
   }
 }
