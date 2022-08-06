@@ -8,9 +8,20 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  &::-webkit-scrollbar {
+    width: 0;
+    border-radius: 3px;
+    color: $color-primary;
+  }
+  &::-webkit-scrollbar-thumb {
+    width: toRem(3px);
+    border-radius: 3px;
+    color: $color-neutral-2;
+  }
 }
 
 #root {
+  font-family: $font-primary-regular;
   height: 100vh;
   width: 100vw;
 }
@@ -18,7 +29,10 @@
 .App {
   height: 100vh;
   width: 100vw;
-
+  &-section-container {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
   @media screen and (min-width: $breakpoint-lg-tablet) {
     display: grid;
     grid-template-columns: 1fr 4fr;

@@ -88,7 +88,40 @@
   src: url("./assets/fonts/Raleway-ThinItalic.ttf");
 }
 
+.paragraph-small-regular {
+  font-family: $font-primary-regular;
+  font-size: toRem(12px);
+}
+
 .paragraph-regular-regular {
   font-family: $font-primary-regular;
   font-size: toRem(14px);
+}
+
+.paragraph-regular-bold {
+  font-family: $font-primary-bold;
+  font-size: toRem(14px);
+}
+
+.title-big-semibold {
+  font-family: $font-primary-bold;
+  font-size: toRem(36px);
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.isButton {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $color-quinary;
+  border-radius: toRem(35px);
+  background-color: $color-tertiary;
+  margin: toRem(10px);
+  padding: toRem(10px) toRem(15px);
 }

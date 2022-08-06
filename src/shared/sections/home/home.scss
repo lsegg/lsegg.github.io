@@ -1,0 +1,76 @@
+@import "../../../vars";
+
+.Home {
+  background-color: $color-primary;
+  color: $color-quinary;
+  gap: toRem(50px);
+
+  &-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    text-align: center;
+
+    &-avatar {
+      border-radius: 100%;
+      width: 20vw;
+      min-width: toRem(150px);
+      margin: toRem(30px);
+    }
+
+    &-name {
+      margin: toRem(10px);
+    }
+  }
+
+  &-scroll {
+    color: $color-quinary;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    &-mouse {
+      border: 2px $color-quinary solid;
+      border-radius: toRem(16px);
+      width: toRem(20px);
+      height: toRem(26px);
+      margin: toRem(10px);
+      &-wheel {
+        color: transparent;
+        border-radius: 100%;
+        background-color: $color-quinary;
+        position: relative;
+        top: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 4px;
+        width: 4px;
+        animation: ani-wheel 2s linear infinite;
+      }
+    }
+  }
+
+  @media screen and (min-width: $breakpoint-sm-tablet) {
+    gap: toRem(100px);
+  }
+}
+
+@keyframes ani-wheel {
+  0% {
+    top: 30%;
+  }
+
+  15% {
+    top: 40%;
+  }
+
+  50% {
+    top: 40%;
+  }
+
+  100% {
+    top: 30%;
+  }
+}

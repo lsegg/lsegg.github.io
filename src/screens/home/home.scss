@@ -1,11 +1,7 @@
 @import "../../vars";
 
-.Home {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
+.SiteInConstruction {
   margin: toRem(20px);
-  height: 75%;
 
   &-img {
     align-self: center;
