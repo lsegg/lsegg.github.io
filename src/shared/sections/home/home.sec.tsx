@@ -6,11 +6,11 @@ export const HomeSection: any = () => {
     <section className="Home" id="home">
       <div className="Home-intro">
         <img src={avatar} alt="Avatar" className="Home-intro-avatar" />
-        <p className="Home-intro-name title-big-semibold">Lucía Seggiaro</p>
+        <h1 className="Home-intro-name title-x-large-semibold">Lucía Seggiaro</h1>
         <p className="Home-intro-job">I'm Front-End developer.</p>
         <a
           href="#about"
-          className="Home-intro-button paragraph-regular-bold isButton"
+          className="Home-intro-button paragraph-medium-bold isButton"
         >
           Hire me
         </a>

@@ -93,27 +93,34 @@
   font-size: toRem(12px);
 }
 
-.paragraph-regular-regular {
+.paragraph-medium-regular {
   font-family: $font-primary-regular;
   font-size: toRem(14px);
 }
 
-.paragraph-regular-bold {
+.paragraph-medium-bold {
   font-family: $font-primary-bold;
   font-size: toRem(14px);
 }
 
-.title-big-semibold {
+.title-large-semibold {
+  font-family: $font-primary-bold;
+  font-size: toRem(24px);
+}
+
+.title-x-large-semibold {
   font-family: $font-primary-bold;
   font-size: toRem(36px);
 }
 
 section {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media screen and (min-width: $breakpoint-sm-tablet) {
+    height: 100vh;
+  }
 }
 
 .isButton {

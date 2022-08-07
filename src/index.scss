@@ -16,7 +16,7 @@
   &::-webkit-scrollbar-thumb {
     width: toRem(3px);
     border-radius: 3px;
-    color: $color-neutral-2;
+    color: $color-neutral-3;
   }
 }
 
@@ -24,6 +24,7 @@
   font-family: $font-primary-regular;
   height: 100vh;
   width: 100vw;
+  background-color: $color-neutral-1;
 }
 
 .App {

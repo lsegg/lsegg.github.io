@@ -1,8 +1,8 @@
 // Fonts
-$font-primary-light: 'RalewayLight', sans-serif;
-$font-primary-regular: 'RalewayRegular', sans-serif;
-$font-primary-medium: 'RalewaySemiBold', sans-serif;
-$font-primary-bold: 'RalewayBold', sans-serif;
+$font-primary-light: "RalewayLight", sans-serif;
+$font-primary-regular: "RalewayRegular", sans-serif;
+$font-primary-medium: "RalewaySemiBold", sans-serif;
+$font-primary-bold: "RalewayBold", sans-serif;
 
 // Colors
 $color-primary: #313349;
@@ -11,9 +11,10 @@ $color-tertiary: #e07a5f;
 $color-quaternary: #f2cc8f;
 $color-quinary: #f4f1de;
 
-$color-neutral-1: #ffffff;
-$color-neutral-2: #454545;
-$color-neutral-3: #000000;
+$color-neutral-1: #f3f3f7;
+$color-neutral-2: #bbc4c4;
+$color-neutral-3: #454545;
+$color-neutral-4: #000000;
 
 // Default pixel size
 $root-px-size: 16px;
@@ -27,5 +28,5 @@ $root-px-size: 16px;
 // Breakpoints
 $breakpoint-mobile: toRem(320px);
 $breakpoint-sm-tablet: toRem(768px);
-$breakpoint-lg-tablet: toRem(1024px); 
+$breakpoint-lg-tablet: toRem(1024px);
 $breakpoint-desktop: toRem(1440px);

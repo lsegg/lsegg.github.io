@@ -1,6 +1,7 @@
 @import "../../../vars";
 
 .Home {
+  height: 100vh;
   background-color: $color-primary;
   color: $color-quinary;
   gap: toRem(50px);

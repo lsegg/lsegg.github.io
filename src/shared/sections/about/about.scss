@@ -1,0 +1,62 @@
+@import "../../../vars";
+
+.About {
+  &-title {
+    align-self: flex-start;
+    color: $color-primary;
+    padding: toRem(30px);
+  }
+
+  &-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: toRem(30px);
+
+    &-avatar {
+      display: none;
+      border-radius: 100%;
+      width: 40vw;
+      max-width: toRem(150px);
+      margin-right: toRem(30px);
+    }
+
+    &-text {
+      padding: toRem(30px);
+      background-color: white;
+      border-radius: toRem(20px);
+      box-shadow: 0 5px 20px 0 rgb(69 67 96 / 10%);
+      &-paragraph {
+        padding-bottom: toRem(10px);
+      }
+    }
+  }
+
+  &-skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: toRem(30px);
+
+    &-icon {
+      color: $color-neutral-2;
+      margin: toRem(30px);
+      font-size: toRem(36px);
+    }
+  }
+
+  @media screen and (min-width: $breakpoint-sm-tablet) {
+    &-intro {
+      align-items: flex-start;
+      flex-direction: row;
+      &-avatar {
+        display: block;
+      }
+    }
+    &-skills {
+      margin: toRem(50px) toRem(100px);
+    }
+  }
+}
