@@ -20,80 +20,78 @@ export const HeaderLay: any = () => {
             className="Header-nav-button-icon"
           />
         </button>
-        {navbarShown && (
-          <ul className="Header-nav-list">
-            <li
-              className="Header-nav-list-item"
-              onClick={() => {
-                setNavbarShown(false);
-              }}
-            >
-              <a href="#home" className="Header-nav-list-item-link">
-                Home
-              </a>
-            </li>
-            <li
-              className="Header-nav-list-item"
-              onClick={() => {
-                setNavbarShown(false);
-              }}
-            >
-              <a href="#about" className="Header-nav-list-item-link">
-                About
-              </a>
-            </li>
-            <li
-              className="Header-nav-list-item"
-              onClick={() => {
-                setNavbarShown(false);
-              }}
-            >
-              <a href="#services" className="Header-nav-list-item-link">
-                Services
-              </a>
-            </li>
-            <li
-              className="Header-nav-list-item"
-              onClick={() => {
-                setNavbarShown(false);
-              }}
-            >
-              <a href="#experience" className="Header-nav-list-item-link">
-                Experience
-              </a>
-            </li>
-            <li
-              className="Header-nav-list-item"
-              onClick={() => {
-                setNavbarShown(false);
-              }}
-            >
-              <a href="#works" className="Header-nav-list-item-link">
-                Works
-              </a>
-            </li>
-            <li
-              className="Header-nav-list-item"
-              onClick={() => {
-                setNavbarShown(false);
-              }}
-            >
-              <a href="#blog" className="Header-nav-list-item-link">
-                Blog
-              </a>
-            </li>
-            <li
-              className="Header-nav-list-item"
-              onClick={() => {
-                setNavbarShown(false);
-              }}
-            >
-              <a href="#contact" className="Header-nav-list-item-link">
-                Contact
-              </a>
-            </li>
-          </ul>
-        )}
+        <ul className={`Header-nav-list ${navbarShown ? "isShown" : ""}`}>
+          <li
+            className="Header-nav-list-item"
+            onClick={() => {
+              setNavbarShown(false);
+            }}
+          >
+            <a href="#home" className="Header-nav-list-item-link">
+              Home
+            </a>
+          </li>
+          <li
+            className="Header-nav-list-item"
+            onClick={() => {
+              setNavbarShown(false);
+            }}
+          >
+            <a href="#about" className="Header-nav-list-item-link">
+              About
+            </a>
+          </li>
+          <li
+            className="Header-nav-list-item"
+            onClick={() => {
+              setNavbarShown(false);
+            }}
+          >
+            <a href="#services" className="Header-nav-list-item-link">
+              Services
+            </a>
+          </li>
+          <li
+            className="Header-nav-list-item"
+            onClick={() => {
+              setNavbarShown(false);
+            }}
+          >
+            <a href="#experience" className="Header-nav-list-item-link">
+              Experience
+            </a>
+          </li>
+          <li
+            className="Header-nav-list-item"
+            onClick={() => {
+              setNavbarShown(false);
+            }}
+          >
+            <a href="#works" className="Header-nav-list-item-link">
+              Portfolio
+            </a>
+          </li>
+          <li
+            className="Header-nav-list-item"
+            onClick={() => {
+              setNavbarShown(false);
+            }}
+          >
+            <a href="#blog" className="Header-nav-list-item-link">
+              Blog
+            </a>
+          </li>
+          <li
+            className="Header-nav-list-item"
+            onClick={() => {
+              setNavbarShown(false);
+            }}
+          >
+            <a href="#contact" className="Header-nav-list-item-link">
+              Contact
+            </a>
+          </li>
+        </ul>
       </nav>
       <p className="Header-copyright">&#169; Lucía Seggiaro - {currentYear}</p>
     </header>

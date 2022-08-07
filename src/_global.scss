@@ -118,13 +118,12 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  @media screen and (min-width: $breakpoint-sm-tablet) {
+  @media screen and (min-width: $breakpoint-lg-tablet) {
     height: 100vh;
   }
 }
 
 .isButton {
-  text-decoration: none;
   text-transform: uppercase;
   color: $color-quinary;
   border-radius: toRem(35px);

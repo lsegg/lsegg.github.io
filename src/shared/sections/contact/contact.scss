@@ -1,0 +1,41 @@
+@import "../../../vars";
+
+.Contact {
+  align-items: flex-start;
+  margin: toRem(30px);
+  &-title {
+    align-self: flex-start;
+    color: $color-primary;
+  }
+
+  &-subtitle {
+    margin: toRem(10px) 0 toRem(30px);
+  }
+
+  &-network {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    &-icon {
+      color: $color-neutral-2;
+      margin: toRem(30px);
+      font-size: toRem(36px);
+    }
+
+    &-coding,
+    &-drawing {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &-email {
+    &-link {
+      color: $color-tertiary;
+    }
+  }
+}
