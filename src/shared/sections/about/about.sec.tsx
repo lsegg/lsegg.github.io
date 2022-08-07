@@ -25,7 +25,7 @@ export const AboutSection: any = () => {
       <h2 className="About-title title-x-large-semibold">About me</h2>
       <div className="About-intro">
         <img src={avatar} alt="Avatar" className="About-intro-avatar" />
-        <div className="About-intro-text">
+        <div className="About-intro-text isContainer">
           <p className="About-intro-text-paragraph">
             Ever since I was a little kid, arts, graphics and the IT world have
             been my passions. This has taken many forms: architecture,

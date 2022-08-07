@@ -1,3 +1,5 @@
+@import "./vars";
+
 @font-face {
   font-family: "RalewayBlack";
   src: url("./assets/fonts/Raleway-Black.ttf");
@@ -116,11 +118,9 @@
 section {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  @media screen and (min-width: $breakpoint-lg-tablet) {
-    height: 100vh;
-  }
+  padding: toRem(30px);
 }
 
 .isButton {
@@ -130,4 +130,11 @@ section {
   background-color: $color-tertiary;
   margin: toRem(10px);
   padding: toRem(10px) toRem(15px);
+}
+
+.isContainer {
+  padding: toRem(30px);
+  background-color: white;
+  border-radius: toRem(20px);
+  box-shadow: 0 5px 20px 0 rgb(69 67 96 / 10%);
 }

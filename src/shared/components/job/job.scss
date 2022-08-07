@@ -1,0 +1,25 @@
+@import "../../../vars";
+
+.Job {
+  width: 50%;
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    color: $color-quinary;
+    margin-bottom: toRem(30px);
+    &-icon {
+      font-size: toRem(56px);
+    }
+    &-title {
+      text-align: end;
+    }
+  }
+
+  &-web-development {
+    background-color: $color-tertiary;
+  }
+  &-illustration {
+    background-color: $color-secondary;
+  }
+}

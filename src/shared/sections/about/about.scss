@@ -2,9 +2,8 @@
 
 .About {
   &-title {
-    align-self: flex-start;
     color: $color-primary;
-    padding: toRem(30px);
+    padding-bottom: toRem(30px);
   }
 
   &-intro {
@@ -23,10 +22,6 @@
     }
 
     &-text {
-      padding: toRem(30px);
-      background-color: white;
-      border-radius: toRem(20px);
-      box-shadow: 0 5px 20px 0 rgb(69 67 96 / 10%);
       &-paragraph {
         padding-bottom: toRem(10px);
       }

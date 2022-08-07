@@ -1,0 +1,27 @@
+@import "../../../vars";
+
+.Services {
+  &-title {
+    color: $color-primary;
+    margin-bottom: toRem(30px);
+  }
+  &-types {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: toRem(30px);
+  }
+
+  &-custom {
+    margin: toRem(30px) 0;
+    &-link {
+      color: $color-tertiary;
+    }
+  }
+
+  @media screen and (min-width: $breakpoint-sm-tablet) {
+    &-types {
+      flex-direction: row;
+    }
+  }
+}

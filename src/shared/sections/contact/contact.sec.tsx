@@ -17,7 +17,7 @@ export const ContactSection: any = () => {
     <section className="Contact" id="contact">
       <h2 className="Contact-title title-x-large-semibold">Get in Touch</h2>
       <p className="Contact-subtitle">Let's talk about everything!</p>
-      <div className="Contact-network">
+      <div className="Contact-network isContainer">
         <div className="Contact-network-coding">
           <a
             className="SiteInConstruction-paragraph-link"
@@ -120,7 +120,7 @@ export const ContactSection: any = () => {
         </div>
       </div>
       <div className="Contact-email">
-        Don't like social network? Send me an{" "}
+        Don't like social networks? Send me an{" "}
         <a className="Contact-email-link" href="mailto:artofluli@gmail.com">
           email
         </a>
