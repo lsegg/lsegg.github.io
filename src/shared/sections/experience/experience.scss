@@ -1,0 +1,22 @@
+@import "../../../vars";
+
+.Experience {
+  &-title {
+    color: $color-primary;
+    margin-bottom: toRem(30px);
+  }
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(30px);
+  }
+
+  @media screen and (min-width: $breakpoint-sm-tablet) {
+    &-wrapper {
+      flex-direction: row;
+    }
+    &-subsection {
+      width: 50%;
+    }
+  }
+}

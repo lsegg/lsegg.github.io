@@ -138,6 +138,10 @@ section {
   background-color: $color-secondary;
   margin: toRem(10px);
   padding: toRem(10px) toRem(15px);
+  &:hover {
+    color: $color-secondary;
+    background-color: $color-quinary;
+  }
 }
 
 .isContainer {
