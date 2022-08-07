@@ -1,19 +1,17 @@
 @import "../../../vars";
 
 .Contact {
+  height: 100vh;
+  background: no-repeat url("../../../assets/images/contacting.png");
+  background-position: 50% 25%;
+  background-size: 75%;
   &-title {
     color: $color-primary;
     margin-bottom: toRem(10px);
   }
 
   &-network {
-    align-self: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin: toRem(30px) 0;
-
+    width: 100%;
     &-icon {
       color: $color-neutral-2;
       margin: toRem(10px);
@@ -23,19 +21,36 @@
       }
     }
 
-    &-coding,
-    &-drawing {
-      width: max-content;
+    &-wrapper {
+      width: fit-content;
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      margin: toRem(250px) auto toRem(30px);
+      &-coding,
+      &-drawing {
+        width: max-content;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    &-email {
+      &-link {
+        color: $color-secondary;
+      }
     }
   }
 
-  &-email {
-    &-link {
-      color: $color-tertiary;
+  @media screen and (min-width: $breakpoint-lg-tablet) {
+    background: no-repeat center/50%
+      url("../../../assets/images/contacting.png");
+    &-network {
+      &-wrapper {
+        margin: toRem(30px) auto;
+      }
     }
   }
 }

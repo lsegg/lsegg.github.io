@@ -9,7 +9,7 @@ export const HomeSection: any = () => {
         <h1 className="Home-intro-name title-x-large-semibold">Lucía Seggiaro</h1>
         <p className="Home-intro-job">I'm Front-End developer.</p>
         <a
-          href="#about"
+          href="#contact"
           className="Home-intro-button paragraph-medium-bold isButton"
         >
           Hire me

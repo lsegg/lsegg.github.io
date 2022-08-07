@@ -37,8 +37,8 @@
 
     &-icon {
       color: $color-neutral-2;
-      margin: toRem(30px);
-      font-size: toRem(36px);
+      margin: toRem(10px);
+      font-size: toRem(24px);
     }
   }
 
@@ -52,6 +52,10 @@
     }
     &-skills {
       margin: toRem(50px) toRem(100px);
+      &-icon {
+        margin: toRem(30px);
+        font-size: toRem(36px);
+      }
     }
   }
 }

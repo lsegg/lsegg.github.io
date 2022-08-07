@@ -5,6 +5,7 @@ import "./header.scss";
 
 export const HeaderLay: any = () => {
   const [navbarShown, setNavbarShown] = useState<Boolean>(false);
+  const pending: boolean = true;
   const currentYear: number = new Date().getFullYear();
   const handleClick = () => {
     setNavbarShown(!navbarShown);
@@ -39,16 +40,20 @@ export const HeaderLay: any = () => {
               Experience
             </a>
           </li>
-          <li className="Header-nav-list-item" onClick={handleClick}>
-            <a href="#works" className="Header-nav-list-item-link">
-              Portfolio
-            </a>
-          </li>
-          <li className="Header-nav-list-item" onClick={handleClick}>
-            <a href="#blog" className="Header-nav-list-item-link">
-              Blog
-            </a>
-          </li>
+          {!pending && (
+            <>
+              <li className="Header-nav-list-item" onClick={handleClick}>
+                <a href="#works" className="Header-nav-list-item-link">
+                  Portfolio
+                </a>
+              </li>
+              <li className="Header-nav-list-item" onClick={handleClick}>
+                <a href="#blog" className="Header-nav-list-item-link">
+                  Blog
+                </a>
+              </li>
+            </>
+          )}
           <li className="Header-nav-list-item" onClick={handleClick}>
             <a href="#contact" className="Header-nav-list-item-link">
               Contact

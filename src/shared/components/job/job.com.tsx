@@ -1,5 +1,5 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCode, faBrush } from "@fortawesome/free-solid-svg-icons";
+import programming from "../../../assets/images/programming.png";
+import painting from "../../../assets/images/painting.png";
 import "./job.scss";
 
 type JobComProps = {
@@ -16,13 +16,12 @@ export const JobCom: any = ({ icon, title, description }: JobComProps) => {
         .replace(/\s+/g, "-")} isContainer`}
       key={title}
     >
-      <div className="Job-header">
-        <FontAwesomeIcon
-          className="Job-header-icon"
-          icon={icon === "code" ? faCode : faBrush}
-        />
-        <h3 className="Job-title title-large-semibold">{title}</h3>
-      </div>
+      <h3 className="Job-header-title title-large-semibold">{title}</h3>
+      <img
+        className="Job-img"
+        src={title === "Web Development" ? programming : painting}
+        alt={title}
+      />
       <p className="Job-description">{description}</p>
     </article>
   );
