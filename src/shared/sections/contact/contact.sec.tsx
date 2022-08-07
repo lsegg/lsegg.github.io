@@ -1,3 +1,4 @@
+import { TitleCom } from "../../components/title/title.com";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArtstation,
@@ -10,14 +11,13 @@ import {
   faInstagram,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-import contacting from "../../../assets/images/contacting.png";
 import "./contact.scss";
 
 export const ContactSection: any = () => {
   return (
     <section className="Contact" id="contact">
       <div className="Contact-intro">
-        <h2 className="Contact-title title-x-large-semibold">Get in Touch</h2>
+        <TitleCom content="Get in Touch" sectionClass="Contact-title" />
         <p className="Contact-subtitle">Let's talk about everything!</p>
       </div>
       <div className="Contact-network">

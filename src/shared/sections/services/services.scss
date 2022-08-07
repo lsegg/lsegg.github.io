@@ -1,10 +1,6 @@
 @import "../../../vars";
 
 .Services {
-  &-title {
-    color: $color-primary;
-    margin-bottom: toRem(30px);
-  }
   &-types {
     align-self: center;
     display: flex;

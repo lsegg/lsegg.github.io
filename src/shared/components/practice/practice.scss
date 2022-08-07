@@ -7,6 +7,10 @@
   margin-bottom: toRem(10px);
   width: 100%;
 
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
   &-wrapper {
     background-color: white;
     border-radius: 100%;

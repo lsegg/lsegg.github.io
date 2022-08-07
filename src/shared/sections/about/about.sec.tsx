@@ -1,3 +1,4 @@
+import { TitleCom } from "../../components/title/title.com";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAws,
@@ -22,7 +23,7 @@ import "./about.scss";
 export const AboutSection: any = () => {
   return (
     <section className="About" id="about">
-      <h2 className="About-title title-x-large-semibold">About me</h2>
+      <TitleCom content="About me" sectionClass="About-title" />
       <div className="About-intro">
         <img src={avatar} alt="Avatar" className="About-intro-avatar" />
         <div className="About-intro-text isContainer">

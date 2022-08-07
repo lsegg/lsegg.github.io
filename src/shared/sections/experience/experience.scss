@@ -1,10 +1,6 @@
 @import "../../../vars";
 
 .Experience {
-  &-title {
-    color: $color-primary;
-    margin-bottom: toRem(30px);
-  }
   &-wrapper {
     display: flex;
     flex-direction: column;
@@ -17,6 +13,12 @@
     }
     &-subsection {
       width: 50%;
+    }
+  }
+
+  @media screen and (min-width: $breakpoint-lg-desktop) {
+    &-wrapper {
+      margin-bottom: 10%;
     }
   }
 }

@@ -44,7 +44,11 @@ export const PracticeCom: any = ({
         </p>
         <ul className="Practice-data-list paragraph-small-regular">
           {items.map((item) => {
-            return <li className="Practice-data-list-item">{item}</li>;
+            return (
+              <li className="Practice-data-list-item" key={items.indexOf(item)}>
+                {item}
+              </li>
+            );
           })}
         </ul>
         <p className="Practice-data-where paragraph-medium-regular">

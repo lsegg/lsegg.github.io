@@ -1,7 +1,7 @@
 @import "../../../vars";
 
 .Home {
-  height: 100vh;
+  height: calc(100vh - toRem(50px));
   align-items: center;
   background-color: $color-primary;
   color: $color-quinary;
@@ -56,6 +56,9 @@
 
   @media screen and (min-width: $breakpoint-sm-tablet) {
     gap: toRem(100px);
+  }
+  @media screen and (min-width: $breakpoint-lg-tablet) {
+    height: 100vh;
   }
 }
 

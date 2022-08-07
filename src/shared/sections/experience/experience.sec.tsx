@@ -1,3 +1,4 @@
+import { TitleCom } from "../../components/title/title.com";
 import { PracticeCom } from "../../components/practice/practice.com";
 import "./experience.scss";
 
@@ -51,7 +52,7 @@ export const ExperienceSection: any = () => {
 
   return (
     <section className="Experience" id="experience">
-      <h2 className="Experience-title title-x-large-semibold">Experience</h2>
+      <TitleCom content="Experience" sectionClass="Experience-title" />
       <div className="Experience-wrapper">
         <div className="Experience-subsection Experience-subsection-work isContainer">
           <PracticeCom

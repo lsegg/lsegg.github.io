@@ -1,11 +1,6 @@
 @import "../../../vars";
 
 .About {
-  &-title {
-    color: $color-primary;
-    padding-bottom: toRem(30px);
-  }
-
   &-intro {
     display: flex;
     flex-direction: column;

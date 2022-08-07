@@ -1,1 +1,15 @@
+// Components
+@import "./components/job/job.scss";
+@import "./components/practice/practice.scss";
+@import "./components/title/title.scss";
+
+// Layouts
 @import "./layouts/header/header.scss";
+
+// Sections
+@import "./sections/about/about.scss";
+@import "./sections/contact/contact.scss";
+@import "./sections/experience/experience.scss";
+@import "./sections/home/home.scss";
+@import "./sections/services/services.scss";
+@import "./sections/site-in-construction/site-in-construction.scss";
