@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.9402c2d5.css",
-    "main.js": "/static/js/main.3b1fc6f7.js",
+    "main.css": "/static/css/main.59bbefc0.css",
+    "main.js": "/static/js/main.b630e2da.js",
     "static/js/787.109add10.chunk.js": "/static/js/787.109add10.chunk.js",
     "static/media/site-in-construction.png": "/static/media/site-in-construction.f24473c0f05b0bb356c8.png",
+    "static/media/avatar.png": "/static/media/avatar.8dd156fa7f80001ddc07.png",
     "static/media/Raleway-ExtraLight.ttf": "/static/media/Raleway-ExtraLight.e19d39bd2c0c5f58ffea.ttf",
     "static/media/Raleway-Light.ttf": "/static/media/Raleway-Light.58bcdae09d89ccd8d086.ttf",
     "static/media/Raleway-Medium.ttf": "/static/media/Raleway-Medium.601cda68c7b7bbcc9a12.ttf",
@@ -12,6 +13,7 @@
     "static/media/Raleway-ExtraBold.ttf": "/static/media/Raleway-ExtraBold.8b7015f87bd9859e1382.ttf",
     "static/media/Raleway-Bold.ttf": "/static/media/Raleway-Bold.18960343b3da49bfd353.ttf",
     "static/media/Raleway-Thin.ttf": "/static/media/Raleway-Thin.37b903083fc82c0bdc17.ttf",
+    "static/media/painting.png": "/static/media/painting.8a3e4cdcfe7b9bbe7d0f.png",
     "static/media/Raleway-Black.ttf": "/static/media/Raleway-Black.6d75f2b870b0a5df344d.ttf",
     "static/media/Raleway-SemiBoldItalic.ttf": "/static/media/Raleway-SemiBoldItalic.87b2cd29a7cb14781cae.ttf",
     "static/media/Raleway-ExtraBoldItalic.ttf": "/static/media/Raleway-ExtraBoldItalic.1d536482cdbec07cc8e9.ttf",
@@ -22,13 +24,15 @@
     "static/media/Raleway-Italic.ttf": "/static/media/Raleway-Italic.a0018c8a791a6d9b8e3e.ttf",
     "static/media/Raleway-ThinItalic.ttf": "/static/media/Raleway-ThinItalic.5af7853a591baaa237ba.ttf",
     "static/media/Raleway-BlackItalic.ttf": "/static/media/Raleway-BlackItalic.3245b2a2e189bfb7619b.ttf",
+    "static/media/contacting.png": "/static/media/contacting.f297ca39a6b80781b8ba.png",
+    "static/media/programming.png": "/static/media/programming.8f50d5844056520b124e.png",
     "index.html": "/index.html",
-    "main.9402c2d5.css.map": "/static/css/main.9402c2d5.css.map",
-    "main.3b1fc6f7.js.map": "/static/js/main.3b1fc6f7.js.map",
+    "main.59bbefc0.css.map": "/static/css/main.59bbefc0.css.map",
+    "main.b630e2da.js.map": "/static/js/main.b630e2da.js.map",
     "787.109add10.chunk.js.map": "/static/js/787.109add10.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9402c2d5.css",
-    "static/js/main.3b1fc6f7.js"
+    "static/css/main.59bbefc0.css",
+    "static/js/main.b630e2da.js"
   ]
 }
