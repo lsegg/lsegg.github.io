@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUserAlt,
   faBriefcase,
+  faLayerGroup,
   faGraduationCap,
   faComments,
   faAnglesRight,
@@ -21,10 +22,10 @@ export const TitleCom: any = ({ content, sectionClass }: TitleComProps) => {
         return (icon = faUserAlt);
       case "Services-title":
         return (icon = faBriefcase);
+      case "Portfolio-title":
+        return (icon = faLayerGroup);
       case "Experience-title":
         return (icon = faGraduationCap);
-      case "Services-title":
-        return (icon = faBriefcase);
       case "Contact-title":
         return (icon = faComments);
       default:

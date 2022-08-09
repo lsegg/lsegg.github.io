@@ -54,7 +54,7 @@ export const ExperienceSection: any = () => {
     <section className="Experience" id="experience">
       <TitleCom content="Experience" sectionClass="Experience-title" />
       <div className="Experience-wrapper">
-        <div className="Experience-subsection Experience-subsection-work isContainer">
+        <div className="Experience-subsection Experience-subsection-work isCard">
           <PracticeCom
             type="work"
             startDate="jul 2021"
@@ -86,7 +86,7 @@ export const ExperienceSection: any = () => {
             items={work[2].items}
           />
         </div>
-        <div className="Experience-subsection -academic isContainer">
+        <div className="Experience-subsection -academic isCard">
           <PracticeCom
             type="academic"
             startDate="2020"

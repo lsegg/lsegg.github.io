@@ -1,0 +1,44 @@
+@import "../../../vars";
+
+.Portfolio {
+  &-filter {
+    display: flex;
+    flex-direction: column;
+    &-label {
+      cursor: pointer;
+      background-color: transparent;
+      color: $color-tertiary;
+      font-weight: bolder;
+      border-radius: toRem(35px);
+      margin: toRem(10px);
+      padding: toRem(10px) toRem(25px) toRem(10px) toRem(10px);
+      &:hover {
+        background-color: $color-tertiary;
+        color: $color-quinary;
+      }
+      &:focus-within {
+        background-color: $color-tertiary;
+        color: $color-quinary;
+      }
+    }
+    &-input {
+      opacity: 0;
+    }
+  }
+  &-works {
+    align-self: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: toRem(30px);
+    min-height: 70vh;
+  }
+
+  @media screen and (min-width: $breakpoint-sm-tablet) {
+    &-filter {
+      flex-direction: row;
+    }
+    &-works {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}

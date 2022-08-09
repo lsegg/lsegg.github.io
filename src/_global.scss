@@ -95,6 +95,11 @@
   font-size: toRem(12px);
 }
 
+.paragraph-small-bold {
+  font-family: $font-primary-bold;
+  font-size: toRem(12px);
+}
+
 .paragraph-medium-regular {
   font-family: $font-primary-regular;
   font-size: toRem(14px);
@@ -144,7 +149,7 @@ section {
   }
 }
 
-.isContainer {
+.isCard {
   padding: toRem(30px);
   background-color: white;
   border-radius: toRem(20px);

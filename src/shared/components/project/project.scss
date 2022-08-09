@@ -1,0 +1,32 @@
+@import "../../../vars";
+
+.Project {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: $color-quinary;
+  background-color: $color-tertiary;
+  &-category {
+    position: absolute;
+    top: 0;
+    padding: 10px;
+    background-color: $color-secondary;
+    border-bottom-left-radius: toRem(15px);
+    border-bottom-right-radius: toRem(15px);
+  }
+  &-title {
+    margin-top: toRem(30px);
+  }
+  &-buttons {
+    display: flex;
+    gap: 10px;
+    &-link {
+      width: min-content;
+      padding: toRem(10px) toRem(12px);
+      border-radius: 100%;
+      color: $color-quinary;
+      background-color: $color-secondary;
+    }
+  }
+}

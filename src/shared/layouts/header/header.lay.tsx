@@ -40,13 +40,13 @@ export const HeaderLay: any = () => {
               Experience
             </a>
           </li>
+          <li className="Header-nav-list-item" onClick={handleClick}>
+            <a href="#portfolio" className="Header-nav-list-item-link">
+              Portfolio
+            </a>
+          </li>
           {!pending && (
             <>
-              <li className="Header-nav-list-item" onClick={handleClick}>
-                <a href="#works" className="Header-nav-list-item-link">
-                  Portfolio
-                </a>
-              </li>
               <li className="Header-nav-list-item" onClick={handleClick}>
                 <a href="#blog" className="Header-nav-list-item-link">
                   Blog

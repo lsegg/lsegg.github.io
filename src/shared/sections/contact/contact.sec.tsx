@@ -21,7 +21,7 @@ export const ContactSection: any = () => {
         <p className="Contact-subtitle">Let's talk about everything!</p>
       </div>
       <div className="Contact-network">
-        <div className="Contact-network-wrapper isContainer">
+        <div className="Contact-network-wrapper isCard">
           <div className="Contact-network-wrapper-coding">
             <a
               className="SiteInConstruction-paragraph-link"

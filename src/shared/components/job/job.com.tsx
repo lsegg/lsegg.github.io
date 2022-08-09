@@ -11,9 +11,7 @@ type JobComProps = {
 export const JobCom: any = ({ icon, title, description }: JobComProps) => {
   return (
     <article
-      className={`Job Job-${title
-        .toLowerCase()
-        .replace(/\s+/g, "-")} isContainer`}
+      className={`Job Job-${title.toLowerCase().replace(/\s+/g, "-")} isCard`}
       key={title}
     >
       <h3 className="Job-header-title title-large-semibold">{title}</h3>
