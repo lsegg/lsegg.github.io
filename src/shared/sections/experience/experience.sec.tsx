@@ -61,7 +61,10 @@ export const ExperienceSection: any = () => {
             endDate="current"
             role="Full Stack Web Developer"
             description={work[0].description}
-            entity="StackZone Ltd"
+            entity={{
+              name: "StackZone Ltd",
+              url: "https://www.stackzone.com/",
+            }}
             location="remote"
             items={work[0].items}
           />
@@ -71,7 +74,10 @@ export const ExperienceSection: any = () => {
             endDate="jun 2021"
             role="Teaching assistant"
             description={work[1].description}
-            entity="Universidad Nacional de Rosario"
+            entity={{
+              name: "Universidad Nacional de Rosario",
+              url: "https://fapyd.unr.edu.ar/",
+            }}
             location="Rosario, Argentina"
             items={work[1].items}
           />
@@ -81,7 +87,10 @@ export const ExperienceSection: any = () => {
             endDate="apr 2020"
             role="Permanent & Substitute Drawing teacher"
             description={work[2].description}
-            entity="Escuela de Dibujo Barocelli"
+            entity={{
+              name: "Escuela de Dibujo Barocelli",
+              url: "https://www.escueladibujo.com/",
+            }}
             location="Rosario, Argentina"
             items={work[2].items}
           />
@@ -93,7 +102,10 @@ export const ExperienceSection: any = () => {
             endDate="2021"
             role="Web Development Course"
             description={academic[0].description}
-            entity="Acamica"
+            entity={{
+              name: "Acamica",
+              url: "https://www.acamica.com/",
+            }}
             location="remote"
             items={academic[0].items}
           />
@@ -103,7 +115,10 @@ export const ExperienceSection: any = () => {
             endDate="2021"
             role="Architecture Degree (incomplete)"
             description={academic[1].description}
-            entity="Universidad Nacional de Rosario"
+            entity={{
+              name: "Universidad Nacional de Rosario",
+              url: "https://fapyd.unr.edu.ar/",
+            }}
             location="Rosario, Argentina"
             items={academic[1].items}
           />

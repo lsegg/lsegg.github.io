@@ -12,7 +12,10 @@ type PracticeComProps = {
   role: string;
   description: string;
   location: string;
-  entity: string;
+  entity: {
+    name: string;
+    url: string;
+  };
   items: string[];
 };
 
@@ -51,8 +54,21 @@ export const PracticeCom: any = ({
             );
           })}
         </ul>
+
         <p className="Practice-data-where paragraph-medium-regular">
-          {entity} - {location}
+          {entity.url ? (
+            <a
+              href={entity.url}
+              className={`Practice-data-where-link ${type}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {entity.name}{" "}
+            </a>
+          ) : (
+            entity.name
+          )}
+          - {location}
         </p>
       </div>
     </div>

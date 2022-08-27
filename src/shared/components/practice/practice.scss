@@ -34,6 +34,15 @@
     &-where {
       text-align: end;
       color: $color-neutral-2;
+      &-link {
+        color: $color-neutral-2;
+        &.work:hover {
+          color: $color-secondary;
+        }
+        &.academic:hover {
+          color: $color-tertiary;
+        }
+      }
     }
     &-role {
       margin: toRem(5px) 0;

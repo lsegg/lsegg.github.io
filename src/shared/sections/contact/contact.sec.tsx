@@ -4,7 +4,6 @@ import {
   faArtstation,
   faBehance,
   faDeviantart,
-  faDribbble,
   faGithub,
   faHackerrank,
   faLinkedin,
@@ -100,17 +99,6 @@ export const ContactSection: any = () => {
               <FontAwesomeIcon
                 className="Contact-network-icon"
                 icon={faDeviantart}
-              />
-            </a>
-            <a
-              className="SiteInConstruction-paragraph-link"
-              href="https://dribbble.com/artofluli"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon
-                className="Contact-network-icon"
-                icon={faDribbble}
               />
             </a>
             <a

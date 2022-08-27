@@ -26,7 +26,7 @@ export const AboutSection: any = () => {
       <TitleCom content="About me" sectionClass="About-title" />
       <div className="About-intro">
         <img src={avatar} alt="Avatar" className="About-intro-avatar" />
-        <div className="About-intro-text isContainer">
+        <div className="About-intro-text isCard">
           <p className="About-intro-text-paragraph">
             Ever since I was a little kid, arts, graphics and the IT world have
             been my passions. This has taken many forms: architecture,
