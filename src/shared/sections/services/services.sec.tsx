@@ -3,8 +3,7 @@ import { JobCom } from "../../components/job/job.com";
 import "./services.scss";
 
 export const ServicesSection: any = () => {
-  const webDevDesc: string =
-    "Design, coding, testing, review and launch, maintenance.";
+  const webDevDesc: string = "Design, coding, testing, review and launch.";
   const illusDesc: string =
     "Digital and watercolor media. Editorial illustration, personalized commisions, concept art.";
   return (

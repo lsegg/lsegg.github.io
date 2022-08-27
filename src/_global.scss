@@ -155,3 +155,9 @@ section {
   border-radius: toRem(20px);
   box-shadow: 0 5px 20px 0 rgb(69 67 96 / 10%);
 }
+
+@mixin transition($second) {
+  -webkit-transition: all $second ease-in-out;
+  -moz-transition: all $second ease-in-out;
+  transition: all $second ease-in-out;
+}
