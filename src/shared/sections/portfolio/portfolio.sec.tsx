@@ -27,6 +27,15 @@ export const PortfolioSection: any = () => {
         repoUrl: "https://lsegg.github.io/podcast-channel/",
       },
     },
+    {
+      category: "illustration",
+      title: "NO = SÍ (Segundo Experimento Ambiental)",
+      description: "Collaboration with music band Flecha Zen for the cover of their album",
+      type: {
+        name: "illustration",
+        webUrl: "https://open.spotify.com/album/6WaNe2XqGe9I9DqTeitTL0",
+      }
+    }
   ];
 
   const [filter, setFilter] = useState<string>("everthing");
@@ -59,7 +68,7 @@ export const PortfolioSection: any = () => {
             value={filter}
             name="everything"
             id="everything"
-            checked={filter == "everything"}
+            checked={filter === "everything"}
             onChange={() => {
               handleChange("everything");
             }}
@@ -73,7 +82,7 @@ export const PortfolioSection: any = () => {
             value={filter}
             name="web-development"
             id="web-development"
-            checked={filter == "web-development"}
+            checked={filter === "web-development"}
             onChange={() => {
               handleChange("web-development");
             }}
@@ -87,7 +96,7 @@ export const PortfolioSection: any = () => {
             value={filter}
             name="illustration"
             id="illustration"
-            checked={filter == "illustration"}
+            checked={filter === "illustration"}
             onChange={() => {
               handleChange("illustration");
             }}

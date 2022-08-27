@@ -5,19 +5,58 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: $color-quinary;
-  background-color: $color-tertiary;
+  cursor: pointer;
+
+  &-overlay {
+    background-color: rgba($color-neutral-3, 0.9);
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    &.isShown {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    &-icon {
+      color: $color-quinary;
+      padding: toRem(20px);
+    }
+  }
+
+  &.illustration {
+    color: $color-quinary;
+    background-color: $color-tertiary;
+  }
+
+  &.web-development {
+    color: $color-quinary;
+    background-color: $color-secondary;
+  }
+
   &-category {
     position: absolute;
     top: 0;
     padding: 10px;
-    background-color: $color-secondary;
     border-bottom-left-radius: toRem(15px);
     border-bottom-right-radius: toRem(15px);
+    &.web-development {
+      background-color: $color-tertiary;
+    }
+    &.illustration {
+      background-color: $color-secondary;
+    }
   }
+
   &-title {
     margin-top: toRem(30px);
   }
+
   &-buttons {
     display: flex;
     gap: 10px;
@@ -26,7 +65,12 @@
       padding: toRem(10px) toRem(12px);
       border-radius: 100%;
       color: $color-quinary;
-      background-color: $color-secondary;
+      &.web-development {
+        background-color: $color-tertiary;
+      }
+      &.illustration {
+        background-color: $color-secondary;
+      }
     }
   }
 }

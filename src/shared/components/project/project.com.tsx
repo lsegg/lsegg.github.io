@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
+import { faExternalLink, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import "./project.scss";
+import { useState } from "react";
 
 export type ProjectComProps = {
   category: "web-development" | "illustration";
@@ -22,10 +23,24 @@ export const ProjectCom: any = ({
   type,
   description,
 }: ProjectComProps) => {
+  const [isShown, setIsShown] = useState<boolean>(false);
+  const handleClick = () => {
+    setIsShown(!isShown);
+  };
+
   return (
-    <article className="Project isCard">
-      <div className="Project-overlay"></div>
-      <p className="Project-category paragraph-small-bold">
+    <article
+      className={`Project isCard ${category}`}
+      onClick={() => handleClick()}
+    >
+      <div className={`Project-overlay ${isShown && "isShown"}`}>
+        <FontAwesomeIcon
+          icon={faTimes}
+          className="Project-overlay-icon"
+          onClick={() => handleClick()}
+        />
+      </div>
+      <p className={`Project-category paragraph-small-bold  ${category} `}>
         {category.replace("-", " ").toUpperCase()}
       </p>
       <h3 className="Project-title title-large-semibold">{title}</h3>
@@ -35,7 +50,7 @@ export const ProjectCom: any = ({
           <>
             <a
               href={type.webUrl}
-              className="Project-buttons-link"
+              className={`Project-buttons-link ${category}`}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -43,7 +58,7 @@ export const ProjectCom: any = ({
             </a>
             <a
               href={type.repoUrl}
-              className="Project-buttons-link"
+              className={`Project-buttons-link ${category}`}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -53,8 +68,8 @@ export const ProjectCom: any = ({
         )}
         {type.name === "illustration" && (
           <a
-            href={type.portfolioUrl}
-            className="Project-buttons-link"
+            href={type.webUrl}
+            className={`Project-buttons-link ${category}`}
             target="_blank"
             rel="noopener noreferrer"
           >
