@@ -26,8 +26,9 @@ export const AboutSection: any = () => {
       <TitleCom content="About me" sectionClass="About-title" />
       <div className="About-intro">
         <img src={avatar} alt="Avatar" className="About-intro-avatar" />
-        <div className="About-intro-text isCard">
-          <p className="About-intro-text-paragraph">
+        <div className="About-intro-dialog isCard">
+          <div className="About-intro-dialog-arrow"></div>
+          <p className="About-intro-dialog-paragraph">
             Ever since I was a little kid, arts, graphics and the IT world have
             been my passions. This has taken many forms: architecture,
             illustration and now, web development. Front-end web development
@@ -35,14 +36,14 @@ export const AboutSection: any = () => {
             problem solving, and I'm allowed to break things in order to improve
             them (in a separate Git branch, of course).
           </p>
-          <p className="About-intro-text-paragraph">
+          <p className="About-intro-dialog-paragraph">
             Now, in this industry, this passion is still with me: I love
             applying responsive design principles, and seeing how my web pages
             shrink on mobile screens and still look amazing. It's very
             satisfying. I guess, in a way, I'm like those websites; I'm
             moldable, but I still keep my creative ability intact.
           </p>
-          <p className="About-intro-text-paragraph">
+          <p className="About-intro-dialog-paragraph">
             No doubt, there are still more things to learn, more problems to
             solve and more things to build. And for this, I am very grateful.
             Feel free to reach out.

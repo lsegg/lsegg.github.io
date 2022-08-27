@@ -16,7 +16,18 @@
       margin-right: toRem(30px);
     }
 
-    &-text {
+    &-dialog {
+      &-arrow {
+        display: none;
+        content: "";
+        width: toRem(15px);
+        height: toRem(15px);
+        background-color: white;
+        position: relative;
+        top: toRem(38px);
+        right: toRem(38px);
+        transform: rotate(45deg);
+      }
       &-paragraph {
         padding-bottom: toRem(10px);
       }
@@ -43,6 +54,11 @@
       flex-direction: row;
       &-avatar {
         display: block;
+      }
+      &-dialog {
+        &-arrow {
+          display: block;
+        }
       }
     }
     &-skills {
