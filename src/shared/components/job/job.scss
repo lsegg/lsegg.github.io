@@ -26,15 +26,4 @@
   @media screen and (min-width: $breakpoint-sm-tablet) {
     width: 40%;
   }
-
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  transform: translateY(0);
-  @include transition(0.3s);
-
-  &:hover {
-    -webkit-transform: translateY(toRem(-5px));
-    -ms-transform: translateY(toRem(-5px));
-    transform: translateY(toRem(-5px));
-  }
 }

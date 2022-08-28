@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArtstation,
   faBehance,
+  faCodepen,
   faDeviantart,
   faGithub,
   faHackerrank,
@@ -29,7 +30,7 @@ export const ContactSection: any = () => {
               rel="noopener noreferrer"
             >
               <FontAwesomeIcon
-                className="Contact-network-icon"
+                className="Contact-network-icon isTranslatedY"
                 icon={faLinkedin}
               />
             </a>
@@ -40,8 +41,19 @@ export const ContactSection: any = () => {
               rel="noopener noreferrer"
             >
               <FontAwesomeIcon
-                className="Contact-network-icon"
+                className="Contact-network-icon isTranslatedY"
                 icon={faGithub}
+              />
+            </a>
+            <a
+              className="SiteInConstruction-paragraph-link"
+              href="https://codepen.io/lsegg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon
+                className="Contact-network-icon isTranslatedY"
+                icon={faCodepen}
               />
             </a>
             <a
@@ -51,7 +63,7 @@ export const ContactSection: any = () => {
               rel="noopener noreferrer"
             >
               <FontAwesomeIcon
-                className="Contact-network-icon"
+                className="Contact-network-icon isTranslatedY"
                 icon={faHackerrank}
               />
             </a>
@@ -62,7 +74,7 @@ export const ContactSection: any = () => {
               rel="noopener noreferrer"
             >
               <FontAwesomeIcon
-                className="Contact-network-icon"
+                className="Contact-network-icon isTranslatedY"
                 icon={faTwitter}
               />
             </a>
@@ -75,7 +87,7 @@ export const ContactSection: any = () => {
               rel="noopener noreferrer"
             >
               <FontAwesomeIcon
-                className="Contact-network-icon"
+                className="Contact-network-icon isTranslatedY"
                 icon={faArtstation}
               />
             </a>
@@ -86,7 +98,7 @@ export const ContactSection: any = () => {
               rel="noopener noreferrer"
             >
               <FontAwesomeIcon
-                className="Contact-network-icon"
+                className="Contact-network-icon isTranslatedY"
                 icon={faBehance}
               />
             </a>
@@ -97,7 +109,7 @@ export const ContactSection: any = () => {
               rel="noopener noreferrer"
             >
               <FontAwesomeIcon
-                className="Contact-network-icon"
+                className="Contact-network-icon isTranslatedY"
                 icon={faDeviantart}
               />
             </a>
@@ -108,7 +120,7 @@ export const ContactSection: any = () => {
               rel="noopener noreferrer"
             >
               <FontAwesomeIcon
-                className="Contact-network-icon"
+                className="Contact-network-icon isTranslatedY"
                 icon={faInstagram}
               />
             </a>

@@ -67,9 +67,17 @@
       color: $color-quinary;
       &.web-development {
         background-color: $color-tertiary;
+        &:hover {
+          color: $color-tertiary;
+          background-color: $color-quinary;
+        }
       }
       &.illustration {
         background-color: $color-secondary;
+        &:hover {
+          color: $color-secondary;
+          background-color: $color-quinary;
+        }
       }
     }
   }
