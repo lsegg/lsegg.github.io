@@ -1,3 +1,4 @@
+import signature from "../../../assets/images/signature.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
@@ -19,6 +20,11 @@ export const HeaderLay: any = () => {
             className="Header-nav-button-icon"
           />
         </button>
+        <img
+          src={signature}
+          alt="signature art of luli"
+          className="Header-nav-signature"
+        />
         <ul className={`Header-nav-list ${navbarShown ? "isShown" : ""}`}>
           <li className="Header-nav-list-item" onClick={handleClick}>
             <a href="#home" className="Header-nav-list-item-link">

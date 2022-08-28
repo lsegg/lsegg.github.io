@@ -29,6 +29,16 @@ In the project directory, you can run:
   - large tablets
   - desktop
 
+## Previews 👁️
+
+### Mobile
+
+![preview mobile](https://github.com/lsegg/lsegg.github.io/blob/main/src/assets/images/mobile-preview.png?raw=true)
+
+### Desktop
+
+![preview desktop](https://github.com/lsegg/lsegg.github.io/blob/main/src/assets/images/desktop-preview.png?raw=true)
+
 ## License 📄
 
 This project is under (MIT License) - See the file [LICENSE](LICENSE) for more details
