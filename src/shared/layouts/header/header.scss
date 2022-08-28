@@ -34,23 +34,21 @@
     }
     &-list {
       display: none;
+      flex-direction: column;
       position: absolute;
       top: toRem(50px);
       background-color: $color-primary;
-      list-style: none;
       width: 100%;
       height: calc(100vh - toRem(50px));
       padding: toRem(50px) 0 0 toRem(50px);
       &.isShown {
-        display: block;
+        display: flex;
       }
       &-item {
         padding: toRem(10px);
-        &-link {
-          color: $color-neutral-1;
-          &:hover {
-            color: $color-secondary;
-          }
+        color: $color-neutral-1;
+        &:hover {
+          color: $color-secondary;
         }
       }
     }
@@ -77,8 +75,9 @@
         display: none;
       }
       &-list {
-        display: block;
-        position: static;
+        display: flex;
+        width: 80%;
+        margin-top: toRem(60px);
         padding: 0;
         height: auto;
       }

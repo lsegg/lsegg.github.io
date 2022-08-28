@@ -8,6 +8,7 @@ This is my Web Full Stack Development Portfolio.
 - [FontAwesome](https://fontawesome.com/) - Icon library and toolkit.
 - [gh-pages](https://github.com/tschaub/gh-pages) - General purpose task for publishing files to a gh-pages branch on GitHub.
 - [React](https://reactjs.org/) - A JavaScript library for building user interfaces.
+- [React Router](https://reactrouter.com/en/main) - Declarative routing for React web applications.
 - [Sass](https://sass-lang.com/) - CSS extension language.
 - [TypeScript](https://www.typescriptlang.org/) - A strongly typed programming language that builds on JavaScript.
 
