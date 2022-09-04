@@ -1,6 +1,7 @@
 @import "../../../vars";
 
 .Contact {
+  margin-top: 10vh;
   height: 100vh;
   background: no-repeat url("../../../assets/images/contacting.png");
   background-position: 50% 25%;
@@ -44,6 +45,9 @@
     }
   }
 
+  @media screen and (min-width: $breakpoint-sm-tablet) {
+    margin-top: 0;
+  }
   @media screen and (min-width: $breakpoint-lg-tablet) {
     background: no-repeat center/50%
       url("../../../assets/images/contacting.png");

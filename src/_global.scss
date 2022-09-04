@@ -131,7 +131,7 @@ section {
   align-items: flex-start;
   justify-content: space-between;
   padding: toRem(30px);
-  @media screen and (min-width: $breakpoint-desktop) {
+  @media screen and (min-width: $breakpoint-lg-desktop) {
     height: 100vh;
   }
 }

@@ -8,6 +8,7 @@ export const PortfolioSection: any = () => {
     {
       category: "web-development",
       title: "YelpCamp",
+      imgIndex: 0,
       description:
         "This is the final project from The Web Developer Bootcamp 2021 by Colt Steele. It is a site like Yelp for finding, sharing and reviewing campgrounds.",
       type: {
@@ -19,23 +20,26 @@ export const PortfolioSection: any = () => {
     {
       category: "web-development",
       title: "Podcast Channel Landing Page",
+      imgIndex: 1,
       description:
         "This is the first project from the Web Full Stack Development intensive programme by Acámica, the goal was to create the layout of the landing page of a Podcast channel, following the visual guides of a provided user interface and developing functionalities of content reproduction, navigation and compatibility with multiple browsers and devices.",
       type: {
         name: "website",
-        webUrl: "https://github.com/lsegg/podcast-channel",
-        repoUrl: "https://lsegg.github.io/podcast-channel/",
+        webUrl: "https://lsegg.github.io/podcast-channel/",
+        repoUrl: "https://github.com/lsegg/podcast-channel",
       },
     },
     {
       category: "illustration",
       title: "NO = SÍ (Segundo Experimento Ambiental)",
-      description: "Collaboration with music band Flecha Zen for the cover of their album",
+      imgIndex: 2,
+      description:
+        "Collaboration with music band Flecha Zen for the cover of their album",
       type: {
         name: "illustration",
         webUrl: "https://open.spotify.com/album/6WaNe2XqGe9I9DqTeitTL0",
-      }
-    }
+      },
+    },
   ];
 
   const [filter, setFilter] = useState<string>("everthing");
@@ -110,7 +114,7 @@ export const PortfolioSection: any = () => {
             <ProjectCom
               category={project.category}
               title={project.title}
-              imgPath={project.imgPath}
+              imgIndex={project.imgIndex}
               description={project.description}
               type={project.type}
               key={project.title.replace(/\s+/g, "-").toLowerCase()}

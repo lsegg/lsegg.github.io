@@ -17,8 +17,8 @@ export const HomeScr: any = () => {
           <HomeSection />
           <AboutSection />
           <ServicesSection />
-          <PortfolioSection />
           <ExperienceSection />
+          <PortfolioSection />
           <ContactSection />
         </>
       )}
