@@ -1,10 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.67fec750.css",
-    "main.js": "/static/js/main.f261075e.js",
+    "main.css": "/static/css/main.4774e443.css",
+    "main.js": "/static/js/main.17ceb1ef.js",
     "static/js/787.109add10.chunk.js": "/static/js/787.109add10.chunk.js",
+    "static/media/yelpcamp-thumbnail.png": "/static/media/yelpcamp-thumbnail.ea15fdde0ff4974fa770.png",
     "static/media/site-in-construction.png": "/static/media/site-in-construction.f24473c0f05b0bb356c8.png",
     "static/media/avatar.png": "/static/media/avatar.8dd156fa7f80001ddc07.png",
+    "static/media/no-si-thumbnail.png": "/static/media/no-si-thumbnail.9165c95f9635cf0667d8.png",
+    "static/media/podcast-channel-thumbnail.png": "/static/media/podcast-channel-thumbnail.ef03230f1c49b9e475bb.png",
     "static/media/Raleway-ExtraLight.ttf": "/static/media/Raleway-ExtraLight.e19d39bd2c0c5f58ffea.ttf",
     "static/media/Raleway-Light.ttf": "/static/media/Raleway-Light.58bcdae09d89ccd8d086.ttf",
     "static/media/Raleway-Medium.ttf": "/static/media/Raleway-Medium.601cda68c7b7bbcc9a12.ttf",
@@ -28,12 +31,12 @@
     "static/media/programming.png": "/static/media/programming.8f50d5844056520b124e.png",
     "static/media/signature.png": "/static/media/signature.6c4dce74542881112e43.png",
     "index.html": "/index.html",
-    "main.67fec750.css.map": "/static/css/main.67fec750.css.map",
-    "main.f261075e.js.map": "/static/js/main.f261075e.js.map",
+    "main.4774e443.css.map": "/static/css/main.4774e443.css.map",
+    "main.17ceb1ef.js.map": "/static/js/main.17ceb1ef.js.map",
     "787.109add10.chunk.js.map": "/static/js/787.109add10.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.67fec750.css",
-    "static/js/main.f261075e.js"
+    "static/css/main.4774e443.css",
+    "static/js/main.17ceb1ef.js"
   ]
 }
