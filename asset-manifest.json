@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.4774e443.css",
-    "main.js": "/static/js/main.17ceb1ef.js",
+    "main.js": "/static/js/main.1f0e51db.js",
     "static/js/787.109add10.chunk.js": "/static/js/787.109add10.chunk.js",
     "static/media/yelpcamp-thumbnail.png": "/static/media/yelpcamp-thumbnail.ea15fdde0ff4974fa770.png",
     "static/media/site-in-construction.png": "/static/media/site-in-construction.f24473c0f05b0bb356c8.png",
@@ -27,16 +27,17 @@
     "static/media/Raleway-Italic.ttf": "/static/media/Raleway-Italic.a0018c8a791a6d9b8e3e.ttf",
     "static/media/Raleway-ThinItalic.ttf": "/static/media/Raleway-ThinItalic.5af7853a591baaa237ba.ttf",
     "static/media/Raleway-BlackItalic.ttf": "/static/media/Raleway-BlackItalic.3245b2a2e189bfb7619b.ttf",
+    "static/media/won-empowered-thumbnail.png": "/static/media/won-empowered-thumbnail.4613563272fda52c9217.png",
     "static/media/contacting.png": "/static/media/contacting.f297ca39a6b80781b8ba.png",
     "static/media/programming.png": "/static/media/programming.8f50d5844056520b124e.png",
     "static/media/signature.png": "/static/media/signature.6c4dce74542881112e43.png",
     "index.html": "/index.html",
     "main.4774e443.css.map": "/static/css/main.4774e443.css.map",
-    "main.17ceb1ef.js.map": "/static/js/main.17ceb1ef.js.map",
+    "main.1f0e51db.js.map": "/static/js/main.1f0e51db.js.map",
     "787.109add10.chunk.js.map": "/static/js/787.109add10.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4774e443.css",
-    "static/js/main.17ceb1ef.js"
+    "static/js/main.1f0e51db.js"
   ]
 }
