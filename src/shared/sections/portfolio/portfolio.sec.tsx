@@ -40,6 +40,17 @@ export const PortfolioSection: any = () => {
         webUrl: "https://open.spotify.com/album/6WaNe2XqGe9I9DqTeitTL0",
       },
     },
+    {
+      category: "illustration",
+      title: "Won Empowered",
+      imgIndex: 3,
+      description:
+        "Art collaboration for a decision-making game to battle gender microagressions made in Sheroes in Games Jam.",
+      type: {
+        name: "illustration",
+        webUrl: "https://magentawitch.itch.io/won-empowered",
+      },
+    },
   ];
 
   const [filter, setFilter] = useState<string>("everthing");

@@ -10,6 +10,7 @@ import {
   faLinkedin,
   faInstagram,
   faTwitter,
+  faItchIo,
 } from "@fortawesome/free-brands-svg-icons";
 import "./contact.scss";
 
@@ -65,6 +66,17 @@ export const ContactSection: any = () => {
               <FontAwesomeIcon
                 className="Contact-network-icon isTranslatedY"
                 icon={faHackerrank}
+              />
+            </a>
+            <a
+              className="SiteInConstruction-paragraph-link"
+              href="https://lsegg.itch.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon
+                className="Contact-network-icon isTranslatedY"
+                icon={faItchIo}
               />
             </a>
             <a

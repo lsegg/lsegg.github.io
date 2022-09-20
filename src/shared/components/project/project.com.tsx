@@ -5,6 +5,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import podcastChannelThumbnail from "../../../assets/images/podcast-channel-thumbnail.png";
 import yelpcampThumbnail from "../../../assets/images/yelpcamp-thumbnail.png";
 import noSiThumbnail from "../../../assets/images/no-si-thumbnail.png";
+import wonEmpoweredThumbnail from "../../../assets/images/won-empowered-thumbnail.png";
 import "./project.scss";
 
 export type ProjectComProps = {
@@ -27,7 +28,12 @@ export const ProjectCom: any = ({
   type,
   description,
 }: ProjectComProps) => {
-  const images = [yelpcampThumbnail, podcastChannelThumbnail, noSiThumbnail];
+  const images = [
+    yelpcampThumbnail,
+    podcastChannelThumbnail,
+    noSiThumbnail,
+    wonEmpoweredThumbnail,
+  ];
   const [isShown, setIsShown] = useState<boolean>(false);
   const handleClick = () => {
     setIsShown(!isShown);
