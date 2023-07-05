@@ -6,8 +6,10 @@ export const HomeSection: any = () => {
     <section className="Home" id="home">
       <div className="Home-intro">
         <img src={avatar} alt="Avatar" className="Home-intro-avatar" />
-        <h1 className="Home-intro-name title-x-large-semibold">Lucía Seggiaro</h1>
-        <p className="Home-intro-job">I'm Front-End developer.</p>
+        <h1 className="Home-intro-name title-x-large-semibold">
+          Lucía Seggiaro
+        </h1>
+        <p className="Home-intro-job">I'm Full Stack Engineer.</p>
         <a
           href="#contact"
           className="Home-intro-button paragraph-medium-bold isButton"
