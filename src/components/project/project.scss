@@ -1,0 +1,147 @@
+@import "../../../vars";
+
+.Project {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 360px;
+  height: 202.5px;
+
+  &-overlay {
+    display: none;
+    background-color: rgba($color-neutral-3, 0.9);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+
+    &.isShown {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-preview {
+      width: 65%;
+      min-width: 360px;
+      padding: toRem(40px);
+    }
+
+    &-description {
+      text-align: left;
+      color: $color-quinary;
+      margin: toRem(50px);
+    }
+
+    &-icon {
+      position: absolute;
+      top: toRem(30px);
+      right: toRem(30px);
+      color: $color-quinary;
+    }
+  }
+
+  &-thumbnail {
+    width: 360px;
+    height: 202.5px;
+    border-radius: toRem(20px);
+  }
+
+  &-hover {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 360px;
+    height: 202.5px;
+    position: absolute;
+    top: 0;
+    padding: toRem(20px);
+    z-index: 2;
+    color: $color-quinary;
+    border-radius: toRem(20px);
+
+    &.illustration {
+      background-color: rgba($color-tertiary, 0.85);
+    }
+
+    &.web-development {
+      background-color: rgba($color-secondary, 0.85);
+    }
+
+    &-category {
+      position: absolute;
+      top: 0;
+      padding: toRem(10px);
+      border-bottom-left-radius: toRem(15px);
+      border-bottom-right-radius: toRem(15px);
+      &.web-development {
+        background-color: $color-tertiary;
+      }
+      &.illustration {
+        background-color: $color-secondary;
+      }
+    }
+
+    &-description {
+      &-title {
+        margin: toRem(18px) 0 toRem(10px);
+      }
+      &-text {
+        width: toRem(225px);
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+
+    &-buttons {
+      display: flex;
+      gap: 10px;
+      &-link {
+        width: min-content;
+        padding: toRem(10px) toRem(12px);
+        border-radius: 100%;
+        color: $color-quinary;
+        &.web-development {
+          background-color: $color-tertiary;
+          &:hover {
+            color: $color-tertiary;
+            background-color: $color-quinary;
+          }
+        }
+        &.illustration {
+          background-color: $color-secondary;
+          &:hover {
+            color: $color-secondary;
+            background-color: $color-quinary;
+          }
+        }
+      }
+    }
+  }
+
+  &:hover {
+    .Project-hover {
+      display: flex;
+    }
+  }
+
+  @media screen and (min-width: $breakpoint-desktop) {
+    width: 480px;
+    height: 270px;
+    &-thumbnail {
+      width: 480px;
+      height: 270px;
+    }
+    &-hover {
+      width: 480px;
+      height: 270px;
+    }
+  }
+}
