@@ -1,0 +1,86 @@
+@import "../../../vars";
+
+.Header {
+  position: sticky;
+  top: 0;
+  height: toRem(50px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $color-primary;
+  border-bottom: 0.5px solid $color-neutral-3;
+  z-index: 1;
+
+  &-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    &-signature {
+      display: none;
+      margin: toRem(30px) 0;
+      align-self: center;
+      width: 60%;
+    }
+    &-button {
+      padding: toRem(15px);
+      background-color: $color-primary;
+      &-icon {
+        color: $color-neutral-1;
+        &:hover {
+          color: $color-secondary;
+        }
+      }
+    }
+    &-list {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: toRem(50px);
+      background-color: $color-primary;
+      width: 100%;
+      height: calc(100vh - toRem(50px));
+      padding: toRem(50px) 0 0 toRem(50px);
+      &.isShown {
+        display: flex;
+      }
+      &-item {
+        padding: toRem(10px);
+        color: $color-neutral-1;
+        &:hover {
+          color: $color-secondary;
+        }
+      }
+    }
+  }
+
+  &-copyright {
+    padding: toRem(15px);
+    vertical-align: center;
+  }
+
+  @media screen and (min-width: $breakpoint-lg-tablet) {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: toRem(15px);
+    height: 100vh;
+    border-bottom: none;
+    border-right: 0.5px solid $color-neutral-3;
+
+    &-nav {
+      &-signature {
+        display: block;
+      }
+      &-button {
+        display: none;
+      }
+      &-list {
+        display: flex;
+        width: 80%;
+        margin-top: toRem(60px);
+        padding: 0;
+        height: auto;
+      }
+    }
+  }
+}

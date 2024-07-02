@@ -1,0 +1,29 @@
+@import "../../../vars";
+@import "../../../global";
+
+.Job {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+
+  &-header-title {
+    color: $color-quinary;
+    text-align: end;
+  }
+
+  &-img {
+    width: 100%;
+  }
+
+  &-web-development {
+    background-color: $color-secondary;
+  }
+  &-illustration {
+    background-color: $color-tertiary;
+  }
+
+  @media screen and (min-width: $breakpoint-sm-tablet) {
+    width: 40%;
+  }
+}

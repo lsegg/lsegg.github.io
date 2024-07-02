@@ -1,0 +1,54 @@
+@import "../../../vars";
+
+.Practice {
+  display: flex;
+  align-items: flex-start;
+  background-color: transparent;
+  margin-bottom: toRem(10px);
+  width: 100%;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &-wrapper {
+    background-color: white;
+    border-radius: 100%;
+    margin: toRem(20px) toRem(20px) 0 0;
+
+    &-icon {
+      &.work {
+        color: $color-secondary;
+      }
+      &.academic {
+        color: $color-tertiary;
+      }
+    }
+  }
+  &-data {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &-date,
+    &-where {
+      text-align: end;
+      color: $color-neutral-2;
+      &-link {
+        color: $color-neutral-2;
+        &.work:hover {
+          color: $color-secondary;
+        }
+        &.academic:hover {
+          color: $color-tertiary;
+        }
+      }
+    }
+    &-role {
+      margin: toRem(5px) 0;
+    }
+    &-list {
+      margin: toRem(10px) 0 toRem(10px) toRem(30px);
+    }
+  }
+}

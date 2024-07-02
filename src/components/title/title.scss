@@ -1,0 +1,17 @@
+@import "../../../vars";
+
+.Title {
+  position: relative;
+  color: $color-primary;
+  margin-bottom: toRem(30px);
+  &-content {
+    margin-left: toRem(15px);
+  }
+  &-icon {
+    position: absolute;
+    top: toRem(-15px);
+    left: toRem(-5px);
+    font-size: toRem(75px);
+    opacity: 0.1;
+  }
+}
