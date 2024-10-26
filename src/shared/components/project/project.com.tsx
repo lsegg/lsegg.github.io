@@ -6,6 +6,7 @@ import podcastChannelThumbnail from "../../../assets/images/podcast-channel-thum
 import yelpcampThumbnail from "../../../assets/images/yelpcamp-thumbnail.png";
 import noSiThumbnail from "../../../assets/images/no-si-thumbnail.png";
 import wonEmpoweredThumbnail from "../../../assets/images/won-empowered-thumbnail.png";
+import jsRunnerGameThumbnail from "../../../assets/images/js-runner-game-thumbnail.png";
 import "./project.scss";
 
 export type ProjectComProps = {
@@ -33,6 +34,7 @@ export const ProjectCom: any = ({
     podcastChannelThumbnail,
     noSiThumbnail,
     wonEmpoweredThumbnail,
+    jsRunnerGameThumbnail,
   ];
   const [isShown, setIsShown] = useState<boolean>(false);
   const handleClick = () => {

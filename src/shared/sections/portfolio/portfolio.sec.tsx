@@ -7,14 +7,38 @@ export const PortfolioSection: any = () => {
   const allProjects: any[] = [
     {
       category: "web-development",
-      title: "YelpCamp",
-      imgIndex: 0,
+      title: "JS endless runner game",
+      imgIndex: 4,
       description:
-        "This is the final project from The Web Developer Bootcamp 2021 by Colt Steele. It is a site like Yelp for finding, sharing and reviewing campgrounds.",
+        "Codealong endless runner game from the JavaScript Game Development Course for Beginners by freeCodeCamp..",
       type: {
         name: "website",
-        webUrl: "https://thawing-sands-22530.herokuapp.com/",
-        repoUrl: "https://github.com/lsegg/yelp-camp",
+        webUrl:
+          "https://lsegg.github.io/javascript-game-development-course-for-beginners/",
+        repoUrl:
+          "https://github.com/lsegg/javascript-game-development-course-for-beginners",
+      },
+    },
+    {
+      category: "illustration",
+      title: "Won Empowered",
+      imgIndex: 3,
+      description:
+        "Art collaboration for a decision-making game to battle gender microagressions made in Sheroes in Games Jam.",
+      type: {
+        name: "illustration",
+        webUrl: "https://magentawitch.itch.io/won-empowered",
+      },
+    },
+    {
+      category: "illustration",
+      title: "NO = SÍ (Segundo Experimento Ambiental)",
+      imgIndex: 2,
+      description:
+        "Collaboration with music band Flecha Zen for the cover of their album",
+      type: {
+        name: "illustration",
+        webUrl: "https://open.spotify.com/album/6WaNe2XqGe9I9DqTeitTL0",
       },
     },
     {
@@ -30,25 +54,15 @@ export const PortfolioSection: any = () => {
       },
     },
     {
-      category: "illustration",
-      title: "NO = SÍ (Segundo Experimento Ambiental)",
-      imgIndex: 2,
+      category: "web-development",
+      title: "YelpCamp",
+      imgIndex: 0,
       description:
-        "Collaboration with music band Flecha Zen for the cover of their album",
+        "This is the final project from The Web Developer Bootcamp 2021 by Colt Steele. It is a site like Yelp for finding, sharing and reviewing campgrounds.",
       type: {
-        name: "illustration",
-        webUrl: "https://open.spotify.com/album/6WaNe2XqGe9I9DqTeitTL0",
-      },
-    },
-    {
-      category: "illustration",
-      title: "Won Empowered",
-      imgIndex: 3,
-      description:
-        "Art collaboration for a decision-making game to battle gender microagressions made in Sheroes in Games Jam.",
-      type: {
-        name: "illustration",
-        webUrl: "https://magentawitch.itch.io/won-empowered",
+        name: "website",
+        webUrl: "https://thawing-sands-22530.herokuapp.com/",
+        repoUrl: "https://github.com/lsegg/yelp-camp",
       },
     },
   ];
