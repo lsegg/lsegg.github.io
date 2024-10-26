@@ -5,15 +5,14 @@ import "./experience.scss";
 export const ExperienceSection: any = () => {
   const work: any = [
     {
-      description:
-        "T-shaped developer (frontend specialist) in Stackzone, a secure self-service cloud governance solution for multi-account environments.",
       items: [
-        "Frontend: UIs layout and implementation with React, Redux, Redux-Saga, Typescript, and Sass based on Figma mock-ups.",
-        "Backend: API services with JavaScript, Node.js, npm, AWS lambda, AWS API Gateway, API Cloudwatch, and PostgreSQL.",
-        "QA: end to end testing, Postman testing, Jest testing, and Sonarqube.",
-        "Documentation: OpenApi, Postman, and Confluence.",
-        "Agile methodologies: Scrum and Kanban.",
-        "Soft skills: communication and interest in helping others (trainee onboarding through buddy system), organization (Jira board maintainer).",
+        "Developed and maintained robust full-stack web applications, leveraging React, Redux, Redux-Saga, TypeScript, and Sass on the frontend, and Node.js, AWS Lambda, PostgreSQL, Redis and Docker on the backend.",
+        "Architected a dynamic frontend system that enabled React to generate over 300 unique interfaces from JSON input, streamlining development through an 'infrastructure-as-code' approach and empowering non-technical staff to create new UIs independently.",
+        "Designed and deployed multi-region, multi-account AWS infrastructure, enabling users to retrieve comprehensive AWS organization data with a single API call, cutting customer IT resource monitoring time by 50%.",
+        "Optimized backend performance by implementing Redis caching and replacing real-time requests with data from CRON-scheduled jobs and queue systems, resulting in increased efficiency and significant cost reductions.",
+        "Automated customer tagging of AWS resources across multiple regions and accounts, enhancing accuracy in resource tracking and achieving up to a 90% reduction in manual effort for cost optimization.",
+        "Collaborated with cross-functional teams in Agile environments (Scrum and Kanban), contributing to sprint planning, reviews, retrospectives, and ensuring alignment with project goals.",
+        "Led trainee onboarding through a structured 'buddy' system, providing mentorship and fostering a collaborative, productive team culture.",
       ],
     },
     {
