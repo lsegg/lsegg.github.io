@@ -1,4 +1,4 @@
-@import "../../../vars";
+@use "../../../vars" as vars;
 
 .Contact {
   margin-top: 10vh;
@@ -14,11 +14,11 @@
   &-network {
     width: 100%;
     &-icon {
-      color: $color-neutral-2;
+      color: vars.$color-neutral-2;
       margin: toRem(10px);
       font-size: toRem(36px);
       &:hover {
-        color: $color-secondary;
+        color: vars.$color-secondary;
       }
     }
 
@@ -40,15 +40,15 @@
     }
     &-email {
       &-link {
-        color: $color-secondary;
+        color: vars.$color-secondary;
       }
     }
   }
 
-  @media screen and (min-width: $breakpoint-sm-tablet) {
+  @media screen and (min-width: vars.$breakpoint-sm-tablet) {
     margin-top: 0;
   }
-  @media screen and (min-width: $breakpoint-lg-tablet) {
+  @media screen and (min-width: vars.$breakpoint-lg-tablet) {
     background: no-repeat center/50%
       url("../../../assets/images/contacting.png");
     &-network {

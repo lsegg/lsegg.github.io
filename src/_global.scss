@@ -1,4 +1,4 @@
-@import "./vars";
+@use "./vars" as vars;
 
 @font-face {
   font-family: "RalewayBlack";
@@ -91,37 +91,37 @@
 }
 
 .paragraph-small-regular {
-  font-family: $font-primary-regular;
+  font-family: vars.$font-primary-regular;
   font-size: toRem(12px);
 }
 
 .paragraph-small-bold {
-  font-family: $font-primary-bold;
+  font-family: vars.$font-primary-bold;
   font-size: toRem(12px);
 }
 
 .paragraph-medium-regular {
-  font-family: $font-primary-regular;
+  font-family: vars.$font-primary-regular;
   font-size: toRem(14px);
 }
 
 .paragraph-medium-bold {
-  font-family: $font-primary-bold;
+  font-family: vars.$font-primary-bold;
   font-size: toRem(14px);
 }
 
 .title-medium-semibold {
-  font-family: $font-primary-bold;
+  font-family: vars.$font-primary-bold;
   font-size: toRem(18px);
 }
 
 .title-large-semibold {
-  font-family: $font-primary-bold;
+  font-family: vars.$font-primary-bold;
   font-size: toRem(24px);
 }
 
 .title-x-large-semibold {
-  font-family: $font-primary-bold;
+  font-family: vars.$font-primary-bold;
   font-size: toRem(36px);
 }
 
@@ -131,21 +131,21 @@ section {
   align-items: flex-start;
   justify-content: space-between;
   padding: toRem(30px);
-  @media screen and (min-width: $breakpoint-lg-desktop) {
+  @media screen and (min-width: vars.$breakpoint-lg-desktop) {
     height: 100vh;
   }
 }
 
 .isButton {
   text-transform: uppercase;
-  color: $color-quinary;
+  color: vars.$color-quinary;
   border-radius: toRem(35px);
-  background-color: $color-secondary;
+  background-color: vars.$color-secondary;
   margin: toRem(10px);
   padding: toRem(10px) toRem(15px);
   &:hover {
-    color: $color-secondary;
-    background-color: $color-quinary;
+    color: vars.$color-secondary;
+    background-color: vars.$color-quinary;
   }
 }
 

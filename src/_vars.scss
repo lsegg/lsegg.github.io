@@ -1,23 +1,23 @@
 // Fonts
-$font-primary-light: "RalewayLight", sans-serif;
-$font-primary-regular: "RalewayRegular", sans-serif;
-$font-primary-medium: "RalewaySemiBold", sans-serif;
-$font-primary-bold: "RalewayBold", sans-serif;
+$font-primary-light: "RalewayLight", sans-serif !default;
+$font-primary-regular: "RalewayRegular", sans-serif !default;
+$font-primary-medium: "RalewaySemiBold", sans-serif !default;
+$font-primary-bold: "RalewayBold", sans-serif !default;
 
 // Colors
-$color-primary: #313349;
-$color-secondary: #e07a5f;
-$color-tertiary: #81b29a;
-$color-quaternary: #f2cc8f;
-$color-quinary: #f4f1de;
+$color-primary: #313349 !default;
+$color-secondary: #e07a5f !default;
+$color-tertiary: #81b29a !default;
+$color-quaternary: #f2cc8f !default;
+$color-quinary: #f4f1de !default;
 
-$color-neutral-1: #f3f3f7;
-$color-neutral-2: #bbc4c4;
-$color-neutral-3: #454545;
-$color-neutral-4: #000000;
+$color-neutral-1: #f3f3f7 !default;
+$color-neutral-2: #bbc4c4 !default;
+$color-neutral-3: #454545 !default;
+$color-neutral-4: #000000 !default;
 
 // Default pixel size
-$root-px-size: 16px;
+$root-px-size: 16px !default;
 
 // PX to rems
 @function toRem($value) {
@@ -26,8 +26,8 @@ $root-px-size: 16px;
 }
 
 // Breakpoints
-$breakpoint-mobile: toRem(320px);
-$breakpoint-sm-tablet: toRem(768px);
-$breakpoint-lg-tablet: toRem(1024px);
-$breakpoint-desktop: toRem(1280px);
-$breakpoint-lg-desktop: toRem(1440px);
+$breakpoint-mobile: toRem(320px) !default;
+$breakpoint-sm-tablet: toRem(768px) !default;
+$breakpoint-lg-tablet: toRem(1024px) !default;
+$breakpoint-desktop: toRem(1280px) !default;
+$breakpoint-lg-desktop: toRem(1440px) !default;

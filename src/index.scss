@@ -1,7 +1,7 @@
-@import "./vars";
-@import "./global";
-@import "./screens/screens.scss";
-@import "./shared/shared.scss";
+@use "./vars" as vars;
+@use "./global";
+@use "./screens/screens.scss";
+@use "./shared/shared.scss";
 
 * {
   border: 0;
@@ -12,20 +12,20 @@
   &::-webkit-scrollbar {
     width: 0;
     border-radius: 3px;
-    color: $color-primary;
+    color: vars.$color-primary;
   }
   &::-webkit-scrollbar-thumb {
     width: toRem(3px);
     border-radius: 3px;
-    color: $color-neutral-3;
+    color: vars.$color-neutral-3;
   }
 }
 
 #root {
-  font-family: $font-primary-regular;
+  font-family: vars.$font-primary-regular;
   height: 100vh;
   width: 100vw;
-  background-color: $color-neutral-1;
+  background-color: vars.$color-neutral-1;
 }
 
 .App {
@@ -35,7 +35,7 @@
     overflow-x: hidden;
     overflow-y: auto;
   }
-  @media screen and (min-width: $breakpoint-lg-tablet) {
+  @media screen and (min-width: vars.$breakpoint-lg-tablet) {
     display: grid;
     grid-template-columns: 1fr 4fr;
   }

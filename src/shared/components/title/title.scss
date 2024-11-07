@@ -1,8 +1,8 @@
-@import "../../../vars";
+@use "../../../vars" as vars;
 
 .Title {
   position: relative;
-  color: $color-primary;
+  color: vars.$color-primary;
   margin-bottom: toRem(30px);
   &-content {
     margin-left: toRem(15px);

@@ -1,4 +1,4 @@
-@import "../../../vars";
+@use "../../../vars" as vars;
 
 .Header {
   position: sticky;
@@ -7,8 +7,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: $color-primary;
-  border-bottom: 0.5px solid $color-neutral-3;
+  background-color: vars.$color-primary;
+  border-bottom: 0.5px solid vars.$color-neutral-3;
   z-index: 1;
 
   &-nav {
@@ -24,11 +24,11 @@
     }
     &-button {
       padding: toRem(15px);
-      background-color: $color-primary;
+      background-color: vars.$color-primary;
       &-icon {
-        color: $color-neutral-1;
+        color: vars.$color-neutral-1;
         &:hover {
-          color: $color-secondary;
+          color: vars.$color-secondary;
         }
       }
     }
@@ -37,7 +37,7 @@
       flex-direction: column;
       position: absolute;
       top: toRem(50px);
-      background-color: $color-primary;
+      background-color: vars.$color-primary;
       width: 100%;
       height: calc(100vh - toRem(50px));
       padding: toRem(50px) 0 0 toRem(50px);
@@ -46,9 +46,9 @@
       }
       &-item {
         padding: toRem(10px);
-        color: $color-neutral-1;
+        color: vars.$color-neutral-1;
         &:hover {
-          color: $color-secondary;
+          color: vars.$color-secondary;
         }
       }
     }
@@ -59,13 +59,13 @@
     vertical-align: center;
   }
 
-  @media screen and (min-width: $breakpoint-lg-tablet) {
+  @media screen and (min-width: vars.$breakpoint-lg-tablet) {
     align-items: flex-start;
     flex-direction: column;
     padding: toRem(15px);
     height: 100vh;
     border-bottom: none;
-    border-right: 0.5px solid $color-neutral-3;
+    border-right: 0.5px solid vars.$color-neutral-3;
 
     &-nav {
       &-signature {

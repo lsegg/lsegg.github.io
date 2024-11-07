@@ -1,4 +1,4 @@
-@import "../../../vars";
+@use "../../../vars" as vars;
 
 .Practice {
   display: flex;
@@ -18,10 +18,10 @@
 
     &-icon {
       &.work {
-        color: $color-secondary;
+        color: vars.$color-secondary;
       }
       &.academic {
-        color: $color-tertiary;
+        color: vars.$color-tertiary;
       }
     }
   }
@@ -33,14 +33,14 @@
     &-date,
     &-where {
       text-align: end;
-      color: $color-neutral-2;
+      color: vars.$color-neutral-2;
       &-link {
-        color: $color-neutral-2;
+        color: vars.$color-neutral-2;
         &.work:hover {
-          color: $color-secondary;
+          color: vars.$color-secondary;
         }
         &.academic:hover {
-          color: $color-tertiary;
+          color: vars.$color-tertiary;
         }
       }
     }

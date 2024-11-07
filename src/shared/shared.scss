@@ -1,17 +1,17 @@
 // Components
-@import "./components/job/job.scss";
-@import "./components/practice/practice.scss";
-@import "./components/title/title.scss";
-@import "./components/project/project.scss";
+@use "./components/job/job.scss";
+@use "./components/practice/practice.scss";
+@use "./components/title/title.scss";
+@use "./components/project/project.scss";
 
 // Layouts
-@import "./layouts/header/header.scss";
+@use "./layouts/header/header.scss";
 
 // Sections
-@import "./sections/about/about.scss";
-@import "./sections/contact/contact.scss";
-@import "./sections/experience/experience.scss";
-@import "./sections/home/home.scss";
-@import "./sections/portfolio/portfolio.scss";
-@import "./sections/services/services.scss";
-@import "./sections/site-in-construction/site-in-construction.scss";
+@use "./sections/about/about.scss";
+@use "./sections/contact/contact.scss";
+@use "./sections/experience/experience.scss";
+@use "./sections/home/home.scss";
+@use "./sections/portfolio/portfolio.scss";
+@use "./sections/services/services.scss";
+@use "./sections/site-in-construction/site-in-construction.scss";

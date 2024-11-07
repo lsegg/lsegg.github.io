@@ -1,4 +1,4 @@
-@import "../../../vars";
+@use "../../../vars" as vars;
 
 .SiteInConstruction {
   height: 92vh;
@@ -11,7 +11,7 @@
     margin-bottom: toRem(10px);
   }
 
-  @media screen and (min-width: $breakpoint-sm-tablet) {
+  @media screen and (min-width: vars.$breakpoint-sm-tablet) {
     height: 100vh;
     background: no-repeat center/100%
       url("../../../assets/images/site-in-construction.png") white;

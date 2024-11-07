@@ -1,4 +1,4 @@
-@import "../../../vars";
+@use "../../../vars" as vars;
 
 .Services {
   &-types {
@@ -11,11 +11,11 @@
   &-custom {
     margin: toRem(30px) 0;
     &-link {
-      color: $color-secondary;
+      color: vars.$color-secondary;
     }
   }
 
-  @media screen and (min-width: $breakpoint-sm-tablet) {
+  @media screen and (min-width: vars.$breakpoint-sm-tablet) {
     &-types {
       flex-direction: row;
       justify-content: center;

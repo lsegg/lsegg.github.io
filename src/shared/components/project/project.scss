@@ -1,4 +1,4 @@
-@import "../../../vars";
+@use "../../../vars" as vars;
 
 .Project {
   position: relative;
@@ -12,7 +12,7 @@
 
   &-overlay {
     display: none;
-    background-color: rgba($color-neutral-3, 0.9);
+    background-color: rgba(vars.$color-neutral-3, 0.9);
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -35,7 +35,7 @@
 
     &-description {
       text-align: left;
-      color: $color-quinary;
+      color: vars.$color-quinary;
       margin: toRem(50px);
     }
 
@@ -43,7 +43,7 @@
       position: absolute;
       top: toRem(30px);
       right: toRem(30px);
-      color: $color-quinary;
+      color: vars.$color-quinary;
     }
   }
 
@@ -63,15 +63,15 @@
     top: 0;
     padding: toRem(20px);
     z-index: 2;
-    color: $color-quinary;
+    color: vars.$color-quinary;
     border-radius: toRem(20px);
 
     &.illustration {
-      background-color: rgba($color-tertiary, 0.85);
+      background-color: rgba(vars.$color-tertiary, 0.85);
     }
 
     &.web-development {
-      background-color: rgba($color-secondary, 0.85);
+      background-color: rgba(vars.$color-secondary, 0.85);
     }
 
     &-category {
@@ -81,10 +81,10 @@
       border-bottom-left-radius: toRem(15px);
       border-bottom-right-radius: toRem(15px);
       &.web-development {
-        background-color: $color-tertiary;
+        background-color: vars.$color-tertiary;
       }
       &.illustration {
-        background-color: $color-secondary;
+        background-color: vars.$color-secondary;
       }
     }
 
@@ -107,19 +107,19 @@
         width: min-content;
         padding: toRem(10px) toRem(12px);
         border-radius: 100%;
-        color: $color-quinary;
+        color: vars.$color-quinary;
         &.web-development {
-          background-color: $color-tertiary;
+          background-color: vars.$color-tertiary;
           &:hover {
-            color: $color-tertiary;
-            background-color: $color-quinary;
+            color: vars.$color-tertiary;
+            background-color: vars.$color-quinary;
           }
         }
         &.illustration {
-          background-color: $color-secondary;
+          background-color: vars.$color-secondary;
           &:hover {
-            color: $color-secondary;
-            background-color: $color-quinary;
+            color: vars.$color-secondary;
+            background-color: vars.$color-quinary;
           }
         }
       }
@@ -132,7 +132,7 @@
     }
   }
 
-  @media screen and (min-width: $breakpoint-desktop) {
+  @media screen and (min-width: vars.$breakpoint-desktop) {
     width: 480px;
     height: 270px;
     &-thumbnail {

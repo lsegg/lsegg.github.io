@@ -1,4 +1,4 @@
-@import "../../../vars";
+@use "../../../vars" as vars;
 
 .Portfolio {
   &-filter {
@@ -7,18 +7,18 @@
     &-label {
       cursor: pointer;
       background-color: transparent;
-      color: $color-tertiary;
+      color: vars.$color-tertiary;
       font-weight: bolder;
       border-radius: toRem(35px);
       margin: toRem(10px);
       padding: toRem(10px) toRem(25px) toRem(10px) toRem(10px);
       &:hover {
-        background-color: $color-tertiary;
-        color: $color-quinary;
+        background-color: vars.$color-tertiary;
+        color: vars.$color-quinary;
       }
       &:focus-within {
-        background-color: $color-tertiary;
-        color: $color-quinary;
+        background-color: vars.$color-tertiary;
+        color: vars.$color-quinary;
       }
     }
     &-input {
@@ -33,7 +33,7 @@
     gap: toRem(30px);
   }
 
-  @media screen and (min-width: $breakpoint-sm-tablet) {
+  @media screen and (min-width: vars.$breakpoint-sm-tablet) {
     &-filter {
       flex-direction: row;
     }
@@ -42,7 +42,7 @@
       grid-template-rows: auto auto;
     }
   }
-  @media screen and (min-width: $breakpoint-desktop) {
+  @media screen and (min-width: vars.$breakpoint-desktop) {
     &-works {
       min-height: 560px;
     }
