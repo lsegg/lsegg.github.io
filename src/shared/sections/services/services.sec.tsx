@@ -10,8 +10,8 @@ export const ServicesSection: any = () => {
     <section className="Services" id="services">
       <TitleCom content="Services" sectionClass="Services-title" />
       <div className="Services-types">
-        <JobCom icon="code" title="Web Development" description={webDevDesc} />
-        <JobCom icon="brush" title="Illustration" description={illusDesc} />
+        <JobCom title="Web Development" description={webDevDesc} />
+        <JobCom title="Illustration" description={illusDesc} />
       </div>
       <div className="Services-custom">
         Looking for a custom job?{" "}

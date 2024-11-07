@@ -3,12 +3,11 @@ import painting from "../../../assets/images/painting.png";
 import "./job.scss";
 
 type JobComProps = {
-  icon: string;
   title: string;
   description: string;
 };
 
-export const JobCom: any = ({ icon, title, description }: JobComProps) => {
+export const JobCom: any = ({ title, description }: JobComProps) => {
   return (
     <article
       className={`Job Job-${title

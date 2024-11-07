@@ -15,21 +15,20 @@ type TitleComProps = {
 };
 
 export const TitleCom: any = ({ content, sectionClass }: TitleComProps) => {
-  let icon;
   const iconSelector = (sectionClass: string) => {
     switch (sectionClass) {
       case "About-title":
-        return (icon = faUserAlt);
+        return faUserAlt;
       case "Services-title":
-        return (icon = faBriefcase);
+        return faBriefcase;
       case "Portfolio-title":
-        return (icon = faLayerGroup);
+        return faLayerGroup;
       case "Experience-title":
-        return (icon = faGraduationCap);
+        return faGraduationCap;
       case "Contact-title":
-        return (icon = faComments);
+        return faComments;
       default:
-        return (icon = faAnglesRight);
+        return faAnglesRight;
     }
   };
 
