@@ -43,28 +43,28 @@ export const HeaderLay: any = () => {
           </Link>
           <Link
             className="Header-nav-list-item"
-            to="/about"
+            to="/#about"
             onClick={() => handleLinkClick("about")}
           >
             About
           </Link>
           <Link
             className="Header-nav-list-item"
-            to="/services"
+            to="/#services"
             onClick={() => handleLinkClick("services")}
           >
             Services
           </Link>
           <Link
             className="Header-nav-list-item"
-            to="/experience"
+            to="/#experience"
             onClick={() => handleLinkClick("experience")}
           >
             Experience
           </Link>
           <Link
             className="Header-nav-list-item"
-            to="/portfolio"
+            to="/#portfolio"
             onClick={() => handleLinkClick("portfolio")}
           >
             Portfolio
@@ -72,7 +72,7 @@ export const HeaderLay: any = () => {
           {!pending && (
             <Link
               className="Header-nav-list-item"
-              to="/blog"
+              to="/#blog"
               onClick={() => handleLinkClick("blog")}
             >
               Blog
@@ -80,7 +80,7 @@ export const HeaderLay: any = () => {
           )}
           <Link
             className="Header-nav-list-item"
-            to="/contact"
+            to="/#contact"
             onClick={() => handleLinkClick("contact")}
           >
             Contact

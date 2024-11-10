@@ -1,5 +1,6 @@
 import { TitleCom } from "../../components/title/title.com";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import contacting from "../../../assets/images/contacting.png";
 import {
   faArtstation,
   faBehance,
@@ -21,6 +22,7 @@ export const ContactSection: any = () => {
         <TitleCom content="Get in Touch" sectionClass="Contact-title" />
         <p className="Contact-subtitle">Let's talk about everything!</p>
       </div>
+      <img src={contacting} alt="contact me" className="Contact-image" />
       <div className="Contact-network">
         <div className="Contact-network-wrapper isCard">
           <div className="Contact-network-wrapper-coding">

@@ -9,9 +9,10 @@
       background-color: transparent;
       color: vars.$color-tertiary;
       font-weight: bolder;
-      border-radius: toRem(35px);
-      margin: toRem(10px);
-      padding: toRem(10px) toRem(25px) toRem(10px) toRem(10px);
+      border-radius: vars.toRem(35px);
+      margin: vars.toRem(10px);
+      padding: vars.toRem(10px) vars.toRem(25px) vars.toRem(10px)
+        vars.toRem(10px);
       &:hover {
         background-color: vars.$color-tertiary;
         color: vars.$color-quinary;
@@ -30,7 +31,8 @@
     align-self: center;
     display: grid;
     grid-template-columns: 1fr;
-    gap: toRem(30px);
+    gap: vars.toRem(30px);
+    overflow-y: scroll;
   }
 
   @media screen and (min-width: vars.$breakpoint-sm-tablet) {

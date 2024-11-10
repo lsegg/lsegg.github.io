@@ -30,19 +30,19 @@
     &-preview {
       width: 65%;
       min-width: 360px;
-      padding: toRem(40px);
+      padding: vars.toRem(40px);
     }
 
     &-description {
       text-align: left;
       color: vars.$color-quinary;
-      margin: toRem(50px);
+      margin: vars.toRem(50px);
     }
 
     &-icon {
       position: absolute;
-      top: toRem(30px);
-      right: toRem(30px);
+      top: vars.toRem(30px);
+      right: vars.toRem(30px);
       color: vars.$color-quinary;
     }
   }
@@ -50,7 +50,7 @@
   &-thumbnail {
     width: 360px;
     height: 202.5px;
-    border-radius: toRem(20px);
+    border-radius: vars.toRem(20px);
   }
 
   &-hover {
@@ -61,10 +61,10 @@
     height: 202.5px;
     position: absolute;
     top: 0;
-    padding: toRem(20px);
+    padding: vars.toRem(20px);
     z-index: 2;
     color: vars.$color-quinary;
-    border-radius: toRem(20px);
+    border-radius: vars.toRem(20px);
 
     &.illustration {
       background-color: rgba(vars.$color-tertiary, 0.85);
@@ -77,9 +77,9 @@
     &-category {
       position: absolute;
       top: 0;
-      padding: toRem(10px);
-      border-bottom-left-radius: toRem(15px);
-      border-bottom-right-radius: toRem(15px);
+      padding: vars.toRem(10px);
+      border-bottom-left-radius: vars.toRem(15px);
+      border-bottom-right-radius: vars.toRem(15px);
       &.web-development {
         background-color: vars.$color-tertiary;
       }
@@ -90,10 +90,10 @@
 
     &-description {
       &-title {
-        margin: toRem(18px) 0 toRem(10px);
+        margin: vars.toRem(18px) 0 vars.toRem(10px);
       }
       &-text {
-        width: toRem(225px);
+        width: vars.toRem(225px);
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -105,7 +105,7 @@
       gap: 10px;
       &-link {
         width: min-content;
-        padding: toRem(10px) toRem(12px);
+        padding: vars.toRem(10px) vars.toRem(12px);
         border-radius: 100%;
         color: vars.$color-quinary;
         &.web-development {

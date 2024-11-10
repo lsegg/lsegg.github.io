@@ -1,11 +1,11 @@
 @use "../../../vars" as vars;
 
 .Home {
-  height: calc(100vh - toRem(50px));
+  height: calc(100vh - vars.toRem(50px));
   align-items: center;
   background-color: vars.$color-primary;
   color: vars.$color-quinary;
-  gap: toRem(50px);
+  gap: vars.toRem(50px);
 
   &-intro {
     display: flex;
@@ -18,12 +18,12 @@
     &-avatar {
       border-radius: 100%;
       width: 20vw;
-      min-width: toRem(150px);
-      margin: toRem(30px);
+      min-width: vars.toRem(150px);
+      margin: vars.toRem(30px);
     }
 
     &-name {
-      margin: toRem(10px);
+      margin: vars.toRem(10px);
     }
   }
 
@@ -35,10 +35,10 @@
     justify-content: flex-end;
     &-mouse {
       border: 2px vars.$color-quinary solid;
-      border-radius: toRem(16px);
-      width: toRem(20px);
-      height: toRem(26px);
-      margin: toRem(10px);
+      border-radius: vars.toRem(16px);
+      width: vars.toRem(20px);
+      height: vars.toRem(26px);
+      margin: vars.toRem(10px);
       &-wheel {
         color: transparent;
         border-radius: 100%;
@@ -55,7 +55,7 @@
   }
 
   @media screen and (min-width: vars.$breakpoint-sm-tablet) {
-    gap: toRem(100px);
+    gap: vars.toRem(100px);
   }
   @media screen and (min-width: vars.$breakpoint-lg-tablet) {
     height: 100vh;

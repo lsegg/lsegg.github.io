@@ -3,20 +3,23 @@
 .Contact {
   margin-top: 10vh;
   height: 100vh;
-  background: no-repeat url("../../../assets/images/contacting.png");
-  background-position: 50% 25%;
-  background-size: 75%;
+  position: relative;
 
   &-title {
-    margin-bottom: toRem(10px);
+    margin-bottom: vars.toRem(10px);
+  }
+
+  &-image {
+    align-self: center;
+    width: 70%;
   }
 
   &-network {
     width: 100%;
     &-icon {
       color: vars.$color-neutral-2;
-      margin: toRem(10px);
-      font-size: toRem(36px);
+      margin: vars.toRem(10px);
+      font-size: vars.toRem(36px);
       &:hover {
         color: vars.$color-secondary;
       }
@@ -28,7 +31,7 @@
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      margin: toRem(250px) auto toRem(30px);
+      margin: vars.toRem(250px) auto vars.toRem(30px);
       &-coding,
       &-drawing {
         width: max-content;
@@ -51,9 +54,12 @@
   @media screen and (min-width: vars.$breakpoint-lg-tablet) {
     background: no-repeat center/50%
       url("../../../assets/images/contacting.png");
+    &-image {
+      width: 35%;
+    }
     &-network {
       &-wrapper {
-        margin: toRem(30px) auto;
+        margin: vars.toRem(30px) auto;
       }
     }
   }

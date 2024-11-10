@@ -2,13 +2,13 @@
 
 .SiteInConstruction {
   height: 92vh;
-  padding: toRem(30px) 0 0;
+  padding: vars.toRem(30px) 0 0;
   justify-content: flex-start;
   background: no-repeat center/175%
     url("../../../assets/images/site-in-construction.png") white;
 
   &-paragraph {
-    margin-bottom: toRem(10px);
+    margin-bottom: vars.toRem(10px);
   }
 
   @media screen and (min-width: vars.$breakpoint-sm-tablet) {
@@ -16,6 +16,6 @@
     background: no-repeat center/100%
       url("../../../assets/images/site-in-construction.png") white;
     justify-content: flex-end;
-    padding: 0 0 toRem(30px);
+    padding: 0 0 vars.toRem(30px);
   }
 }

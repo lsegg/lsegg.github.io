@@ -4,15 +4,17 @@
   &-wrapper {
     display: flex;
     flex-direction: column;
-    gap: toRem(30px);
+    gap: vars.toRem(30px);
   }
 
   @media screen and (min-width: vars.$breakpoint-sm-tablet) {
     &-wrapper {
       flex-direction: row;
+      overflow-y: hidden;
     }
     &-subsection {
       width: 50%;
+      overflow-y: scroll;
     }
   }
 

@@ -3,7 +3,7 @@
 .Header {
   position: sticky;
   top: 0;
-  height: toRem(50px);
+  height: vars.toRem(50px);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -18,12 +18,12 @@
     justify-content: center;
     &-signature {
       display: none;
-      margin: toRem(30px) 0;
+      margin: vars.toRem(30px) 0;
       align-self: center;
       width: 60%;
     }
     &-button {
-      padding: toRem(15px);
+      padding: vars.toRem(15px);
       background-color: vars.$color-primary;
       &-icon {
         color: vars.$color-neutral-1;
@@ -36,16 +36,16 @@
       display: none;
       flex-direction: column;
       position: absolute;
-      top: toRem(50px);
+      top: vars.toRem(50px);
       background-color: vars.$color-primary;
       width: 100%;
-      height: calc(100vh - toRem(50px));
-      padding: toRem(50px) 0 0 toRem(50px);
+      height: calc(100vh - vars.toRem(50px));
+      padding: vars.toRem(50px) 0 0 vars.toRem(50px);
       &.isShown {
         display: flex;
       }
       &-item {
-        padding: toRem(10px);
+        padding: vars.toRem(10px);
         color: vars.$color-neutral-1;
         &:hover {
           color: vars.$color-secondary;
@@ -55,14 +55,14 @@
   }
 
   &-copyright {
-    padding: toRem(15px);
+    padding: vars.toRem(15px);
     vertical-align: center;
   }
 
   @media screen and (min-width: vars.$breakpoint-lg-tablet) {
     align-items: flex-start;
     flex-direction: column;
-    padding: toRem(15px);
+    padding: vars.toRem(15px);
     height: 100vh;
     border-bottom: none;
     border-right: 0.5px solid vars.$color-neutral-3;
@@ -77,7 +77,7 @@
       &-list {
         display: flex;
         width: 80%;
-        margin-top: toRem(60px);
+        margin-top: vars.toRem(60px);
         padding: 0;
         height: auto;
       }

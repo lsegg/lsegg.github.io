@@ -6,30 +6,30 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: toRem(30px);
+    margin: vars.toRem(30px);
 
     &-avatar {
       display: none;
       border-radius: 100%;
       width: 40vw;
-      max-width: toRem(150px);
-      margin-right: toRem(30px);
+      max-width: vars.toRem(150px);
+      margin-right: vars.toRem(30px);
     }
 
     &-dialog {
       &-arrow {
         display: none;
         content: "";
-        width: toRem(15px);
-        height: toRem(15px);
+        width: vars.toRem(15px);
+        height: vars.toRem(15px);
         background-color: white;
         position: relative;
-        top: toRem(38px);
-        right: toRem(38px);
+        top: vars.toRem(38px);
+        right: vars.toRem(38px);
         transform: rotate(45deg);
       }
       &-paragraph {
-        padding-bottom: toRem(10px);
+        padding-bottom: vars.toRem(10px);
       }
     }
   }
@@ -39,12 +39,12 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: toRem(30px);
+    margin: vars.toRem(30px);
 
     &-icon {
       color: vars.$color-neutral-2;
-      margin: toRem(10px);
-      font-size: toRem(24px);
+      margin: vars.toRem(10px);
+      font-size: vars.toRem(24px);
     }
   }
 
@@ -62,10 +62,10 @@
       }
     }
     &-skills {
-      margin: toRem(50px) toRem(100px);
+      margin: vars.toRem(50px) vars.toRem(100px);
       &-icon {
-        margin: toRem(30px);
-        font-size: toRem(36px);
+        margin: vars.toRem(30px);
+        font-size: vars.toRem(36px);
       }
     }
   }

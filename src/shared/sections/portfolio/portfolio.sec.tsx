@@ -68,7 +68,7 @@ export const PortfolioSection: any = () => {
   ];
 
   const [filter, setFilter] = useState<string>("everthing");
-  const [projects, setProyects] = useState<any[]>(allProjects);
+  const [projects, setProjects] = useState<any[]>(allProjects);
 
   const handleChange = (value: string) => {
     setFilter(value);
@@ -76,9 +76,9 @@ export const PortfolioSection: any = () => {
       const filteredProjects = allProjects.filter(
         (project) => project.category === value
       );
-      setProyects(filteredProjects);
+      setProjects(filteredProjects);
     } else {
-      setProyects(allProjects);
+      setProjects(allProjects);
     }
   };
 
