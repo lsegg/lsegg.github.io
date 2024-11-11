@@ -3,7 +3,7 @@ import "./home.scss";
 
 export const HomeSection: any = () => {
   const handleClick = () => {
-    fetch("src/assets/resume.pdf").then((response) => {
+    fetch("/resume.pdf").then((response) => {
       response.blob().then((blob) => {
         // Creating new object of PDF file
         const fileURL = window.URL.createObjectURL(blob);
