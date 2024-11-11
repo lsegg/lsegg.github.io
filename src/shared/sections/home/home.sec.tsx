@@ -2,6 +2,20 @@ import avatar from "../../../assets/images/avatar.png";
 import "./home.scss";
 
 export const HomeSection: any = () => {
+  const handleClick = () => {
+    fetch("src/assets/resume.pdf").then((response) => {
+      response.blob().then((blob) => {
+        // Creating new object of PDF file
+        const fileURL = window.URL.createObjectURL(blob);
+
+        // Setting various property values
+        let alink = document.createElement("a");
+        alink.href = fileURL;
+        alink.download = "lucia-seggiaro-resume.pdf";
+        alink.click();
+      });
+    });
+  };
   return (
     <section className="Home" id="home">
       <div className="Home-intro">
@@ -10,12 +24,12 @@ export const HomeSection: any = () => {
           Lucía Seggiaro
         </h1>
         <p className="Home-intro-job">I'm Full Stack Engineer.</p>
-        <a
-          href="#contact"
+        <button
+          onClick={handleClick}
           className="Home-intro-button paragraph-medium-bold isButton"
         >
           Hire me
-        </a>
+        </button>
       </div>
       <div className="Home-scroll">
         <p className="Home-scroll-directive paragraph-small-regular">
