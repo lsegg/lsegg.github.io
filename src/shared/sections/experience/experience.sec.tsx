@@ -6,6 +6,13 @@ export const ExperienceSection: any = () => {
   const work: any = [
     {
       items: [
+        "Build, maintain, and improve the capacity to fetch and transform data.",
+        "Maintain and further develop a large-scale API capable of handling +10k requests per second.",
+        "Work closely with cross-functional teams to align data management, API development and business objectives.",
+      ],
+    },
+    {
+      items: [
         "Developed and maintained robust full-stack web applications, leveraging React, Redux, Redux-Saga, TypeScript, and Sass on the frontend, and Node.js, AWS Lambda, PostgreSQL, Redis and Docker on the backend.",
         "Architected a dynamic frontend system that enabled React to generate over 300 unique interfaces from JSON input, streamlining development through an 'infrastructure-as-code' approach and empowering non-technical staff to create new UIs independently.",
         "Designed and deployed multi-region, multi-account AWS infrastructure, enabling users to retrieve comprehensive AWS organization data with a single API call, cutting customer IT resource monitoring time by 50%.",
@@ -38,14 +45,18 @@ export const ExperienceSection: any = () => {
   ];
   const academic: any = [
     {
-      description:
-        "The course consist of 3 blocks, which replicate professional environments and incorporate Agile methodologies and ceremonies such as Plannings, Dailys, Demos and Retros. The curricula includes everything from the fundamentals of programming to the launch of complete web applications and solving problems by applying industry best practices.",
-      items: [],
+      items: [
+        "The course consist of 3 blocks, which replicate professional environments and incorporate Agile methodologies and ceremonies such as Plannings, Dailys, Demos and Retros.",
+        "The curricula includes everything from the fundamentals of programming to the launch of complete web applications and solving problems by applying industry best practices.",
+      ],
     },
     {
       description:
-        "The purpose of the profession includes the planning, construction and significance of the human habitat at all its scales, as well as the elements of its equipment. 60% achieved.",
-      items: [],
+        "Transitioned to focus on Web Development and Illustration full-time after completing the majority of the program.",
+      items: [
+        "The purpose of the profession includes the planning, construction and significance of the human habitat at all its scales, as well as the elements of its equipment.",
+        "60% achieved.",
+      ],
     },
   ];
 
@@ -56,16 +67,29 @@ export const ExperienceSection: any = () => {
         <div className="Experience-subsection Experience-subsection-work isCard">
           <PracticeCom
             type="work"
-            startDate="jul 2021"
+            startDate="jan 2025"
             endDate="current"
-            role="Full Stack Web Developer"
+            role="Full Stack Engineer"
             description={work[0].description}
+            entity={{
+              name: "Scraper API",
+              url: "https://www.scraperapi.com/",
+            }}
+            location="remote"
+            items={work[0].items}
+          />
+          <PracticeCom
+            type="work"
+            startDate="jul 2021"
+            endDate="dec 2024"
+            role="Full Stack Engineer"
+            description={work[1].description}
             entity={{
               name: "StackZone Ltd",
               url: "https://www.stackzone.com/",
             }}
             location="remote"
-            items={work[0].items}
+            items={work[1].items}
           />
           <PracticeCom
             type="work"
@@ -112,7 +136,7 @@ export const ExperienceSection: any = () => {
             type="academic"
             startDate="2014"
             endDate="2021"
-            role="Architecture Degree (incomplete)"
+            role="Architecture Degree"
             description={academic[1].description}
             entity={{
               name: "Universidad Nacional de Rosario",
