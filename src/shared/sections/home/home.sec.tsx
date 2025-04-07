@@ -1,4 +1,5 @@
 import avatar from "../../../assets/images/avatar.png";
+import { TypingAnimation } from "../../components/typing-animation/typing-animation";
 import "./home.scss";
 
 export const HomeSection: any = () => {
@@ -23,7 +24,16 @@ export const HomeSection: any = () => {
         <h1 className="Home-intro-name title-x-large-semibold">
           Lucía Seggiaro
         </h1>
-        <p className="Home-intro-job">I'm Full Stack Engineer.</p>
+        <TypingAnimation
+          strings={[
+            "I'm full stack engineer.",
+            "I'm an illustrator.",
+            "I'm an artist.",
+            "I'm a web developer.",
+            "I'm a problem solver.",
+          ]}
+          className="Home-intro-job"
+        />
         <button
           onClick={handleClick}
           className="Home-intro-button paragraph-medium-bold isButton"
