@@ -1,0 +1,108 @@
+{
+  "work": [
+    {
+      "startDate": "jan 2025",
+      "endDate": "current",
+      "role": "Full Stack Engineer",
+      "description": "",
+      "entity": {
+        "name": "Scraper API",
+        "url": "https://www.scraperapi.com/"
+      },
+      "location": "remote",
+      "items": [
+        "Build, maintain, and improve the capacity to fetch and transform data.",
+        "Maintain and further develop a large-scale API capable of handling +10k requests per second.",
+        "Work closely with cross-functional teams to align data management, API development and business objectives."
+      ]
+    },
+    {
+      "startDate": "jul 2021",
+      "endDate": "dec 2024",
+      "role": "Full Stack Engineer",
+      "description": "",
+      "entity": {
+        "name": "StackZone Ltd",
+        "url": "https://www.stackzone.com/"
+      },
+      "location": "remote",
+      "items": [
+        "Developed and maintained robust full-stack web applications, leveraging React, Redux, Redux-Saga, TypeScript, and Sass on the frontend, and Node.js, AWS Lambda, PostgreSQL, Redis and Docker on the backend.",
+        "Architected a dynamic frontend system that enabled React to generate over 300 unique interfaces from JSON input, streamlining development through an 'infrastructure-as-code' approach and empowering non-technical staff to create new UIs independently.",
+        "Designed and deployed multi-region, multi-account AWS infrastructure, enabling users to retrieve comprehensive AWS organization data with a single API call, cutting customer IT resource monitoring time by 50%.",
+        "Optimized backend performance by implementing Redis caching and replacing real-time requests with data from CRON-scheduled jobs and queue systems, resulting in increased efficiency and significant cost reductions.",
+        "Automated customer tagging of AWS resources across multiple regions and accounts, enhancing accuracy in resource tracking and achieving up to a 90% reduction in manual effort for cost optimization.",
+        "Collaborated with cross-functional teams in Agile environments (Scrum and Kanban), contributing to sprint planning, reviews, retrospectives, and ensuring alignment with project goals.",
+        "Led trainee onboarding through a structured 'buddy' system, providing mentorship and fostering a collaborative, productive team culture."
+      ]
+    },
+    {
+      "startDate": "jun 2019",
+      "endDate": "jun 2021",
+      "role": "Teaching assistant",
+      "description": "",
+      "entity": {
+        "name": "Universidad Nacional de Rosario",
+        "url": "https://fapyd.unr.edu.ar/"
+      },
+      "location": "Rosario, Argentina",
+      "items": [
+        "Teaching both direct and virtual classes.",
+        "Participation in lesson and curricula planning.",
+        "Participation in grading.",
+        "Production of study material.",
+        "General assistance to the professor."
+      ]
+    },
+    {
+      "startDate": "nov 2019",
+      "endDate": "apr 2020",
+      "role": "Permanent & Substitute Drawing teacher",
+      "description": "",
+      "entity": {
+        "name": "Escuela de Dibujo Barocelli",
+        "url": "https://www.escueladibujo.com/"
+      },
+      "location": "Rosario, Argentina",
+      "items": [
+        "In charge of Initial Drawing course for teenagers between 11 and 15 years old.",
+        "Class planning according to established curriculum.",
+        "Participation in grading.",
+        "Substitute teacher in various courses such as Watercolors and Drawing I for adults.",
+        "School's stand staff at several congresses and conventions."
+      ]
+    }
+  ],
+  "academic": [
+    {
+      "startDate": "2020",
+      "endDate": "2021",
+      "role": "Web Development Course",
+      "description": "",
+      "entity": {
+        "name": "Acamica",
+        "url": "https://www.acamica.com/"
+      },
+      "location": "remote",
+      "items": [
+        "The course consist of 3 blocks, which replicate professional environments and incorporate Agile methodologies and ceremonies such as Plannings, Dailys, Demos and Retros.",
+        "The curricula includes everything from the fundamentals of programming to the launch of complete web applications and solving problems by applying industry best practices."
+      ]
+    },
+    {
+      "startDate": "2014",
+      "endDate": "2021",
+      "role": "Architecture Degree",
+      "description": "Transitioned to focus on Web Development and Illustration full-time after completing the majority of the program.",
+      "entity": {
+        "name": "Universidad Nacional de Rosario",
+        "url": "https://fapyd.unr.edu.ar/"
+      },
+      "location": "Rosario, Argentina",
+      "items": [
+        "The purpose of the profession includes the planning, construction and significance of the human habitat at all its scales, as well as the elements of its equipment.",
+        "60% achieved."
+      ]
+    }
+  ]
+}
