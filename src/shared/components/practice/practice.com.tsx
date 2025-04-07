@@ -3,6 +3,7 @@ import {
   faBriefcase,
   faGraduationCap,
 } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 import "./practice.scss";
 
 type PracticeComProps = {
@@ -29,6 +30,14 @@ export const PracticeCom: any = ({
   entity,
   items,
 }: PracticeComProps) => {
+  const [showAll, setShowAll] = useState(false);
+  const hasMoreItems = items.length > 2;
+  const displayedItems = showAll ? items : items.slice(0, 2);
+
+  const toggleShowAll = () => {
+    setShowAll(!showAll);
+  };
+
   return (
     <div className="Practice" id="practice">
       <div className="Practice-wrapper">
@@ -46,13 +55,21 @@ export const PracticeCom: any = ({
           {description}
         </p>
         <ul className="Practice-data-list paragraph-small-regular">
-          {items.map((item) => {
+          {displayedItems.map((item, index) => {
             return (
-              <li className="Practice-data-list-item" key={items.indexOf(item)}>
+              <li className="Practice-data-list-item" key={index}>
                 {item}
               </li>
             );
           })}
+          {hasMoreItems && (
+            <li
+              className="Practice-data-list-item Practice-data-list-toggle"
+              onClick={toggleShowAll}
+            >
+              {showAll ? "Show less" : "[...]"}
+            </li>
+          )}
         </ul>
 
         <p className="Practice-data-where paragraph-medium-regular">

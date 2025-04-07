@@ -52,3 +52,17 @@
     }
   }
 }
+
+.Practice-data-list {
+  &-toggle {
+    color: var(--color-primary);
+    cursor: pointer;
+    font-style: italic;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+  }
+}
