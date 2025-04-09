@@ -8,21 +8,38 @@ export const PortfolioSection = forwardRef((_, ref) => {
   const allProjects: any[] = projectsData;
 
   const [filter, setFilter] = useState<string>("everything");
-  const [projects, setProjects] = useState<any[]>(allProjects);
+  const [displayCount, setDisplayCount] = useState<number>(2);
+  const [filteredProjects, setFilteredProjects] = useState<any[]>([]);
+  const [projects, setProjects] = useState<any[]>([]);
+
+  // Update projects whenever filteredProjects or displayCount changes
+  useEffect(() => {
+    setProjects(filteredProjects.slice(0, displayCount));
+  }, [filteredProjects, displayCount]);
 
   const handleChange = (value: string) => {
     setFilter(value);
+    setDisplayCount(2); // Reset display count when filter changes
+
     if (value !== "everything") {
-      const filteredProjects = allProjects.filter(
+      const filtered = allProjects.filter(
         (project) => project.category === value
       );
-      setProjects(filteredProjects);
+      setFilteredProjects(filtered);
     } else {
-      setProjects(allProjects);
+      setFilteredProjects(allProjects);
     }
   };
 
-  // Listen for the custom event from ServicesSection
+  const handleLoadMore = () => {
+    setDisplayCount(displayCount + 2);
+  };
+
+  // Initialize filtered projects
+  useEffect(() => {
+    setFilteredProjects(allProjects);
+  }, []);
+
   useEffect(() => {
     const handleSetFilter = (event: CustomEvent) => {
       const { category } = event.detail;
@@ -42,12 +59,13 @@ export const PortfolioSection = forwardRef((_, ref) => {
     };
   }, []);
 
-  // Expose the handleChange method to parent components
   useImperativeHandle(ref, () => ({
     setFilter: (value: string) => {
       handleChange(value);
     },
   }));
+
+  const hasMoreProjects = projects.length < filteredProjects.length;
 
   return (
     <section className="Portfolio" id="portfolio">
@@ -114,6 +132,16 @@ export const PortfolioSection = forwardRef((_, ref) => {
           );
         })}
       </div>
+      {hasMoreProjects && (
+        <div className="Portfolio-load-more">
+          <button
+            onClick={handleLoadMore}
+            className="Portfolio-load-more-button paragraph-medium-bold isButton"
+          >
+            Load more
+          </button>
+        </div>
+      )}
     </section>
   );
 });

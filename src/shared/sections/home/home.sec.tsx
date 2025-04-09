@@ -6,10 +6,8 @@ export const HomeSection: any = () => {
   const handleClick = () => {
     fetch("/resume.pdf").then((response) => {
       response.blob().then((blob) => {
-        // Creating new object of PDF file
         const fileURL = window.URL.createObjectURL(blob);
 
-        // Setting various property values
         let alink = document.createElement("a");
         alink.href = fileURL;
         alink.download = "lucia-seggiaro-resume.pdf";
@@ -26,7 +24,7 @@ export const HomeSection: any = () => {
         </h1>
         <TypingAnimation
           strings={[
-            "I'm full stack engineer.",
+            "I'm a full stack engineer.",
             "I'm an illustrator.",
             "I'm an artist.",
             "I'm a web developer.",

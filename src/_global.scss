@@ -132,7 +132,7 @@ section {
   justify-content: space-between;
   padding: vars.toRem(30px);
   @media screen and (min-width: vars.$breakpoint-lg-desktop) {
-    height: 100vh;
+    min-height: 100vh;
   }
 }
 

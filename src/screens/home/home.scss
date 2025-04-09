@@ -1,3 +1,16 @@
+@use "../../vars" as vars;
+
 .HomeScreen {
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+
+  section {
+    position: relative;
+    z-index: 1;
+  }
+
+  section + section {
+    margin-top: vars.toRem(50px);
+  }
 }
