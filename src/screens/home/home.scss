@@ -9,8 +9,4 @@
     position: relative;
     z-index: 1;
   }
-
-  section + section {
-    margin-top: vars.toRem(50px);
-  }
 }

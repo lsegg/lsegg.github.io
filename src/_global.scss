@@ -150,10 +150,16 @@ section {
 }
 
 .isCard {
-  padding: vars.toRem(30px);
+  padding: vars.toRem(15px);
   background-color: white;
   border-radius: vars.toRem(20px);
   box-shadow: 0 5px 20px 0 rgb(69 67 96 / 10%);
+  width: 100%;
+  box-sizing: border-box;
+
+  @media screen and (min-width: vars.$breakpoint-sm-tablet) {
+    padding: vars.toRem(30px);
+  }
 }
 
 @mixin transition($second) {
