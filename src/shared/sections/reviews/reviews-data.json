@@ -1,0 +1,79 @@
+{
+  "reviews": [
+    {
+      "name": "Fernanda Santamaría",
+      "gender": "woman",
+      "role": "Product Owner at StackZone",
+      "paragraphs": [
+        "I had the pleasure of working with Lucía at StackZone, and I cannot imagine a better teammate. Lucía is a hard worker and a top-notch professional. She is resourceful, efficient, and always willing to contribute ideas to improve the product. She consistently proposes solutions and seeks to optimize the work, always using best practices to avoid rework and focusing on continuous improvement. Her positive attitude and ability to solve complex problems make any challenge manageable.",
+        "Working with her was a very enriching experience, and I hope our paths cross again in the future. I highly recommend Lucía to any team looking for a talented engineer and an excellent teammate."
+      ]
+    },
+    {
+      "name": "Eduardo Van Cauteren",
+      "gender": "man",
+      "role": "Cloud Engineer at StackZone",
+      "paragraphs": [
+        "I've had the joy of working with Lucía at StackZone for over two years, and during this time, she has consistently demonstrated key qualities such as organization, precision, and hard-work. Lu is proactive and open-minded, not being afraid to share her thoughts and engage in constructive discussions to enhance processes.",
+        "As per our daily stuff, we collaborated together on releases and troubleshooting various complex features. On the technical side, while being a very skilled backend programmer, she strikes the perfect balance between completing tasks on time and doing them right, all while trying to keep the technical debt to a minimum.",
+        "Additionally, she enjoys documenting her work, a rare and valuable thing among tech professionals these days."
+      ]
+    },
+    {
+      "name": "Osvaldo Gioia",
+      "gender": "man",
+      "role": "Senior Backend Developer at StackZone",
+      "paragraphs": [
+        "Lucía is an outstanding professional. I had the pleasure of working with her for 2 years on backend development, and she consistently followed best practices in development, testing, and documentation, which is highly valuable among developers.",
+        "She is very detail-oriented and well-organized in her work, always reviewing code thoroughly to prevent potential bugs in the future. Lucía is also always willing to help others and collaborate wherever needed.",
+        "Her proactive approach and constant desire for improvement stand out. Beyond her strong technical skills, her communication abilities make her a key asset to any team."
+      ]
+    },
+    {
+      "name": "Jeremias Muriette",
+      "gender": "man",
+      "role": "Full Stack Developer at StackZone",
+      "paragraphs": [
+        "I have worked with Lucia for more than 3 years, and it has been a true honor to work with her. She is an extremely reliable, responsible and respectful person, always applying the best practices and predisposed to help others.",
+        "She gave me a great help when I started to take my first steps in the IT work environment. She is a great person and an excellent developer, someone that any team should have."
+      ]
+    },
+    {
+      "name": "Agostina Risso",
+      "gender": "woman",
+      "role": "QA at StackZone",
+      "paragraphs": [
+        "I had the pleasure of working with Lu at StackZone, where she consistently demonstrated her expertise as a Backend Developer. Her commitment to writing clean, efficient code and following best practices made my job as a QA much smoother.",
+        "She is incredibly responsible and is always trying to improve, happy to help and with a positive attitude. Lucia's proactive approach and collaborative spirit are just a few of the many qualities that make her an exceptional developer.",
+        "I highly recommend her to any team looking for a skilled and dependable professional."
+      ]
+    },
+    {
+      "name": "Carolina Cadelago",
+      "gender": "woman",
+      "role": "Product Designer at StackZone",
+      "paragraphs": [
+        "Working with Lucia has been a true pleasure. I've had the opportunity to witness her growth across various areas of the company, and she consistently stands out as one of the most dedicated and hardworking individuals I've known.",
+        "Lucia is incredibly organized, responsible, and committed to achieving her objectives in the most effective way possible. Her exceptional performance sets her apart and makes a significant impact within any team."
+      ]
+    },
+    {
+      "name": "Joaquin Girardi",
+      "gender": "man",
+      "role": "Full Stack engineer at StackZone",
+      "paragraphs": [
+        "I had the privilege of working with Lucia on different teams at StackZone. She demonstrated exceptional skills in backend development, especially with AWS Step Functions.",
+        "Lucia was always willing to assist others and kept everything meticulously organized, from the project structure to the implementation lifecycle. She is definitely a valuable asset to any company"
+      ]
+    },
+    {
+      "name": "Antonio Bentosela",
+      "gender": "man",
+      "role": "Software QA Engineer",
+      "paragraphs": [
+        "Lucia is an excellent professional, who stands out mainly for her attention to detail and level of demand to solve problems. I have seen her take charge of the most complex tasks, and insist until they are solved.",
+        "She is also a person who stands out for her good communication and predisposition to work as part of a team. I look forward to working with her again in the future."
+      ]
+    }
+  ]
+}

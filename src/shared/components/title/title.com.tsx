@@ -6,6 +6,7 @@ import {
   faGraduationCap,
   faComments,
   faAnglesRight,
+  faUsers,
 } from "@fortawesome/free-solid-svg-icons";
 import "./title.scss";
 
@@ -25,6 +26,8 @@ export const TitleCom: any = ({ content, sectionClass }: TitleComProps) => {
         return faLayerGroup;
       case "Experience-title":
         return faGraduationCap;
+      case "Reviews-title":
+        return faUsers;
       case "Contact-title":
         return faComments;
       default:
