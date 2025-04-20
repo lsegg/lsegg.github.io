@@ -1,21 +1,16 @@
 import { TitleCom } from "../../components/title/title.com";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faAws,
-  faJs,
-  faBootstrap,
-  faJira,
-  faConfluence,
-  faCss3,
-  faFigma,
-  faGit,
-  faHtml5,
-  faNodeJs,
-  faPython,
-  faReact,
-  faSass,
-  faSlack,
-  faTrello,
+  faLinkedin,
+  faGithub,
+  faCodepen,
+  faHackerrank,
+  faItchIo,
+  faTwitter,
+  faArtstation,
+  faBehance,
+  faDeviantart,
+  faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 import avatar from "../../../assets/images/avatar.png";
 import "./about.scss";
@@ -29,43 +24,140 @@ export const AboutSection: any = () => {
         <div className="About-intro-dialog isCard">
           <div className="About-intro-dialog-arrow"></div>
           <p className="About-intro-dialog-paragraph">
-            Ever since I was a little kid, arts, graphics and the IT world have
-            been my passions. This has taken many forms: architecture,
-            illustration and now, web development. Front-end web development
-            brings all my interests together; it incorporates creativity and
-            problem solving, and I'm allowed to break things in order to improve
-            them (in a separate Git branch, of course).
+            Hey, I'm a web developer and illustrator from Argentina, currently
+            based somewhere in Europe. I split my time between building digital
+            tools and creating art that tell stories.
           </p>
           <p className="About-intro-dialog-paragraph">
-            Now, in this industry, this passion is still with me: I love
-            applying responsive design principles, and seeing how my web pages
-            shrink on mobile screens and still look amazing. It's very
-            satisfying. I guess, in a way, I'm like those websites; I'm
-            moldable, but I still keep my creative ability intact.
+            I'm endlessly curious about the world — whether I'm coding a new
+            project, sketching characters, geeking out over the latest in AI, or
+            mapping out my next trip. Remote work, creativity, flexibility...
+            that's the life I'm chasing, and I love that tech is making it
+            possible.
           </p>
           <p className="About-intro-dialog-paragraph">
-            No doubt, there are still more things to learn, more problems to
-            solve and more things to build. And for this, I am very grateful.
-            Feel free to reach out.
+            When I'm not deep in a project, you'll probably find me hiking
+            somewhere green, hunting for vintage finds, getting way too
+            competitive over a board game, or dreaming up my next destination.
+          </p>
+          <p className="About-intro-dialog-paragraph">
+            Right now, I'm on the lookout for work opportunities that mix
+            creativity, tech, and travel — if that sounds like your vibe too,
+            let's talk!
           </p>
         </div>
       </div>
-      <div className="About-skills">
-        <FontAwesomeIcon icon={faReact} className="About-skills-icon" />
-        <FontAwesomeIcon icon={faJs} className="About-skills-icon" />
-        <FontAwesomeIcon icon={faHtml5} className="About-skills-icon" />
-        <FontAwesomeIcon icon={faSass} className="About-skills-icon" />
-        <FontAwesomeIcon icon={faCss3} className="About-skills-icon" />
-        <FontAwesomeIcon icon={faBootstrap} className="About-skills-icon" />
-        <FontAwesomeIcon icon={faFigma} className="About-skills-icon" />
-        <FontAwesomeIcon icon={faGit} className="About-skills-icon" />
-        <FontAwesomeIcon icon={faNodeJs} className="About-skills-icon" />
-        <FontAwesomeIcon icon={faPython} className="About-skills-icon" />
-        <FontAwesomeIcon icon={faAws} className="About-skills-icon" />
-        <FontAwesomeIcon icon={faJira} className="About-skills-icon" />
-        <FontAwesomeIcon icon={faConfluence} className="About-skills-icon" />
-        <FontAwesomeIcon icon={faTrello} className="About-skills-icon" />
-        <FontAwesomeIcon icon={faSlack} className="About-skills-icon" />
+      <div className="About-network">
+        <div className="About-network-wrapper">
+          <div className="About-network-wrapper-coding">
+            <a
+              className="About-network-icon"
+              href="https://www.linkedin.com/in/lucia-seggiaro/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon
+                className="About-network-icon"
+                icon={faLinkedin}
+              />
+            </a>
+            <a
+              className="About-network-icon"
+              href="https://github.com/lsegg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon className="About-network-icon" icon={faGithub} />
+            </a>
+            <a
+              className="About-network-icon"
+              href="https://codepen.io/lsegg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon
+                className="About-network-icon"
+                icon={faCodepen}
+              />
+            </a>
+            <a
+              className="About-network-icon"
+              href="https://www.hackerrank.com/lu_seggiaro"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon
+                className="About-network-icon"
+                icon={faHackerrank}
+              />
+            </a>
+            <a
+              className="About-network-icon"
+              href="https://lsegg.itch.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon className="About-network-icon" icon={faItchIo} />
+            </a>
+            <a
+              className="About-network-icon"
+              href="https://twitter.com/artofluli"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon
+                className="About-network-icon"
+                icon={faTwitter}
+              />
+            </a>
+          </div>
+          <div className="About-network-wrapper-drawing">
+            <a
+              className="About-network-icon"
+              href="https://www.artstation.com/artofluli"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon
+                className="About-network-icon"
+                icon={faArtstation}
+              />
+            </a>
+            <a
+              className="About-network-icon"
+              href="https://www.behance.net/artofluli"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon
+                className="About-network-icon"
+                icon={faBehance}
+              />
+            </a>
+            <a
+              className="About-network-icon"
+              href="https://www.deviantart.com/artofluli"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon
+                className="About-network-icon"
+                icon={faDeviantart}
+              />
+            </a>
+            <a
+              className="About-network-icon"
+              href="https://www.instagram.com/artofluli/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon
+                className="About-network-icon"
+                icon={faInstagram}
+              />
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );
