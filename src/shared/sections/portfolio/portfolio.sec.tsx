@@ -1,6 +1,7 @@
 import { useState, useEffect, useImperativeHandle, forwardRef } from "react";
-import { ProjectCom } from "../../components/project/project.com";
 import { TitleCom } from "../../components/title/title.com";
+import { FilterCom } from "../../components/filter/filter.com";
+import { ProjectCom } from "../../components/project/project.com";
 import projectsData from "./projects-data.json";
 import "./portfolio.scss";
 
@@ -11,6 +12,8 @@ export const PortfolioSection = forwardRef((_, ref) => {
   const [displayCount, setDisplayCount] = useState<number>(2);
   const [filteredProjects, setFilteredProjects] = useState<any[]>([]);
   const [projects, setProjects] = useState<any[]>([]);
+
+  const filterOptions = ["everything", "web-development", "illustration"];
 
   // Update projects whenever filteredProjects or displayCount changes
   useEffect(() => {
@@ -70,54 +73,11 @@ export const PortfolioSection = forwardRef((_, ref) => {
   return (
     <section className="Portfolio" id="portfolio">
       <TitleCom content="Recent Works" sectionClass="Portfolio-title" />
-      <div
-        className="Portfolio-filter title-medium-semibold"
-        role="group"
-        aria-label="Toggle project filter"
-      >
-        <label className="Portfolio-filter-label" htmlFor="everything">
-          <input
-            type="radio"
-            className="Portfolio-filter-input"
-            value={filter}
-            name="everything"
-            id="everything"
-            checked={filter === "everything"}
-            onChange={() => {
-              handleChange("everything");
-            }}
-          />
-          EVERYTHING
-        </label>
-        <label className="Portfolio-filter-label" htmlFor="web-development">
-          <input
-            type="radio"
-            className="Portfolio-filter-input"
-            value={filter}
-            name="web-development"
-            id="web-development"
-            checked={filter === "web-development"}
-            onChange={() => {
-              handleChange("web-development");
-            }}
-          />
-          WEB DEVELOPMENT
-        </label>
-        <label className="Portfolio-filter-label" htmlFor="illustration">
-          <input
-            type="radio"
-            className="Portfolio-filter-input"
-            value={filter}
-            name="illustration"
-            id="illustration"
-            checked={filter === "illustration"}
-            onChange={() => {
-              handleChange("illustration");
-            }}
-          />
-          ILLUSTRATION
-        </label>
-      </div>
+      <FilterCom
+        filter={filter}
+        onFilterChange={handleChange}
+        options={filterOptions}
+      />
       <div className="Portfolio-works">
         {projects.map((project) => {
           return (

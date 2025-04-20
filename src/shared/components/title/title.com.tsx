@@ -16,23 +16,14 @@ type TitleComProps = {
 };
 
 export const TitleCom: any = ({ content, sectionClass }: TitleComProps) => {
-  const iconSelector = (sectionClass: string) => {
-    switch (sectionClass) {
-      case "About-title":
-        return faUserAlt;
-      case "Services-title":
-        return faBriefcase;
-      case "Portfolio-title":
-        return faLayerGroup;
-      case "Experience-title":
-        return faGraduationCap;
-      case "Reviews-title":
-        return faUsers;
-      case "Contact-title":
-        return faComments;
-      default:
-        return faAnglesRight;
-    }
+  const iconSelection = {
+    "About-title": faUserAlt,
+    "Services-title": faBriefcase,
+    "Portfolio-title": faLayerGroup,
+    "Experience-title": faGraduationCap,
+    "Reviews-title": faUsers,
+    "Contact-title": faComments,
+    "Home-title": faAnglesRight,
   };
 
   return (
@@ -40,7 +31,10 @@ export const TitleCom: any = ({ content, sectionClass }: TitleComProps) => {
       <h2 className="Title-content title-x-large-semibold">{content}</h2>
       <FontAwesomeIcon
         className="Title-icon"
-        icon={iconSelector(sectionClass)}
+        icon={
+          iconSelection[sectionClass as keyof typeof iconSelection] ??
+          faAnglesRight
+        }
       />
     </div>
   );
