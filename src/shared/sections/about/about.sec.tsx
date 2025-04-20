@@ -49,114 +49,98 @@ export const AboutSection: any = () => {
       </div>
       <div className="About-network">
         <div className="About-network-wrapper">
-          <div className="About-network-wrapper-coding">
-            <a
+          <a
+            className="About-network-icon"
+            href="https://www.linkedin.com/in/lucia-seggiaro/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon className="About-network-icon" icon={faLinkedin} />
+          </a>
+          <a
+            className="About-network-icon"
+            href="https://github.com/lsegg"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon className="About-network-icon" icon={faGithub} />
+          </a>
+          <a
+            className="About-network-icon"
+            href="https://www.instagram.com/artofluli/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon
               className="About-network-icon"
-              href="https://www.linkedin.com/in/lucia-seggiaro/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon
-                className="About-network-icon"
-                icon={faLinkedin}
-              />
-            </a>
-            <a
+              icon={faInstagram}
+            />
+          </a>
+          <a
+            className="About-network-icon"
+            href="https://www.behance.net/artofluli"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon className="About-network-icon" icon={faBehance} />
+          </a>
+          <a
+            className="About-network-icon"
+            href="https://twitter.com/artofluli"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon className="About-network-icon" icon={faTwitter} />
+          </a>
+          <a
+            className="About-network-icon"
+            href="https://codepen.io/lsegg"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon className="About-network-icon" icon={faCodepen} />
+          </a>
+          <a
+            className="About-network-icon"
+            href="https://www.hackerrank.com/lu_seggiaro"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon
               className="About-network-icon"
-              href="https://github.com/lsegg"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon className="About-network-icon" icon={faGithub} />
-            </a>
-            <a
+              icon={faHackerrank}
+            />
+          </a>
+          <a
+            className="About-network-icon"
+            href="https://lsegg.itch.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon className="About-network-icon" icon={faItchIo} />
+          </a>
+          <a
+            className="About-network-icon"
+            href="https://www.artstation.com/artofluli"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon
               className="About-network-icon"
-              href="https://codepen.io/lsegg"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon
-                className="About-network-icon"
-                icon={faCodepen}
-              />
-            </a>
-            <a
+              icon={faArtstation}
+            />
+          </a>
+          <a
+            className="About-network-icon"
+            href="https://www.deviantart.com/artofluli"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon
               className="About-network-icon"
-              href="https://www.hackerrank.com/lu_seggiaro"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon
-                className="About-network-icon"
-                icon={faHackerrank}
-              />
-            </a>
-            <a
-              className="About-network-icon"
-              href="https://lsegg.itch.io/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon className="About-network-icon" icon={faItchIo} />
-            </a>
-            <a
-              className="About-network-icon"
-              href="https://twitter.com/artofluli"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon
-                className="About-network-icon"
-                icon={faTwitter}
-              />
-            </a>
-          </div>
-          <div className="About-network-wrapper-drawing">
-            <a
-              className="About-network-icon"
-              href="https://www.artstation.com/artofluli"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon
-                className="About-network-icon"
-                icon={faArtstation}
-              />
-            </a>
-            <a
-              className="About-network-icon"
-              href="https://www.behance.net/artofluli"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon
-                className="About-network-icon"
-                icon={faBehance}
-              />
-            </a>
-            <a
-              className="About-network-icon"
-              href="https://www.deviantart.com/artofluli"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon
-                className="About-network-icon"
-                icon={faDeviantart}
-              />
-            </a>
-            <a
-              className="About-network-icon"
-              href="https://www.instagram.com/artofluli/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon
-                className="About-network-icon"
-                icon={faInstagram}
-              />
-            </a>
-          </div>
+              icon={faDeviantart}
+            />
+          </a>
         </div>
       </div>
     </section>

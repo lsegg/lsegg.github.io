@@ -39,7 +39,6 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: vars.toRem(30px);
     width: 100%;
 
     &-icon {
@@ -52,20 +51,11 @@
     }
 
     &-wrapper {
-      width: fit-content;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      margin: vars.toRem(250px) auto vars.toRem(30px);
-      &-coding,
-      &-drawing {
-        width: max-content;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-      }
+      margin: 0;
     }
   }
 
@@ -84,7 +74,7 @@
     }
     &-network {
       &-wrapper {
-        margin: vars.toRem(30px) auto;
+        margin: vars.toRem(25px) auto vars.toRem(30px);
       }
     }
   }
