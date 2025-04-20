@@ -50,7 +50,7 @@
   &-thumbnail {
     width: 360px;
     height: 202.5px;
-    border-radius: vars.toRem(20px);
+    border-radius: vars.toRem(8px);
   }
 
   &-hover {
@@ -64,7 +64,7 @@
     padding: vars.toRem(20px);
     z-index: 2;
     color: vars.$color-quinary;
-    border-radius: vars.toRem(20px);
+    border-radius: vars.toRem(8px);
 
     &.illustration {
       background-color: rgba(vars.$color-tertiary, 0.85);
@@ -78,8 +78,8 @@
       position: absolute;
       top: 0;
       padding: vars.toRem(10px);
-      border-bottom-left-radius: vars.toRem(15px);
-      border-bottom-right-radius: vars.toRem(15px);
+      border-bottom-left-radius: vars.toRem(17px);
+      border-bottom-right-radius: vars.toRem(17px);
       &.web-development {
         background-color: vars.$color-tertiary;
       }

@@ -87,7 +87,7 @@ export const PortfolioSection = forwardRef((_, ref) => {
               handleChange("everything");
             }}
           />
-          Everything
+          EVERYTHING
         </label>
         <label className="Portfolio-filter-label" htmlFor="web-development">
           <input
@@ -101,7 +101,7 @@ export const PortfolioSection = forwardRef((_, ref) => {
               handleChange("web-development");
             }}
           />
-          Web Development
+          WEB DEVELOPMENT
         </label>
         <label className="Portfolio-filter-label" htmlFor="illustration">
           <input
@@ -115,7 +115,7 @@ export const PortfolioSection = forwardRef((_, ref) => {
               handleChange("illustration");
             }}
           />
-          Illustration
+          ILLUSTRATION
         </label>
       </div>
       <div className="Portfolio-works">

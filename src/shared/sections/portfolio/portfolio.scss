@@ -13,24 +13,22 @@
 
   &-filter {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-self: center;
+    margin-bottom: vars.toRem(15px);
+    width: 100%;
     &-label {
       cursor: pointer;
       background-color: transparent;
       color: vars.$color-tertiary;
+      font-size: vars.toRem(12px);
       font-weight: bolder;
-      border-radius: vars.toRem(35px);
-      margin: vars.toRem(10px);
-      padding: vars.toRem(10px) vars.toRem(25px) vars.toRem(10px)
-        vars.toRem(10px);
+
       &:hover {
-        background-color: vars.$color-tertiary;
-        color: vars.$color-quinary;
+        color: vars.$color-primary;
       }
       &:focus-within {
-        background-color: vars.$color-tertiary;
-        color: vars.$color-quinary;
+        color: vars.$color-primary;
       }
     }
     &-input {
@@ -58,7 +56,8 @@
 
   @media screen and (min-width: vars.$breakpoint-sm-tablet) {
     &-filter {
-      flex-direction: row;
+      justify-content: flex-start;
+      margin: vars.toRem(20px) 0;
     }
     &-works {
       grid-template-columns: repeat(2, minmax(0, 1fr));
