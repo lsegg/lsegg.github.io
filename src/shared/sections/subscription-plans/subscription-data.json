@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Explorer",
+    "price": "FREE",
+    "description": "Stay connected to my creative world!",
+    "features": [
+      "Access to all public blog entries and general updates.",
+      "Join in open polls and art discussions."
+    ],
+    "link": "https://example.com/explorer-plan",
+    "icon": "explorer"
+  },
+  {
+    "title": "Supporter",
+    "price": "$4.99 / month",
+    "description": "For those who love peeking behind the curtain!",
+    "features": [
+      "Everything from Explorer plan, plus:",
+      "Exclusive behind-the-scenes process breakdowns.",
+      "Montly screensaver illustration."
+    ],
+    "link": "https://example.com/supporter-plan",
+    "isPopular": true,
+    "icon": "supporter"
+  },
+  {
+    "title": "Commissioner",
+    "price": "$99.99 / month",
+    "description": "Become a true part of my art journey.",
+    "features": [
+      "Everything from the Supporter plan, plus:",
+      "One custom, personalized illustration per month (simple one color background, up to 2 characters).",
+      "Priority for custom commissions or special projects."
+    ],
+    "link": "https://example.com/commissioner-plan",
+    "icon": "commissioner"
+  }
+]
