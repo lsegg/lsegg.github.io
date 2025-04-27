@@ -7,7 +7,6 @@ import "./header.scss";
 
 export const HeaderLay: any = () => {
   const [navbarShown, setNavbarShown] = useState<Boolean>(false);
-  const pending: boolean = true;
   const currentYear: number = new Date().getFullYear();
   const handleMenuClick = () => {
     setNavbarShown(!navbarShown);
@@ -69,15 +68,13 @@ export const HeaderLay: any = () => {
           >
             Portfolio
           </Link>
-          {!pending && (
-            <Link
-              className="Header-nav-list-item"
-              to="/#blog"
-              onClick={() => handleLinkClick("blog")}
-            >
-              Blog
-            </Link>
-          )}
+          <Link
+            className="Header-nav-list-item"
+            to="/#blog"
+            onClick={() => handleLinkClick("blog")}
+          >
+            Blog
+          </Link>
           <Link
             className="Header-nav-list-item"
             to="/#contact"

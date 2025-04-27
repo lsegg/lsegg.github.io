@@ -1,0 +1,44 @@
+@use "../../../vars" as vars;
+
+.Blog {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  margin-bottom: vars.toRem(100px);
+  min-height: auto;
+  overflow: visible;
+
+  &-works {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: vars.toRem(30px);
+    margin-bottom: vars.toRem(30px);
+    justify-items: center;
+    overflow: visible;
+  }
+
+  &-show-all {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: vars.toRem(20px);
+    margin-bottom: vars.toRem(20px);
+  }
+
+  @media screen and (min-width: vars.$breakpoint-sm-tablet) {
+    &-works {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-auto-rows: auto;
+      justify-content: center;
+    }
+  }
+  @media screen and (min-width: vars.$breakpoint-desktop) {
+    &-works {
+      min-height: auto;
+    }
+  }
+}
