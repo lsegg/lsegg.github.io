@@ -1,21 +1,25 @@
 @use "../../../vars" as vars;
 
 .SiteInConstruction {
-  height: 92vh;
-  padding: vars.toRem(30px) 0 0;
-  justify-content: flex-start;
-  background: no-repeat center/175%
-    url("../../../assets/images/site-in-construction.png") white;
+  min-height: calc(100dvh - #{vars.$header-height});
+  align-items: center;
+  justify-content: flex-end;
+  gap: vars.$space-sm;
+  text-align: center;
+  background: no-repeat center top / min(115%, #{vars.toRem(760px)})
+    url("../../../assets/images/site-in-construction.png");
 
   &-paragraph {
-    margin-bottom: vars.toRem(10px);
+    color: var(--color-ink-muted);
+    max-width: 46ch;
+
+    &-link {
+      margin-top: vars.$space-lg;
+    }
   }
 
-  @media screen and (min-width: vars.$breakpoint-sm-tablet) {
-    height: 100vh;
-    background: no-repeat center/100%
-      url("../../../assets/images/site-in-construction.png") white;
-    justify-content: flex-end;
-    padding: 0 0 vars.toRem(30px);
+  @media screen and (min-width: vars.$breakpoint-lg-tablet) {
+    min-height: 100dvh;
+    background-size: min(72%, #{vars.toRem(680px)});
   }
 }

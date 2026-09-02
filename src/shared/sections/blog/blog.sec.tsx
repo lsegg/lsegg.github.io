@@ -76,13 +76,17 @@ export const BlogSection = forwardRef((_, ref) => {
 
   return (
     <section className="Blog" id="blog">
-      <TitleCom content="Latest Posts" sectionClass="Blog-title" />
+      <TitleCom
+        content="Latest Posts"
+        sectionClass="Blog-title"
+        eyebrow="From the notebook"
+      />
       <FilterCom
         filter={filter}
         onFilterChange={handleChange}
         options={filterOptions}
       />
-      <div className="Blog-works">
+      <div className="Blog-works" data-reveal>
         {posts.map((post) => {
           return (
             <PostCom
@@ -100,7 +104,7 @@ export const BlogSection = forwardRef((_, ref) => {
         <div className="Blog-show-all">
           <button
             onClick={handleLoadMore}
-            className="Blog-show-all-button paragraph-medium-bold isButton"
+            className="Blog-show-all-button isButton isButton--ghost"
           >
             Show all posts
           </button>

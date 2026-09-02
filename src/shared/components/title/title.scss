@@ -1,17 +1,57 @@
 @use "../../../vars" as vars;
 
+// ---------------------------------------------------------------------------
+// Section heading — an oversized ghost glyph sits behind a tracked-out
+// eyebrow and the display headline, with a rule running off to the margin.
+// ---------------------------------------------------------------------------
 .Title {
   position: relative;
-  color: vars.$color-primary;
-  margin-bottom: vars.toRem(30px);
-  &-content {
-    margin-left: vars.toRem(15px);
-  }
+  color: var(--color-ink);
+  margin-bottom: vars.$space-xl;
+  padding-top: vars.$space-xs;
+  isolation: isolate;
+
   &-icon {
     position: absolute;
-    top: vars.toRem(-15px);
-    left: vars.toRem(-5px);
-    font-size: vars.toRem(75px);
-    opacity: 0.1;
+    top: vars.toRem(-26px);
+    left: vars.toRem(-14px);
+    z-index: -1;
+    font-size: clamp(#{vars.toRem(72px)}, 11vw, #{vars.toRem(118px)});
+    color: vars.$color-primary;
+    opacity: 0.07;
+    transform: rotate(-6deg);
+    pointer-events: none;
+  }
+
+  &-eyebrow {
+    color: vars.$color-secondary-deep;
+    margin-bottom: vars.$space-xs;
+  }
+
+  &-headline {
+    display: flex;
+    align-items: center;
+    gap: clamp(#{vars.toRem(16px)}, 3vw, #{vars.toRem(32px)});
+  }
+
+  &-content {
+    flex: 0 0 auto;
+    max-width: 100%;
+  }
+
+  // Hairline that fades toward the outer margin — the editorial "cut".
+  &-rule {
+    flex: 1 1 auto;
+    height: 1px;
+    min-width: vars.toRem(24px);
+    background: linear-gradient(
+      to right,
+      var(--color-rule-strong),
+      transparent
+    );
+  }
+
+  @media screen and (min-width: vars.$breakpoint-sm-tablet) {
+    margin-bottom: vars.$space-2xl;
   }
 }

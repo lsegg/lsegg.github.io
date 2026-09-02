@@ -1,68 +1,182 @@
 @use "../../../vars" as vars;
 
+// ---------------------------------------------------------------------------
+// Timeline entry. The connecting rule is drawn on the entry itself so the
+// column needs no extra wrapper element.
+// ---------------------------------------------------------------------------
 .Practice {
+  position: relative;
   display: flex;
   align-items: flex-start;
-  background-color: transparent;
-  margin-bottom: vars.toRem(10px);
-  width: 100%;
+  gap: vars.$space-md;
+  padding-bottom: vars.$space-xl;
+
+  // Vertical rule running between markers.
+  &::before {
+    content: "";
+    position: absolute;
+    left: vars.toRem(17px);
+    top: vars.toRem(36px);
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(
+      to bottom,
+      var(--color-rule-strong),
+      var(--color-rule) 60%,
+      transparent
+    );
+  }
 
   &:last-of-type {
-    margin-bottom: 0;
+    padding-bottom: 0;
+
+    &::before {
+      display: none;
+    }
   }
 
-  &-wrapper {
-    background-color: white;
-    border-radius: 100%;
-    margin: vars.toRem(20px) vars.toRem(20px) 0 0;
+  // -- Marker -------------------------------------------------------------
+  &-marker {
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    width: vars.toRem(35px);
+    height: vars.toRem(35px);
+    border-radius: vars.$radius-pill;
+    background-color: var(--color-paper-raised);
+    border: 1px solid var(--color-rule);
+    box-shadow: 0 0 0 vars.toRem(4px) var(--color-paper);
+    transition: border-color 0.3s vars.$ease-out,
+      background-color 0.3s vars.$ease-out;
 
     &-icon {
-      &.work {
-        color: vars.$color-secondary;
-      }
-      &.academic {
-        color: vars.$color-tertiary;
-      }
+      font-size: vars.toRem(13px);
+    }
+
+    &.work {
+      color: vars.$color-secondary-deep;
+    }
+
+    &.academic {
+      color: vars.$color-tertiary-deep;
     }
   }
+
+  &:hover &-marker.work {
+    border-color: vars.$color-secondary;
+    background-color: rgba(vars.$color-secondary, 0.1);
+  }
+
+  &:hover &-marker.academic {
+    border-color: vars.$color-tertiary;
+    background-color: rgba(vars.$color-tertiary, 0.1);
+  }
+
+  // -- Body ---------------------------------------------------------------
   &-data {
-    width: 90%;
+    flex: 1 1 auto;
+    min-width: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    &-date,
+    padding-top: vars.toRem(4px);
+
+    &-date {
+      color: var(--color-ink-subtle);
+    }
+
+    &-role {
+      margin: vars.toRem(6px) 0 vars.toRem(3px);
+      color: var(--color-ink);
+    }
+
     &-where {
-      text-align: end;
-      color: vars.$color-neutral-2;
+      color: var(--color-ink-subtle);
+
       &-link {
-        color: vars.$color-neutral-2;
-        &.work:hover {
-          color: vars.$color-secondary;
+        color: var(--color-ink-muted);
+        font-family: vars.$font-primary-bold;
+        border-bottom: 1px solid transparent;
+        transition: color 0.28s vars.$ease-out,
+          border-color 0.28s vars.$ease-out;
+
+        &.work:hover,
+        &.work:focus-visible {
+          color: vars.$color-secondary-deep;
+          border-color: currentColor;
         }
-        &.academic:hover {
-          color: vars.$color-tertiary;
+
+        &.academic:hover,
+        &.academic:focus-visible {
+          color: vars.$color-tertiary-deep;
+          border-color: currentColor;
+        }
+      }
+
+      &-name {
+        font-family: vars.$font-primary-bold;
+        color: var(--color-ink-muted);
+      }
+
+      &-sep {
+        margin-inline: vars.toRem(6px);
+        opacity: 0.5;
+      }
+    }
+
+    &-description {
+      margin-top: vars.$space-xs;
+      color: var(--color-ink-muted);
+    }
+
+    &-list {
+      margin-top: vars.$space-xs;
+      display: flex;
+      flex-direction: column;
+      gap: vars.toRem(5px);
+      color: var(--color-ink-muted);
+
+      &-item {
+        position: relative;
+        padding-left: vars.$space-md;
+
+        // Small ink tick instead of a default bullet.
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: vars.toRem(9px);
+          width: vars.toRem(6px);
+          height: 1px;
+          background-color: var(--color-rule-strong);
         }
       }
     }
-    &-role {
-      margin: vars.toRem(5px) 0;
-    }
-    &-list {
-      margin: vars.toRem(10px) 0 vars.toRem(10px) vars.toRem(30px);
-    }
-  }
-}
 
-.Practice-data-list {
-  &-toggle {
-    color: var(--color-primary);
-    cursor: pointer;
-    font-style: italic;
-    transition: opacity 0.3s ease;
+    &-toggle {
+      align-self: flex-start;
+      margin-top: vars.$space-sm;
+      padding: vars.toRem(5px) vars.toRem(11px);
+      border-radius: vars.$radius-pill;
+      border: 1px solid var(--color-rule);
+      color: var(--color-ink-subtle);
+      font-size: vars.toRem(9.5px);
+      background-color: transparent;
+      transition: color 0.28s vars.$ease-out, border-color 0.28s vars.$ease-out,
+        background-color 0.28s vars.$ease-out;
 
-    &:hover {
-      opacity: 0.8;
-      text-decoration: underline;
+      &.work:hover,
+      &.work:focus-visible {
+        color: vars.$color-secondary-deep;
+        border-color: rgba(vars.$color-secondary-deep, 0.5);
+        background-color: rgba(vars.$color-secondary, 0.09);
+      }
+
+      &.academic:hover,
+      &.academic:focus-visible {
+        color: vars.$color-tertiary-deep;
+        border-color: rgba(vars.$color-tertiary-deep, 0.5);
+        background-color: rgba(vars.$color-tertiary, 0.09);
+      }
     }
   }
 }

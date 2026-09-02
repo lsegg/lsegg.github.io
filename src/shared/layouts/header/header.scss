@@ -1,87 +1,290 @@
 @use "../../../vars" as vars;
+@use "../../../mixins" as m;
 
+// ---------------------------------------------------------------------------
+// Header — a sticky ink bar on small screens, a full-height ink rail on wide
+// ones. The rail carries a faint hand-drawn grain so it reads as printed
+// board rather than flat chrome.
+// ---------------------------------------------------------------------------
 .Header {
   position: sticky;
   top: 0;
-  height: vars.toRem(50px);
+  height: vars.$header-height;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: vars.$color-primary;
-  border-bottom: 0.5px solid vars.$color-neutral-3;
-  z-index: 2;
+  color: vars.$color-quinary;
+  z-index: 20;
+  isolation: isolate;
+
+  // Terracotta hairline instead of the old grey border.
+  &::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      vars.$color-secondary,
+      vars.$color-tertiary 45%,
+      rgba(vars.$color-quinary, 0.12)
+    );
+  }
 
   &-nav {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    &-signature {
-      display: none;
-      margin: vars.toRem(30px) 0;
-      align-self: center;
-      width: 60%;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+
+    &-signature-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      padding-inline: vars.$space-sm;
+      // Balance the hamburger so the signature stays optically centred.
+      margin-right: vars.toRem(52px);
     }
-    &-button {
-      padding: vars.toRem(15px);
-      background-color: vars.$color-primary;
-      &-icon {
-        color: vars.$color-neutral-1;
-        &:hover {
-          color: vars.$color-secondary;
-        }
+
+    &-signature {
+      width: auto;
+      height: vars.toRem(28px);
+      opacity: 0.92;
+      transition: opacity 0.3s vars.$ease-out, transform 0.4s vars.$ease-out;
+
+      &:hover {
+        opacity: 1;
+        transform: rotate(-1.5deg) scale(1.03);
       }
     }
+
+    &-button {
+      display: grid;
+      place-items: center;
+      width: vars.toRem(52px);
+      height: vars.$header-height;
+      flex: 0 0 auto;
+      background-color: transparent;
+
+      &-icon {
+        font-size: vars.toRem(18px);
+        color: vars.$color-quinary;
+        transition: color 0.25s vars.$ease-out, transform 0.3s vars.$ease-spring;
+      }
+
+      &:hover &-icon {
+        color: vars.$color-secondary;
+      }
+
+      &:active &-icon {
+        transform: scale(0.88);
+      }
+    }
+
+    // -- Mobile drawer ----------------------------------------------------
     &-list {
-      display: none;
+      display: flex;
       flex-direction: column;
-      position: absolute;
-      top: vars.toRem(50px);
+      position: fixed;
+      top: vars.$header-height;
+      left: 0;
       background-color: vars.$color-primary;
       width: 100%;
-      height: calc(100vh - vars.toRem(50px));
-      padding: vars.toRem(50px) 0 0 vars.toRem(50px);
+      height: calc(100dvh - #{vars.$header-height});
+      padding: vars.$space-2xl vars.$space-xl;
+      gap: vars.$space-2xs;
+      overflow-y: auto;
+
+      // Closed: collapsed and non-interactive, but still animatable.
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(vars.toRem(-16px));
+      transition: opacity 0.35s vars.$ease-out, transform 0.4s vars.$ease-out,
+        visibility 0.35s linear;
+
       &.isShown {
-        display: flex;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
       }
-      &-item {
-        padding: vars.toRem(10px);
-        color: vars.$color-neutral-1;
-        &:hover {
-          color: vars.$color-secondary;
+
+      // Staggered entrance for each row once the drawer opens.
+      &.isShown .Header-nav-list-item {
+        animation: nav-row-in 0.5s vars.$ease-out backwards;
+        animation-delay: calc(var(--row, 0) * 45ms + 60ms);
+      }
+    }
+
+    &-list-row {
+      display: flex;
+    }
+
+    &-list-item {
+      @include m.micro-label;
+      display: flex;
+      align-items: baseline;
+      gap: vars.$space-sm;
+      width: 100%;
+      padding: vars.toRem(11px) vars.$space-sm;
+      border-radius: vars.$radius-sm;
+      color: rgba(vars.$color-quinary, 0.72);
+      position: relative;
+      transition: color 0.28s vars.$ease-out, padding-left 0.32s vars.$ease-out,
+        background-color 0.28s vars.$ease-out;
+
+      // The sliding ink marker on the left edge.
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: vars.toRem(3px);
+        height: 0;
+        border-radius: vars.$radius-pill;
+        background-color: vars.$color-secondary;
+        transform: translateY(-50%);
+        transition: height 0.32s vars.$ease-out;
+      }
+
+      &-index {
+        font-size: vars.toRem(9px);
+        letter-spacing: 0.1em;
+        color: vars.$color-tertiary;
+        opacity: 0.75;
+        transition: opacity 0.28s vars.$ease-out, color 0.28s vars.$ease-out;
+      }
+
+      &:hover,
+      &:focus-visible {
+        color: vars.$color-quinary;
+        padding-left: vars.$space-lg;
+        background-color: rgba(vars.$color-quinary, 0.05);
+
+        &::before {
+          height: 60%;
+        }
+      }
+
+      &.isActive {
+        color: vars.$color-quinary;
+        padding-left: vars.$space-lg;
+
+        &::before {
+          height: 70%;
+        }
+
+        // Sand rather than terracotta: at 9px the label needs 4.5:1 on ink,
+        // which straight terracotta (4.19:1) does not reach.
+        .Header-nav-list-item-index {
+          color: vars.$color-quaternary;
+          opacity: 1;
         }
       }
     }
   }
 
   &-copyright {
-    color: vars.$color-neutral-2;
-    padding: vars.toRem(15px);
-    vertical-align: center;
+    @include m.micro-label;
+    display: none;
+    color: rgba(vars.$color-quinary, 0.75);
+    font-size: vars.toRem(10px);
+
+    &-mark {
+      color: vars.$color-quaternary;
+    }
+
+    &-year {
+      display: block;
+      color: rgba(vars.$color-quinary, 0.6);
+    }
   }
 
+  // -- Wide screens: vertical rail --------------------------------------
   @media screen and (min-width: vars.$breakpoint-lg-tablet) {
-    align-items: flex-start;
+    align-items: stretch;
     flex-direction: column;
-    padding: vars.toRem(15px);
+    justify-content: space-between;
+    padding: vars.$space-xl vars.$space-lg;
     height: 100vh;
-    border-bottom: none;
-    border-right: 0.5px solid vars.$color-neutral-3;
+    height: 100dvh;
+    gap: vars.$space-xl;
+
+    // Rail edge reads as a printed fold: ink gradient + accent hairline.
+    &::after {
+      inset: 0 0 0 auto;
+      width: 1px;
+      height: auto;
+      background: linear-gradient(
+        to bottom,
+        vars.$color-secondary,
+        vars.$color-tertiary 40%,
+        rgba(vars.$color-quinary, 0.1)
+      );
+    }
+
+    // Faint grain over the ink so it isn't a flat block of colour.
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background-image: var(--grain);
+      background-size: vars.toRem(160px) vars.toRem(160px);
+      opacity: 0.07;
+    }
 
     &-nav {
-      &-signature {
-        display: block;
+      flex-direction: column;
+      align-items: stretch;
+      width: auto;
+      gap: vars.$space-2xl;
+
+      &-signature-link {
+        margin-right: 0;
+        padding-inline: 0;
+        flex: 0 0 auto;
       }
+
+      &-signature {
+        width: 72%;
+        max-width: vars.toRem(160px);
+        height: auto;
+        align-self: center;
+      }
+
       &-button {
         display: none;
       }
+
       &-list {
-        display: flex;
-        width: 80%;
-        margin-top: vars.toRem(60px);
-        padding: 0;
+        position: static;
+        width: 100%;
         height: auto;
+        padding: 0;
+        overflow: visible;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        gap: vars.toRem(2px);
       }
     }
+
+    &-copyright {
+      display: block;
+    }
+  }
+}
+
+@keyframes nav-row-in {
+  from {
+    opacity: 0;
+    transform: translateX(vars.toRem(-14px));
+  }
+  to {
+    opacity: 1;
+    transform: none;
   }
 }

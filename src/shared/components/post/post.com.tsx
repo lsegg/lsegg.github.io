@@ -1,6 +1,11 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faExternalLink, faTimes } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowUpRightFromSquare,
+  faXmark,
+  faMagnifyingGlassPlus,
+} from "@fortawesome/free-solid-svg-icons";
 import podcastChannelThumbnail from "../../../assets/images/podcast-channel-thumbnail.png";
 import yelpcampThumbnail from "../../../assets/images/yelpcamp-thumbnail.png";
 import noSiThumbnail from "../../../assets/images/no-si-thumbnail.png";
@@ -21,6 +26,14 @@ export type PostComProps = {
   description: string;
 };
 
+const IMAGES = [
+  yelpcampThumbnail,
+  podcastChannelThumbnail,
+  noSiThumbnail,
+  wonEmpoweredThumbnail,
+  jsRunnerGameThumbnail,
+];
+
 export const PostCom: any = ({
   category,
   title,
@@ -28,91 +41,123 @@ export const PostCom: any = ({
   type,
   description,
 }: PostComProps) => {
-  const images = [
-    yelpcampThumbnail,
-    podcastChannelThumbnail,
-    noSiThumbnail,
-    wonEmpoweredThumbnail,
-    jsRunnerGameThumbnail,
-  ];
   const [isShown, setIsShown] = useState<boolean>(false);
-  const handleClick = () => {
-    setIsShown(!isShown);
-  };
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const thumbnail = IMAGES[imgIndex];
+  const categoryLabel = category.replace(/-/g, " ");
+
+  const open = () => setIsShown(true);
+  const close = () => setIsShown(false);
+
+  // Escape closes the preview and the page behind it stays put.
+  useEffect(() => {
+    if (!isShown) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") close();
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    document.body.style.overflow = "hidden";
+    closeRef.current?.focus();
+
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = "";
+    };
+  }, [isShown]);
 
   return (
-    <article
-      className={`Post ${category} url(${images[imgIndex]})`}
-      onClick={() => handleClick()}
-      style={{
-        background: `no-repeat url("../../../assets/images/podcast-channel-thumbnail.png")`,
-      }}
-    >
-      <div className={`Post-overlay ${isShown && "isShown"}`}>
-        <FontAwesomeIcon
-          icon={faTimes}
-          className="Post-overlay-icon"
-          onClick={() => handleClick()}
-        />
+    <article className={`Post ${category}`}>
+      <button
+        type="button"
+        className="Post-media"
+        onClick={open}
+        aria-label={`Enlarge preview of ${title}`}
+      >
         <img
-          src={images[imgIndex]}
-          className="Post-overlay-preview"
-          onClick={() => {
-            window.open(type.webUrl, "_blank");
-          }}
-          alt="Post preview"
+          src={thumbnail}
+          className="Post-thumbnail"
+          alt={`${title} preview`}
+          loading="lazy"
         />
-        <div className="Post-overlay-description">
-          <h3 className="Post-overlay-description-title title-large-semibold">
-            {title}
-          </h3>
-          <p className="Post-overlay-description-text paragraph-small-regular">
-            {description}
-          </p>
-        </div>
-      </div>
-      <img
-        src={images[imgIndex]}
-        className="Post-thumbnail"
-        alt="Post thumbnail"
-      />
-      <div className={`Post-hover ${category}`}>
-        <p className={`Post-hover-category paragraph-small-bold  ${category} `}>
-          {category.replace("-", " ").toUpperCase()}
-        </p>
-        <div className="Post-hover-description">
-          <h3 className="Post-hover-description-title title-large-semibold">
-            {title}
-          </h3>
-          <p className="Post-hover-description-text paragraph-small-regular">
-            {description}
-          </p>
-        </div>
-        <span className="Post-hover-buttons">
-          {type.name === "website" && (
-            <>
-              <a
-                href={type.webUrl}
-                className={`Post-hover-buttons-link ${category}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faExternalLink} />
-              </a>
-            </>
-          )}
-          {type.name === "illustration" && (
-            <a
-              href={type.webUrl}
-              className={`Post-hover-buttons-link ${category}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon icon={faExternalLink} />
-            </a>
-          )}
+        <span className="Post-media-veil" aria-hidden="true">
+          <FontAwesomeIcon icon={faMagnifyingGlassPlus} />
         </span>
+        <span className={`Post-category micro-label ${category}`}>
+          {categoryLabel}
+        </span>
+      </button>
+
+      <div className="Post-body">
+        <h3 className="Post-body-title title-medium-semibold">{title}</h3>
+        <p className="Post-body-description paragraph-small-regular">
+          {description}
+        </p>
+        <div className="Post-links">
+          <a
+            href={type.webUrl}
+            className={`Post-links-link micro-label ${category}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {type.name === "website" ? "Read post" : "View piece"}
+            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+          </a>
+        </div>
       </div>
+
+      {isShown &&
+        createPortal(
+          <div
+            className="Post-overlay isShown"
+            role="dialog"
+            aria-modal="true"
+            aria-label={title}
+            onClick={close}
+          >
+            <button
+              type="button"
+              className="Post-overlay-close"
+              onClick={close}
+              ref={closeRef}
+              aria-label="Close preview"
+            >
+              <FontAwesomeIcon icon={faXmark} />
+            </button>
+            <div
+              className="Post-overlay-inner"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <img
+                src={thumbnail}
+                className="Post-overlay-preview"
+                alt={`${title} preview`}
+              />
+              <div className="Post-overlay-description">
+                <p className="Post-overlay-description-category micro-label">
+                  {categoryLabel}
+                </p>
+                <h3 className="Post-overlay-description-title title-large-semibold">
+                  {title}
+                </h3>
+                <p className="Post-overlay-description-text paragraph-medium-regular">
+                  {description}
+                </p>
+                <a
+                  href={type.webUrl}
+                  className="Post-overlay-description-cta isButton"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {type.name === "website" ? "Open post" : "Open piece"}
+                  <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                </a>
+              </div>
+            </div>
+          </div>,
+          document.body
+        )}
     </article>
   );
 };

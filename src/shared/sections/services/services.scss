@@ -2,23 +2,51 @@
 
 .Services {
   &-types {
-    align-self: center;
     display: flex;
     flex-direction: column;
-    gap: vars.toRem(30px);
+    gap: clamp(#{vars.toRem(20px)}, 3vw, #{vars.toRem(32px)});
   }
 
   &-custom {
-    margin: vars.toRem(30px) 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: vars.toRem(6px);
+    margin-top: vars.$space-2xl;
+    padding-top: vars.$space-lg;
+    border-top: 1px solid var(--color-rule);
+    color: var(--color-ink-muted);
+
     &-link {
-      color: vars.$color-secondary;
+      position: relative;
+      color: vars.$color-secondary-deep;
+      font-family: vars.$font-primary-bold;
+
+      // Underline that draws in on hover.
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: vars.toRem(-2px);
+        height: 1px;
+        background-color: currentColor;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.35s vars.$ease-out;
+      }
+
+      &:hover::after,
+      &:focus-visible::after {
+        transform: scaleX(1);
+      }
     }
   }
 
   @media screen and (min-width: vars.$breakpoint-sm-tablet) {
     &-types {
       flex-direction: row;
-      justify-content: center;
+      align-items: stretch;
     }
   }
 }

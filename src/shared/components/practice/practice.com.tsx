@@ -39,40 +39,19 @@ export const PracticeCom: any = ({
   };
 
   return (
-    <div className="Practice" id="practice">
-      <div className="Practice-wrapper">
+    <li className={`Practice Practice--${type}`}>
+      <span className={`Practice-marker ${type}`} aria-hidden="true">
         <FontAwesomeIcon
-          className={`Practice-wrapper-icon ${type}`}
+          className="Practice-marker-icon"
           icon={type === "work" ? faBriefcase : faGraduationCap}
         />
-      </div>
+      </span>
       <div className="Practice-data">
-        <p className="Practice-data-date paragraph-small-regular">
-          {startDate} - {endDate}
+        <p className="Practice-data-date micro-label">
+          {startDate} <span aria-hidden="true">—</span> {endDate}
         </p>
         <h4 className="Practice-data-role title-medium-semibold">{role}</h4>
-        <p className="Practice-data-description paragraph-small-regular">
-          {description}
-        </p>
-        <ul className="Practice-data-list paragraph-small-regular">
-          {displayedItems.map((item, index) => {
-            return (
-              <li className="Practice-data-list-item" key={index}>
-                {item}
-              </li>
-            );
-          })}
-          {hasMoreItems && (
-            <li
-              className="Practice-data-list-item Practice-data-list-toggle"
-              onClick={toggleShowAll}
-            >
-              {showAll ? "Show less" : "[...]"}
-            </li>
-          )}
-        </ul>
-
-        <p className="Practice-data-where paragraph-medium-regular">
+        <p className="Practice-data-where paragraph-small-regular">
           {entity.url ? (
             <a
               href={entity.url}
@@ -80,14 +59,37 @@ export const PracticeCom: any = ({
               target="_blank"
               rel="noopener noreferrer"
             >
-              {entity.name}{" "}
+              {entity.name}
             </a>
           ) : (
-            entity.name
+            <span className="Practice-data-where-name">{entity.name}</span>
           )}
-          - {location}
+          <span className="Practice-data-where-sep" aria-hidden="true">
+            ·
+          </span>
+          {location}
         </p>
+        <p className="Practice-data-description paragraph-small-regular">
+          {description}
+        </p>
+        <ul className="Practice-data-list paragraph-small-regular">
+          {displayedItems.map((item, index) => (
+            <li className="Practice-data-list-item" key={index}>
+              {item}
+            </li>
+          ))}
+        </ul>
+        {hasMoreItems && (
+          <button
+            type="button"
+            className={`Practice-data-toggle micro-label ${type}`}
+            onClick={toggleShowAll}
+            aria-expanded={showAll}
+          >
+            {showAll ? "Show less" : `Show ${items.length - 2} more`}
+          </button>
+        )}
       </div>
-    </div>
+    </li>
   );
 };

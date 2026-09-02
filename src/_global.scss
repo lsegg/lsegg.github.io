@@ -1,182 +1,433 @@
 @use "./vars" as vars;
+@use "./mixins" as m;
 
+// ---------------------------------------------------------------------------
+// Runtime token layer
+// ---------------------------------------------------------------------------
+:root {
+  --color-ink: #{vars.$color-primary};
+  --color-ink-muted: #{vars.$color-ink-muted};
+  --color-ink-subtle: #{vars.$color-ink-subtle};
+  --color-primary: #{vars.$color-primary};
+  --color-terracotta: #{vars.$color-secondary};
+  --color-terracotta-deep: #{vars.$color-secondary-deep};
+  --color-sage: #{vars.$color-tertiary};
+  --color-sage-deep: #{vars.$color-tertiary-deep};
+  --color-wash-terracotta: #{vars.$color-wash-terracotta};
+  --color-wash-sage: #{vars.$color-wash-sage};
+  --color-sand: #{vars.$color-quaternary};
+  --color-paper: #{vars.$color-paper};
+  --color-paper-raised: #{vars.$color-paper-raised};
+  --color-rule: #{vars.$color-rule};
+  --color-rule-strong: #{vars.$color-rule-strong};
+
+  --shadow-print: #{vars.toRem(4px)} #{vars.toRem(4px)} 0
+    #{rgba(vars.$color-primary, 0.07)};
+  --shadow-lift: 0 #{vars.toRem(22px)} #{vars.toRem(44px)}
+    #{vars.toRem(-28px)} #{rgba(vars.$color-primary, 0.45)};
+  --shadow-lift-strong: 0 #{vars.toRem(32px)} #{vars.toRem(60px)}
+    #{vars.toRem(-30px)} #{rgba(vars.$color-primary, 0.5)};
+
+  --ease-out: #{vars.$ease-out};
+  --ease-spring: #{vars.$ease-spring};
+
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+}
+
+// ---------------------------------------------------------------------------
+// Fonts
+// ---------------------------------------------------------------------------
 @font-face {
   font-family: "RalewayBlack";
   src: url("./assets/fonts/Raleway-Black.ttf");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "RalewayBlackItalic";
   src: url("./assets/fonts/Raleway-BlackItalic.ttf");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "RalewayBold";
   src: url("./assets/fonts/Raleway-Bold.ttf");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "RalewayBoldItalic";
   src: url("./assets/fonts/Raleway-BoldItalic.ttf");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "RalewayExtraBold";
   src: url("./assets/fonts/Raleway-ExtraBold.ttf");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "RalewayExtraBoldItalic";
   src: url("./assets/fonts/Raleway-ExtraBoldItalic.ttf");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "RalewayExtraLight";
   src: url("./assets/fonts/Raleway-ExtraLight.ttf");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "RalewayExtraLightItalic";
   src: url("./assets/fonts/Raleway-ExtraLightItalic.ttf");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "RalewayItalic";
   src: url("./assets/fonts/Raleway-Italic.ttf");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "RalewayLight";
   src: url("./assets/fonts/Raleway-Light.ttf");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "RalewayLightItalic";
   src: url("./assets/fonts/Raleway-LightItalic.ttf");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "RalewayMedium";
   src: url("./assets/fonts/Raleway-Medium.ttf");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "RalewayMediumItalic";
   src: url("./assets/fonts/Raleway-MediumItalic.ttf");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "RalewayRegular";
   src: url("./assets/fonts/Raleway-Regular.ttf");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "RalewaySemiBold";
   src: url("./assets/fonts/Raleway-SemiBold.ttf");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "RalewaySemiBoldItalic";
   src: url("./assets/fonts/Raleway-SemiBoldItalic.ttf");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "RalewayThin";
   src: url("./assets/fonts/Raleway-Thin.ttf");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "RalewayThinItalic";
   src: url("./assets/fonts/Raleway-ThinItalic.ttf");
+  font-display: swap;
 }
 
+// ---------------------------------------------------------------------------
+// Base typography
+// ---------------------------------------------------------------------------
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-size: vars.toRem(16px);
+  line-height: 1.65;
+  color: var(--color-ink);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include m.display-type;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+::selection {
+  background-color: vars.$color-quaternary;
+  color: vars.$color-primary;
+}
+
+// ---------------------------------------------------------------------------
+// Type utilities
+// ---------------------------------------------------------------------------
 .paragraph-small-regular {
   font-family: vars.$font-primary-regular;
-  font-size: vars.toRem(12px);
+  font-size: vars.toRem(13.5px);
+  line-height: 1.7;
 }
 
 .paragraph-small-bold {
   font-family: vars.$font-primary-bold;
-  font-size: vars.toRem(12px);
+  font-size: vars.toRem(13.5px);
+  line-height: 1.7;
 }
 
 .paragraph-medium-regular {
   font-family: vars.$font-primary-regular;
-  font-size: vars.toRem(14px);
+  font-size: vars.toRem(15px);
+  line-height: 1.7;
 }
 
 .paragraph-medium-bold {
   font-family: vars.$font-primary-bold;
-  font-size: vars.toRem(14px);
+  font-size: vars.toRem(15px);
+  line-height: 1.7;
 }
 
 .title-medium-semibold {
-  font-family: vars.$font-primary-bold;
-  font-size: vars.toRem(18px);
+  @include m.display-type;
+  font-size: vars.toRem(20px);
+  line-height: 1.2;
 }
 
 .title-large-semibold {
-  font-family: vars.$font-primary-bold;
-  font-size: vars.toRem(24px);
+  @include m.display-type;
+  font-size: clamp(#{vars.toRem(22px)}, 2.2vw, #{vars.toRem(28px)});
 }
 
 .title-x-large-semibold {
-  font-family: vars.$font-primary-bold;
-  font-size: vars.toRem(36px);
+  @include m.display-type;
+  font-size: clamp(#{vars.toRem(32px)}, 5vw, #{vars.toRem(52px)});
 }
 
+.micro-label {
+  @include m.micro-label;
+}
+
+// Screen-reader-only, for labels that must exist but not show.
+.isVisuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+// ---------------------------------------------------------------------------
+// Section shell — consistent vertical rhythm and a capped content column
+// ---------------------------------------------------------------------------
 section {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: vars.toRem(30px);
-  @media screen and (min-width: vars.$breakpoint-lg-desktop) {
-    min-height: 100vh;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: vars.$space-lg;
+  padding: clamp(#{vars.toRem(48px)}, 8vw, #{vars.toRem(104px)})
+    clamp(#{vars.toRem(20px)}, 5vw, #{vars.toRem(56px)});
+  position: relative;
+  scroll-margin-top: vars.$header-height;
+
+  // On wide screens the header becomes a side rail, so nothing is covering
+  // the top of a section any more.
+  @media screen and (min-width: vars.$breakpoint-lg-tablet) {
+    scroll-margin-top: 0;
+  }
+
+  // Everything inside a section shares one measured, centred column.
+  > * {
+    width: 100%;
+    max-width: vars.$content-max;
+    margin-inline: auto;
   }
 }
 
+// ---------------------------------------------------------------------------
+// Buttons
+// ---------------------------------------------------------------------------
 .isButton {
-  text-transform: uppercase;
+  @include m.micro-label;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: vars.$space-xs;
   color: vars.$color-quinary;
-  border-radius: vars.toRem(35px);
-  background-color: vars.$color-secondary;
-  margin: vars.toRem(10px);
-  padding: vars.toRem(10px) vars.toRem(15px);
-  &:hover {
-    color: vars.$color-secondary;
-    background-color: vars.$color-quinary;
+  border-radius: vars.$radius-pill;
+  background-color: vars.$color-secondary-deep;
+  padding: vars.toRem(13px) vars.toRem(26px);
+  cursor: pointer;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  box-shadow: 0 vars.toRem(10px) vars.toRem(20px) vars.toRem(-12px)
+    rgba(vars.$color-secondary-deep, 0.85);
+  transition: transform 0.35s vars.$ease-spring, box-shadow 0.35s vars.$ease-out,
+    color 0.3s vars.$ease-out;
+
+  // Ink wash that fills from the bottom on hover.
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color: vars.$color-primary;
+    transform: translateY(101%);
+    transition: transform 0.4s vars.$ease-out;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: vars.$color-quinary;
+    transform: translateY(vars.toRem(-2px));
+    box-shadow: 0 vars.toRem(16px) vars.toRem(26px) vars.toRem(-14px)
+      rgba(vars.$color-primary, 0.6);
+
+    &::before {
+      transform: translateY(0);
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  // Quieter variant for secondary actions.
+  &.isButton--ghost {
+    color: vars.$color-primary;
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1px var(--color-rule-strong);
+
+    &::before {
+      background-color: vars.$color-primary;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: vars.$color-quinary;
+      box-shadow: inset 0 0 0 1px vars.$color-primary;
+    }
   }
 }
 
+// ---------------------------------------------------------------------------
+// Cards — paper with a hairline edge and an offset "printed" shadow
+// ---------------------------------------------------------------------------
 .isCard {
-  padding: vars.toRem(15px);
-  background-color: white;
-  border-radius: vars.toRem(8px);
-  box-shadow: 0 5px 20px 0 rgb(69 67 96 / 10%);
+  padding: clamp(#{vars.toRem(18px)}, 3vw, #{vars.toRem(32px)});
+  background-color: var(--color-paper-raised);
+  border: 1px solid var(--color-rule);
+  border-radius: vars.$radius-lg;
+  box-shadow: var(--shadow-print);
   width: 100%;
   box-sizing: border-box;
-
-  @media screen and (min-width: vars.$breakpoint-sm-tablet) {
-    padding: vars.toRem(30px);
-  }
-}
-
-@mixin transition($second) {
-  -webkit-transition: all $second ease-in-out;
-  -moz-transition: all $second ease-in-out;
-  transition: all $second ease-in-out;
+  position: relative;
 }
 
 .isTranslatedY {
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
   transform: translateY(0);
-  @include transition(0.2s);
+  transition: transform 0.4s vars.$ease-out, box-shadow 0.4s vars.$ease-out,
+    border-color 0.4s vars.$ease-out;
 
-  &:hover {
-    -webkit-transform: translateY(vars.toRem(-5px));
-    -ms-transform: translateY(vars.toRem(-5px));
-    transform: translateY(vars.toRem(-5px));
+  &:hover,
+  &:focus-within {
+    transform: translateY(vars.toRem(-6px));
+    border-color: var(--color-rule-strong);
+    box-shadow: var(--shadow-lift);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Decorative hairline rule, used to separate section blocks
+// ---------------------------------------------------------------------------
+.isRule {
+  height: 1px;
+  border: 0;
+  background: linear-gradient(
+    to right,
+    var(--color-rule-strong),
+    transparent 70%
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Focus
+// ---------------------------------------------------------------------------
+// The outline already follows each element's own border-radius, so this rule
+// must not set border-radius itself or it would reshape round targets.
+:focus-visible {
+  outline: vars.toRem(2px) solid vars.$color-secondary-deep;
+  outline-offset: vars.toRem(3px);
+}
+
+// ---------------------------------------------------------------------------
+// Scroll reveal — elements tagged with data-reveal fade up once in view
+// ---------------------------------------------------------------------------
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(vars.toRem(22px));
+  transition: opacity 0.7s vars.$ease-out, transform 0.7s vars.$ease-out;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+[data-reveal].isRevealed {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
   }
 }

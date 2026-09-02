@@ -1,20 +1,53 @@
-// Fonts
-$font-primary-light: "RalewayLight", sans-serif !default;
-$font-primary-regular: "RalewayRegular", sans-serif !default;
-$font-primary-medium: "RalewaySemiBold", sans-serif !default;
-$font-primary-bold: "RalewayBold", sans-serif !default;
+// ---------------------------------------------------------------------------
+// Design tokens
+// Aesthetic: warm editorial risograph — cream paper stock, two ink accents,
+// navy for type. Every value here has a matching CSS custom property in
+// _global.scss so runtime styling and Sass stay in sync.
+// ---------------------------------------------------------------------------
+@use "sass:color";
 
-// Colors
-$color-primary: #313349 !default;
-$color-secondary: #e07a5f !default;
-$color-tertiary: #81b29a !default;
-$color-quaternary: #f2cc8f !default;
-$color-quinary: #f4f1de !default;
+// Fonts -------------------------------------------------------------------
+// Fraunces carries the personality (display), Raleway keeps the body calm.
+$font-display: "Fraunces", "Georgia", serif !default;
+
+$font-primary-light: "RalewayLight", "Raleway", sans-serif !default;
+$font-primary-regular: "RalewayRegular", "Raleway", sans-serif !default;
+$font-primary-medium: "RalewaySemiBold", "Raleway", sans-serif !default;
+$font-primary-bold: "RalewayBold", "Raleway", sans-serif !default;
+
+// Colors ------------------------------------------------------------------
+$color-primary: #313349 !default; // ink
+$color-secondary: #e07a5f !default; // terracotta ink
+$color-tertiary: #81b29a !default; // sage ink
+$color-quaternary: #f2cc8f !default; // sand
+$color-quinary: #f4f1de !default; // paper
 
 $color-neutral-1: #f3f3f7 !default;
 $color-neutral-2: #bbc4c4 !default;
 $color-neutral-3: #454545 !default;
 $color-neutral-4: #000000 !default;
+
+// Derived tones. Nothing new enters the scheme: these are the same five hues
+// shifted in lightness so they can carry text.
+//
+// The straight terracotta and sage only reach ~2.2-2.8:1 on paper and ~2.1-2.6:1
+// under cream, so they are kept for graphics — rules, washes, markers — while
+// the "deep" variants take over wherever the colour sits behind or under type.
+$color-secondary-deep: color.adjust($color-secondary, $lightness: -20%) !default;
+$color-tertiary-deep: color.adjust($color-tertiary, $lightness: -25%) !default;
+
+$color-paper: color.mix($color-quinary, #ffffff, 55%) !default; // page ground
+$color-paper-raised: color.mix($color-quinary, #ffffff, 12%) !default; // cards
+$color-ink: $color-primary !default;
+$color-ink-muted: color.mix($color-primary, $color-quinary, 82%) !default;
+$color-ink-subtle: color.mix($color-primary, $color-quinary, 72%) !default;
+$color-rule: rgba($color-primary, 0.14) !default;
+$color-rule-strong: rgba($color-primary, 0.28) !default;
+
+// Paper tinted with a single ink — the riso "light pass". Used where a block
+// needs to read as coloured without putting cream text on saturated ink.
+$color-wash-terracotta: color.mix($color-secondary, $color-paper, 14%) !default;
+$color-wash-sage: color.mix($color-tertiary, $color-paper, 14%) !default;
 
 // Default pixel size
 $root-px-size: 16px !default;
@@ -25,7 +58,35 @@ $root-px-size: 16px !default;
   @return $remValue;
 }
 
-// Breakpoints
+// Spacing scale -----------------------------------------------------------
+$space-2xs: toRem(4px) !default;
+$space-xs: toRem(8px) !default;
+$space-sm: toRem(12px) !default;
+$space-md: toRem(16px) !default;
+$space-lg: toRem(24px) !default;
+$space-xl: toRem(32px) !default;
+$space-2xl: toRem(48px) !default;
+$space-3xl: toRem(64px) !default;
+$space-4xl: toRem(96px) !default;
+
+// Radii -------------------------------------------------------------------
+// Kept tight and close together: a nearly-square corner suits cut-and-stacked
+// paper better than a soft one, and it keeps the card edges reading as printed
+// plates rather than UI chrome. Pills stay fully round by intent.
+$radius-sm: toRem(2px) !default; // chips, tooltips, nav rows
+$radius-md: toRem(3px) !default; // media and images
+$radius-lg: toRem(4px) !default; // cards
+$radius-pill: toRem(999px) !default;
+
+// Layout ------------------------------------------------------------------
+$header-height: toRem(56px) !default;
+$content-max: toRem(1080px) !default;
+
+// Motion ------------------------------------------------------------------
+$ease-out: cubic-bezier(0.16, 1, 0.3, 1) !default;
+$ease-spring: cubic-bezier(0.34, 1.4, 0.64, 1) !default;
+
+// Breakpoints -------------------------------------------------------------
 $breakpoint-mobile: toRem(320px) !default;
 $breakpoint-sm-tablet: toRem(768px) !default;
 $breakpoint-lg-tablet: toRem(1024px) !default;

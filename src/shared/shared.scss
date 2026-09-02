@@ -1,17 +1,4 @@
-// Components
-@use "./components/job/job.scss";
-@use "./components/practice/practice.scss";
-@use "./components/title/title.scss";
-@use "./components/project/project.scss";
-
-// Layouts
-@use "./layouts/header/header.scss";
-
-// Sections
-@use "./sections/about/about.scss";
-@use "./sections/contact/contact.scss";
-@use "./sections/experience/experience.scss";
-@use "./sections/home/home.scss";
-@use "./sections/portfolio/portfolio.scss";
-@use "./sections/services/services.scss";
-@use "./sections/site-in-construction/site-in-construction.scss";
+// Component, layout and section styles are co-located with their modules and
+// imported from the corresponding .tsx file. Pulling them in here as well
+// would emit every rule twice and make cascade order depend on which copy the
+// bundler happened to write last, so this file intentionally stays empty.

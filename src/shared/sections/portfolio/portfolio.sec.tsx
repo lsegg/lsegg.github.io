@@ -72,13 +72,17 @@ export const PortfolioSection = forwardRef((_, ref) => {
 
   return (
     <section className="Portfolio" id="portfolio">
-      <TitleCom content="Recent Works" sectionClass="Portfolio-title" />
+      <TitleCom
+        content="Recent Works"
+        sectionClass="Portfolio-title"
+        eyebrow="Selected projects"
+      />
       <FilterCom
         filter={filter}
         onFilterChange={handleChange}
         options={filterOptions}
       />
-      <div className="Portfolio-works">
+      <div className="Portfolio-works" data-reveal>
         {projects.map((project) => {
           return (
             <ProjectCom
@@ -96,7 +100,7 @@ export const PortfolioSection = forwardRef((_, ref) => {
         <div className="Portfolio-load-more">
           <button
             onClick={handleLoadMore}
-            className="Portfolio-load-more-button paragraph-medium-bold isButton"
+            className="Portfolio-load-more-button isButton isButton--ghost"
           >
             Load more
           </button>

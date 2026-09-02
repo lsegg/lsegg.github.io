@@ -3,6 +3,7 @@ import {
   faPersonBurst,
   faHandshake,
   faTheaterMasks,
+  faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 import "./plan.scss";
 
@@ -30,25 +31,36 @@ export const PlanCom: React.FC<PlanProps> = ({
   };
 
   return (
-    <div className={`Plan ${isPopular ? "popular" : ""} isCard isTranslatedY`}>
-      {isPopular && <div className="Plan-badge">Most Popular</div>}
-      <FontAwesomeIcon className="Plan-icon" icon={iconMap[icon]} />
-      <h3 className="Plan-title paragraph-medium-bold">{title}</h3>
-      <div className="Plan-price">{price}</div>
+    <div className={`Plan ${isPopular ? "isPopular" : ""} isTranslatedY`}>
+      {isPopular && <p className="Plan-badge micro-label">Most popular</p>}
+      <div className="Plan-head">
+        <FontAwesomeIcon
+          className="Plan-icon"
+          icon={iconMap[icon]}
+          aria-hidden="true"
+        />
+        <h3 className="Plan-title title-medium-semibold">{title}</h3>
+        <p className="Plan-price">{price}</p>
+      </div>
       <ul className="Plan-summary">
         {features.map((feature, index) => (
-          <li className="Plan-feature" key={index}>
-            {feature}
+          <li className="Plan-feature paragraph-small-regular" key={index}>
+            <FontAwesomeIcon
+              className="Plan-feature-tick"
+              icon={faCheck}
+              aria-hidden="true"
+            />
+            <span>{feature}</span>
           </li>
         ))}
       </ul>
       <a
         href={link}
-        className="Plan-button paragraph-medium-bold isButton"
+        className="Plan-button isButton"
         target="_blank"
         rel="noopener noreferrer"
       >
-        Get Started
+        Get started
       </a>
     </div>
   );

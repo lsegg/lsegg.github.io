@@ -2,7 +2,8 @@
   .cursor {
     display: inline-block;
     width: 3px;
-    animation: blink 1s infinite;
+    margin-left: 1px;
+    animation: blink 1.05s steps(1, end) infinite;
   }
 }
 

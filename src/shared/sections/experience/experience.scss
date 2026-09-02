@@ -2,25 +2,50 @@
 
 .Experience {
   &-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: vars.toRem(30px);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(#{vars.toRem(32px)}, 5vw, #{vars.toRem(56px)});
   }
 
-  @media screen and (min-width: vars.$breakpoint-sm-tablet) {
-    &-wrapper {
-      flex-direction: row;
-      overflow-y: hidden;
+  &-subsection {
+    min-width: 0;
+
+    &-heading {
+      display: flex;
+      align-items: center;
+      gap: vars.$space-sm;
+      margin-bottom: vars.$space-lg;
+      color: var(--color-ink-subtle);
+
+      // Rule trailing the column label.
+      &::after {
+        content: "";
+        flex: 1 1 auto;
+        height: 1px;
+        background: linear-gradient(to right, currentColor, transparent);
+        opacity: 0.35;
+      }
+
+      &.work {
+        color: vars.$color-secondary-deep;
+      }
+
+      &.academic {
+        color: vars.$color-tertiary-deep;
+      }
     }
-    &-subsection {
-      width: 50%;
-      overflow-y: scroll;
+
+    &-list {
+      display: flex;
+      flex-direction: column;
     }
   }
 
-  @media screen and (min-width: vars.$breakpoint-lg-desktop) {
+  @media screen and (min-width: vars.$breakpoint-lg-tablet) {
     &-wrapper {
-      margin-bottom: 10%;
+      // Work history is denser, so it gets the wider track.
+      grid-template-columns: 1.15fr 1fr;
+      align-items: start;
     }
   }
 }

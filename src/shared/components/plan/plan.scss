@@ -1,68 +1,107 @@
 @use "../../../vars" as vars;
 
+// ---------------------------------------------------------------------------
+// Pricing plate. The "popular" tier reads as a second print plate: sage edge,
+// a tag pinned to the top edge, and a lifted resting state.
+// ---------------------------------------------------------------------------
 .Plan {
-  border-radius: vars.toRem(10px);
-  padding: vars.toRem(20px);
-  transition: transform 0.3s ease;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  padding: clamp(#{vars.toRem(26px)}, 3vw, #{vars.toRem(36px)});
+  border-radius: vars.$radius-lg;
+  border: 1px solid var(--color-rule);
+  background-color: var(--color-paper-raised);
+  box-shadow: var(--shadow-print);
 
-  &.popular {
-    border: 1.5px solid vars.$color-tertiary;
+  &.isPopular {
+    border-color: vars.$color-tertiary-deep;
+    box-shadow: 0 vars.toRem(24px) vars.toRem(48px) vars.toRem(-30px)
+      rgba(vars.$color-tertiary-deep, 0.8);
+
+    .Plan-price {
+      color: vars.$color-tertiary-deep;
+    }
+
+    &:hover,
+    &:focus-within {
+      box-shadow: var(--shadow-lift-strong);
+    }
   }
 
-  &-title {
-    font-size: vars.toRem(28px);
-    color: vars.$color-primary;
-    margin-bottom: vars.toRem(10px);
-  }
-
+  // Tag pinned across the top edge rather than rotated down the side.
   &-badge {
-    color: rgb(255, 255, 255);
-    transform: rotate(-90deg);
     position: absolute;
-    right: 0px;
-    top: 38px;
-    font-size: vars.toRem(14px);
-    font-weight: 400;
-    border-top-left-radius: vars.toRem(15px);
-    border-bottom-left-radius: vars.toRem(15px);
-    background: vars.$color-tertiary;
-    padding: vars.toRem(7px) vars.toRem(12px);
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: vars.toRem(6px) vars.toRem(14px);
+    border-radius: vars.$radius-pill;
+    background-color: vars.$color-tertiary-deep;
+    color: vars.$color-quinary;
+    font-size: vars.toRem(9px);
+    white-space: nowrap;
+  }
+
+  &-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: vars.$space-lg;
+    margin-bottom: vars.$space-lg;
+    border-bottom: 1px solid var(--color-rule);
+    width: 100%;
   }
 
   &-icon {
-    font-size: vars.toRem(84px);
+    font-size: vars.toRem(46px);
     color: vars.$color-primary;
-    opacity: 0.5;
-    margin: vars.toRem(20px) 0;
+    opacity: 0.22;
+    margin-bottom: vars.$space-md;
+  }
+
+  &-title {
+    color: var(--color-ink);
   }
 
   &-price {
-    font-size: vars.toRem(30px);
-    font-weight: bolder;
-    color: vars.$color-tertiary;
-    margin-bottom: vars.toRem(10px);
+    font-family: vars.$font-display;
+    font-variation-settings: "SOFT" 30, "WONK" 1;
+    font-size: clamp(#{vars.toRem(30px)}, 3.4vw, #{vars.toRem(40px)});
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: vars.$color-secondary-deep;
+    margin-top: vars.$space-xs;
   }
 
   &-summary {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 vars.toRem(20px) 0;
+    display: flex;
+    flex-direction: column;
+    gap: vars.$space-sm;
+    width: 100%;
+    margin-bottom: vars.$space-xl;
     flex-grow: 1;
+    text-align: left;
   }
 
   &-feature {
-    padding: vars.toRem(10px) 0;
-    color: vars.$color-neutral-3;
-    font-size: vars.toRem(12px);
     display: flex;
+    align-items: flex-start;
+    gap: vars.$space-sm;
+    color: var(--color-ink-muted);
+
+    &-tick {
+      flex: 0 0 auto;
+      margin-top: vars.toRem(5px);
+      font-size: vars.toRem(10px);
+      color: vars.$color-tertiary-deep;
+    }
   }
 
   &-button {
-    text-align: center;
-    width: fit-content;
+    width: 100%;
+    max-width: vars.toRem(220px);
   }
 }

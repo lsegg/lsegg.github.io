@@ -1,12 +1,32 @@
 @use "../../vars" as vars;
 
 .HomeScreen {
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
+  min-width: 0;
 
-  section {
-    position: relative;
-    z-index: 1;
+  // Alternating hairlines between the paper sections give the long scroll a
+  // sense of pagination without adding visual weight.
+  section + section:not(.Contact) {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: clamp(#{vars.toRem(20px)}, 5vw, #{vars.toRem(56px)});
+      right: clamp(#{vars.toRem(20px)}, 5vw, #{vars.toRem(56px)});
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        transparent,
+        var(--color-rule) 12%,
+        var(--color-rule) 88%,
+        transparent
+      );
+    }
+  }
+
+  // The hero is a dark panel; its own edge separates it from what follows.
+  .Home + section::before {
+    display: none;
   }
 }

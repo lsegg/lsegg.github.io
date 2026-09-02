@@ -1,32 +1,75 @@
 @use "../../../vars" as vars;
 
+// ---------------------------------------------------------------------------
+// Mobile-first: the three labels run about 400px side by side and cannot fit
+// on one line on a phone. Left to wrap, they formed a lopsided two-row
+// capsule, so the narrow layout stacks them into a column instead and squares
+// the container off; the pill returns once there is room for a single row.
+// ---------------------------------------------------------------------------
 .Filter {
   display: flex;
-  justify-content: space-between;
-  align-self: center;
-  margin-bottom: vars.toRem(15px);
-  width: 100%;
+  // The track hugs its content, so the stack is centred in the content
+  // column rather than left as an island in the empty half.
+  justify-content: center;
+  min-width: 0;
+  margin-bottom: vars.$space-lg;
+
+  &-track {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: vars.toRem(3px);
+    padding: vars.toRem(4px);
+    // A pill radius on a tall stack reads as a standing capsule, so the
+    // column takes the same squared corner as the cards.
+    border-radius: vars.$radius-lg;
+    border: 1px solid var(--color-rule);
+    background-color: rgba(vars.$color-primary, 0.03);
+  }
 
   &-label {
     cursor: pointer;
-    background-color: transparent;
-    color: vars.$color-tertiary;
-    font-size: vars.toRem(12px);
-    font-weight: bolder;
+    position: relative;
+    padding: vars.toRem(8px) vars.toRem(16px);
+    border-radius: vars.$radius-pill;
+    color: var(--color-ink-subtle);
+    font-size: vars.toRem(10px);
+    white-space: nowrap;
+    // Chips stretch to the widest label in the column, so the text is
+    // centred too — otherwise the filled chip is all empty space on one side.
+    text-align: center;
+    transition: color 0.28s vars.$ease-out, background-color 0.28s vars.$ease-out;
 
     &:hover {
-      color: vars.$color-primary;
+      color: var(--color-ink);
+      background-color: rgba(vars.$color-primary, 0.05);
     }
+
+    &.isActive {
+      color: vars.$color-quinary;
+      background-color: vars.$color-primary;
+    }
+
+    // Keyboard focus lands on the hidden input, so mirror it on the chip.
     &:focus-within {
-      color: vars.$color-primary;
+      outline: vars.toRem(2px) solid vars.$color-secondary-deep;
+      outline-offset: vars.toRem(2px);
     }
-  }
-  &-input {
-    opacity: 0;
   }
 
   @media screen and (min-width: vars.$breakpoint-sm-tablet) {
+    // Back to the left in row mode, in line with the section headings.
     justify-content: flex-start;
-    margin: vars.toRem(20px) 0;
+    margin-bottom: vars.$space-xl;
+
+    &-track {
+      flex-direction: row;
+      align-items: center;
+      border-radius: vars.$radius-pill;
+      // No wrapping in row mode — a wrapped row inside a pill is the shape
+      // this layout exists to avoid. Adding a fourth category means raising
+      // the breakpoint, not letting it fold.
+      flex-wrap: nowrap;
+    }
   }
 }

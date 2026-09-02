@@ -1,0 +1,26 @@
+@use "./vars" as vars;
+
+// ---------------------------------------------------------------------------
+// Output-free helpers. Kept separate from _global.scss so component
+// stylesheets can reach for a mixin without pulling a second copy of the
+// global rules (fonts, :root tokens, base type) into their own CSS chunk.
+// ---------------------------------------------------------------------------
+
+// A hairline label: uppercase, tracked out, small. Used for eyebrows,
+// categories and metadata throughout.
+@mixin micro-label {
+  font-family: vars.$font-primary-bold;
+  font-size: vars.toRem(11px);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+@mixin display-type {
+  font-family: vars.$font-display;
+  font-optical-sizing: auto;
+  font-variation-settings: "SOFT" 20, "WONK" 1;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.04;
+}

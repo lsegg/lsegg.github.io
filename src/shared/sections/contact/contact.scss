@@ -1,36 +1,132 @@
 @use "../../../vars" as vars;
 
+// ---------------------------------------------------------------------------
+// Closing ink panel — bookends the hero so the page opens and shuts on the
+// same dark plate. The email address is the largest thing on it.
+// ---------------------------------------------------------------------------
 .Contact {
-  margin-top: 10vh;
-  min-height: 100vh;
-  position: relative;
-  z-index: 0;
-  clear: both;
-  margin-top: vars.toRem(100px);
+  background-color: vars.$color-primary;
+  color: vars.$color-quinary;
+  overflow: hidden;
+  isolation: isolate;
+  margin-top: vars.$space-4xl;
 
-  &-title {
-    margin-bottom: vars.toRem(10px);
+  &-wash {
+    position: absolute;
+    z-index: -1;
+    width: vars.toRem(560px);
+    height: vars.toRem(560px);
+    right: vars.toRem(-180px);
+    top: vars.toRem(-200px);
+    max-width: none;
+    margin: 0;
+    border-radius: 50%;
+    filter: blur(vars.toRem(100px));
+    background: radial-gradient(
+      circle,
+      rgba(vars.$color-quaternary, 0.32),
+      transparent 68%
+    );
+    pointer-events: none;
   }
 
-  &-image {
-    align-self: center;
-    width: 70%;
+  &-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: vars.$space-2xl;
+    align-items: center;
   }
 
-  &-email {
-    &-link {
-      color: vars.$color-secondary;
+  // Heading tokens flip to paper on the ink panel.
+  .Title {
+    color: vars.$color-quinary;
+
+    &-icon {
+      color: vars.$color-quinary;
+      opacity: 0.09;
+    }
+
+    &-eyebrow {
+      color: vars.$color-quaternary;
+    }
+
+    &-rule {
+      background: linear-gradient(
+        to right,
+        rgba(vars.$color-quinary, 0.35),
+        transparent
+      );
     }
   }
 
-  @media screen and (min-width: vars.$breakpoint-sm-tablet) {
-    margin-top: vars.toRem(100px);
+  &-subtitle {
+    color: rgba(vars.$color-quinary, 0.7);
+    max-width: 44ch;
   }
-  @media screen and (min-width: vars.$breakpoint-lg-tablet) {
-    background: no-repeat center/50%
-      url("../../../assets/images/contacting.png");
+
+  // -- The email, treated as the section's headline ------------------------
+  &-email {
+    display: inline-flex;
+    align-items: center;
+    gap: vars.$space-md;
+    margin-top: vars.$space-xl;
+    color: vars.$color-quinary;
+
+    &-address {
+      font-family: vars.$font-display;
+      font-variation-settings: "SOFT" 30, "WONK" 1;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      font-size: clamp(#{vars.toRem(22px)}, 3.6vw, #{vars.toRem(38px)});
+      line-height: 1.15;
+      background-image: linear-gradient(
+        vars.$color-secondary,
+        vars.$color-secondary
+      );
+      background-repeat: no-repeat;
+      background-size: 100% vars.toRem(2px);
+      background-position: 0 100%;
+      transition: background-size 0.4s vars.$ease-out, color 0.3s vars.$ease-out;
+    }
+
+    &-icon {
+      flex: 0 0 auto;
+      font-size: vars.toRem(16px);
+      color: vars.$color-secondary;
+      transition: transform 0.4s vars.$ease-spring;
+    }
+
+    &:hover,
+    &:focus-visible {
+      .Contact-email-address {
+        color: vars.$color-quaternary;
+        background-size: 0% vars.toRem(2px);
+      }
+
+      .Contact-email-icon {
+        transform: translateX(vars.toRem(8px));
+      }
+    }
+  }
+
+  &-image {
+    width: min(78%, #{vars.toRem(380px)});
+    justify-self: center;
+    // The artwork is line art on transparent; a soft glow seats it on the ink.
+    filter: drop-shadow(
+      0 vars.toRem(24px) vars.toRem(40px) rgba(#000, 0.45)
+    );
+  }
+
+  @media screen and (min-width: vars.$breakpoint-sm-tablet) {
+    &-grid {
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: clamp(#{vars.toRem(32px)}, 5vw, #{vars.toRem(64px)});
+    }
+
     &-image {
-      width: 35%;
+      width: 100%;
+      max-width: vars.toRem(400px);
     }
   }
 }

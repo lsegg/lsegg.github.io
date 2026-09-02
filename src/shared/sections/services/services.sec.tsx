@@ -23,8 +23,12 @@ export const ServicesSection: any = () => {
 
   return (
     <section className="Services" id="services">
-      <TitleCom content="Services" sectionClass="Services-title" />
-      <div className="Services-types">
+      <TitleCom
+        content="Services"
+        sectionClass="Services-title"
+        eyebrow="What I can do for you"
+      />
+      <div className="Services-types" data-reveal>
         <JobCom
           title="Web Development"
           description={webDevDesc}
@@ -36,7 +40,7 @@ export const ServicesSection: any = () => {
           onClick={() => handleJobClick("Illustration")}
         />
       </div>
-      <div className="Services-custom">
+      <div className="Services-custom paragraph-medium-regular" data-reveal>
         Looking for a custom job?{" "}
         <a href="#contact" className="Services-custom-link">
           Contact me! 👇

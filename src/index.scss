@@ -3,40 +3,121 @@
 @use "./screens/screens.scss";
 @use "./shared/shared.scss";
 
-* {
+*,
+*::before,
+*::after {
   border: 0;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  // Anchor targets clear the sticky mobile bar.
+  scroll-padding-top: vars.$header-height;
+}
+
+// Slim, palette-matched scrollbars.
+* {
+  scrollbar-width: thin;
+  scrollbar-color: vars.$color-neutral-2 transparent;
+
   &::-webkit-scrollbar {
-    width: 0;
-    border-radius: 3px;
-    color: vars.$color-primary;
+    width: vars.toRem(8px);
+    height: vars.toRem(8px);
   }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
   &::-webkit-scrollbar-thumb {
-    width: toRem(3px);
-    border-radius: 3px;
-    color: vars.$color-neutral-3;
+    border-radius: vars.$radius-pill;
+    background-color: rgba(vars.$color-primary, 0.22);
+    border: vars.toRem(2px) solid transparent;
+    background-clip: content-box;
+
+    &:hover {
+      background-color: rgba(vars.$color-primary, 0.4);
+    }
   }
+}
+
+body {
+  background-color: var(--color-paper);
+  position: relative;
+  overflow-x: hidden;
+}
+
+// Paper grain. Sits above the layout but below interaction.
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background-image: var(--grain);
+  background-size: vars.toRem(160px) vars.toRem(160px);
+  opacity: 0.035;
+  mix-blend-mode: multiply;
 }
 
 #root {
   font-family: vars.$font-primary-regular;
-  height: 100vh;
-  width: 100vw;
-  background-color: vars.$color-neutral-1;
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
 }
 
 .App {
-  height: 100vh;
-  width: 100vw;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+
   &-section-container {
-    overflow-x: hidden;
-    overflow-y: auto;
+    min-width: 0;
   }
+
+  // Keyboard-only escape hatch past the nav rail.
+  &-skip-link {
+    position: fixed;
+    top: vars.toRem(8px);
+    left: vars.toRem(8px);
+    z-index: 200;
+    padding: vars.toRem(10px) vars.toRem(16px);
+    border-radius: vars.$radius-pill;
+    background-color: vars.$color-primary;
+    color: vars.$color-quinary;
+    font-family: vars.$font-primary-bold;
+    font-size: vars.toRem(11px);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    transform: translateY(-200%);
+    transition: transform 0.25s vars.$ease-out;
+
+    &:focus-visible {
+      transform: none;
+    }
+  }
+
+  // Two-column shell: a full-height ink sidebar and the paper column.
   @media screen and (min-width: vars.$breakpoint-lg-tablet) {
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: minmax(#{vars.toRem(210px)}, 1fr) 4fr;
+    align-items: start;
+
+    // The paper column must be able to shrink inside the grid track,
+    // otherwise wide cards force a horizontal scrollbar.
+    > *:not(.Header) {
+      min-width: 0;
+    }
+  }
+
+  @media screen and (min-width: vars.$breakpoint-lg-desktop) {
+    grid-template-columns: minmax(#{vars.toRem(250px)}, 1fr) 5fr;
   }
 }

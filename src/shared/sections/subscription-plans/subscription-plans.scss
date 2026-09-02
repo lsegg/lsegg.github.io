@@ -1,24 +1,29 @@
 @use "../../../vars" as vars;
 
 .Subscription {
-  padding: vars.toRem(20px) vars.toRem(20px);
-  background-color: vars.$color-neutral-1;
+  &-intro {
+    margin-bottom: vars.$space-2xl;
+
+    // The subtitle carries the section, so the heading tucks in closer.
+    .Title {
+      margin-bottom: vars.$space-sm;
+    }
+  }
+
+  &-subtitle {
+    color: var(--color-ink-muted);
+    max-width: 46ch;
+  }
 
   &-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    max-width: vars.toRem(1200px);
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 768px) {
-  .Subscription {
-    padding: 3rem 1rem;
-
-    &-grid {
-      grid-template-columns: 1fr;
-    }
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min(100%, #{vars.toRem(260px)}), 1fr)
+    );
+    gap: clamp(#{vars.toRem(24px)}, 3vw, #{vars.toRem(32px)});
+    // Leaves room for the "most popular" tag overhanging the top edge.
+    padding-top: vars.$space-sm;
+    align-items: stretch;
   }
 }

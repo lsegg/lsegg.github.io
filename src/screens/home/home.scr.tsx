@@ -8,6 +8,7 @@ import { PortfolioSection } from "../../shared/sections/portfolio/portfolio.sec"
 import { SubscriptionPlansSection } from "../../shared/sections/subscription-plans/subscription-plans.sec";
 import { ReviewsSection } from "../../shared/sections/reviews/reviews.sec";
 import { ContactSection } from "../../shared/sections/contact/contact.sec";
+import { FEATURES } from "../../features";
 import "./home.scss";
 
 export const HomeScr: any = () => {
@@ -23,8 +24,8 @@ export const HomeScr: any = () => {
           <ExperienceSection />
           <PortfolioSection />
           <ReviewsSection />
-          <SubscriptionPlansSection />
-          <BlogSection />
+          {FEATURES.subscriptionPlans && <SubscriptionPlansSection />}
+          {FEATURES.blog && <BlogSection />}
           <ContactSection />
         </>
       )}

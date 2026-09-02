@@ -1,29 +1,137 @@
 @use "../../../vars" as vars;
-@use "../../../global";
+@use "../../../mixins" as m;
 
+// ---------------------------------------------------------------------------
+// Service card — the riso "light pass": paper tinted with a single ink, a
+// saturated rule across the top edge, and type in the house ink.
+// ---------------------------------------------------------------------------
 .Job {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: stretch;
+  gap: vars.$space-md;
   width: 100%;
+  position: relative;
+  text-align: left;
+  overflow: hidden;
+  padding: clamp(#{vars.toRem(20px)}, 3vw, #{vars.toRem(32px)});
+  border-radius: vars.$radius-lg;
+  border: 1px solid var(--color-rule);
+  color: var(--color-ink);
+  box-shadow: var(--shadow-print);
+  cursor: default;
 
-  &-header-title {
-    color: vars.$color-quinary;
-    text-align: end;
-  }
-
-  &-img {
-    width: 100%;
+  // Saturated ink stripe along the top — where the bright accent still lives.
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: vars.toRem(4px);
   }
 
   &-web-development {
-    background-color: vars.$color-secondary;
+    background-color: var(--color-wash-terracotta);
+
+    &::after {
+      background-color: vars.$color-secondary;
+    }
   }
+
   &-illustration {
-    background-color: vars.$color-tertiary;
+    background-color: var(--color-wash-sage);
+
+    &::after {
+      background-color: vars.$color-tertiary;
+    }
+  }
+
+  // Grain over the wash so it reads as printed rather than filled.
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: var(--grain);
+    background-size: vars.toRem(160px) vars.toRem(160px);
+    opacity: 0.06;
+    mix-blend-mode: multiply;
+  }
+
+  &-header {
+    display: flex;
+    flex-direction: column;
+    gap: vars.$space-2xs;
+
+    &-kicker {
+      color: var(--color-ink-subtle);
+    }
+
+    &-title {
+      color: var(--color-ink);
+      text-align: left;
+    }
+  }
+
+  &-web-development &-header-kicker {
+    color: vars.$color-secondary-deep;
+  }
+
+  &-illustration &-header-kicker {
+    color: vars.$color-tertiary-deep;
+  }
+
+  &-img {
+    display: block;
+    width: 78%;
+    max-width: vars.toRem(240px);
+    align-self: center;
+    margin-block: vars.$space-xs;
+    transition: transform 0.5s vars.$ease-out;
+  }
+
+  &-description {
+    color: var(--color-ink-muted);
+    margin-top: auto;
+  }
+
+  &-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: vars.$space-xs;
+    padding-top: vars.$space-sm;
+    border-top: 1px solid var(--color-rule);
+    color: var(--color-ink);
+
+    &-icon {
+      transition: transform 0.35s vars.$ease-spring;
+    }
+  }
+
+  &-web-development &-cta {
+    color: vars.$color-secondary-deep;
+  }
+
+  &-illustration &-cta {
+    color: vars.$color-tertiary-deep;
+  }
+
+  &.isClickable {
+    cursor: pointer;
+  }
+
+  &:hover,
+  &:focus-visible {
+    .Job-img {
+      transform: scale(1.05) rotate(-1.5deg);
+    }
+
+    .Job-cta-icon {
+      transform: translateX(vars.toRem(6px));
+    }
   }
 
   @media screen and (min-width: vars.$breakpoint-sm-tablet) {
-    width: 40%;
+    flex: 1 1 0;
+    min-width: 0;
   }
 }

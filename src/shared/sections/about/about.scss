@@ -1,61 +1,161 @@
 @use "../../../vars" as vars;
+@use "../../../mixins" as m;
 
 .About {
   &-intro {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin: vars.toRem(30px);
+    gap: vars.$space-xl;
+    margin-bottom: vars.$space-2xl;
 
-    &-avatar {
-      display: none;
-      border-radius: 100%;
-      width: 40vw;
-      max-width: vars.toRem(150px);
-      margin-right: vars.toRem(30px);
+    // -- Portrait: same two-ink offset as the hero, scaled down ----------
+    &-portrait {
+      position: relative;
+      flex: 0 0 auto;
+      width: clamp(#{vars.toRem(96px)}, 14vw, #{vars.toRem(128px)});
+      aspect-ratio: 1;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        border: 1px solid;
+      }
+
+      &::before {
+        border-color: rgba(vars.$color-secondary, 0.75);
+        transform: translate(vars.toRem(-6px), vars.toRem(-6px));
+      }
+
+      &::after {
+        border-color: rgba(vars.$color-tertiary, 0.75);
+        transform: translate(vars.toRem(6px), vars.toRem(6px));
+      }
     }
 
+    &-avatar {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    // -- Speech card -----------------------------------------------------
     &-dialog {
+      flex: 1 1 auto;
+      max-width: vars.toRem(680px);
+
+      // Tail pointing back at the portrait. Drawn as a rotated square that
+      // reuses the card's own edge so the hairline stays continuous.
       &-arrow {
         display: none;
-        content: "";
-        width: vars.toRem(15px);
-        height: vars.toRem(15px);
-        background-color: white;
-        position: relative;
+        position: absolute;
+        width: vars.toRem(14px);
+        height: vars.toRem(14px);
+        background-color: var(--color-paper-raised);
+        border-left: 1px solid var(--color-rule);
+        border-bottom: 1px solid var(--color-rule);
         top: vars.toRem(38px);
-        right: vars.toRem(38px);
+        left: vars.toRem(-8px);
         transform: rotate(45deg);
       }
+
       &-paragraph {
-        padding-bottom: vars.toRem(10px);
+        color: var(--color-ink-muted);
+
+        + .About-intro-dialog-paragraph {
+          margin-top: vars.$space-md;
+        }
+
+        // First line gets a little editorial emphasis.
+        &:first-of-type {
+          color: var(--color-ink);
+          font-size: clamp(#{vars.toRem(16px)}, 1.6vw, #{vars.toRem(18px)});
+        }
       }
     }
   }
 
+  // -- Social row ---------------------------------------------------------
   &-network {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    width: 100%;
+    gap: vars.$space-md;
+    padding-top: vars.$space-xl;
+    border-top: 1px solid var(--color-rule);
 
-    &-icon {
-      color: vars.$color-neutral-2;
-      margin: vars.toRem(10px);
-      font-size: vars.toRem(36px);
-      &:hover {
-        color: vars.$color-secondary;
-      }
+    &-label {
+      color: var(--color-ink-subtle);
     }
 
     &-wrapper {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      align-items: center;
-      margin: 0;
+      gap: vars.$space-xs;
+    }
+
+    &-link {
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: vars.toRem(44px);
+      height: vars.toRem(44px);
+      border-radius: vars.$radius-pill;
+      border: 1px solid var(--color-rule);
+      color: var(--color-ink-subtle);
+      background-color: transparent;
+      transition: color 0.3s vars.$ease-out, border-color 0.3s vars.$ease-out,
+        background-color 0.3s vars.$ease-out, transform 0.35s vars.$ease-spring;
+
+      &:hover,
+      &:focus-visible {
+        color: vars.$color-quinary;
+        background-color: vars.$color-secondary-deep;
+        border-color: vars.$color-secondary-deep;
+        transform: translateY(vars.toRem(-4px));
+      }
+
+      // Every second chip picks up the sage ink instead, so the row reads
+      // as two-colour print rather than one accent repeated ten times.
+      &:nth-child(even):hover,
+      &:nth-child(even):focus-visible {
+        background-color: vars.$color-tertiary-deep;
+        border-color: vars.$color-tertiary-deep;
+      }
+    }
+
+    &-icon {
+      font-size: vars.toRem(18px);
+    }
+
+    &-tooltip {
+      @include m.micro-label;
+      position: absolute;
+      bottom: calc(100% + #{vars.toRem(8px)});
+      left: 50%;
+      transform: translate(-50%, vars.toRem(4px));
+      padding: vars.toRem(4px) vars.toRem(9px);
+      border-radius: vars.$radius-sm;
+      background-color: vars.$color-primary;
+      color: vars.$color-quinary;
+      font-size: vars.toRem(9px);
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s vars.$ease-out, transform 0.25s vars.$ease-out;
+    }
+
+    &-link:hover &-tooltip,
+    &-link:focus-visible &-tooltip {
+      opacity: 1;
+      transform: translate(-50%, 0);
     }
   }
 
@@ -63,18 +163,25 @@
     &-intro {
       align-items: flex-start;
       flex-direction: row;
-      &-avatar {
+      gap: vars.$space-2xl;
+
+      &-portrait {
+        // Nudge down so the tail lands beside the first line of copy.
+        margin-top: vars.$space-xs;
+      }
+
+      &-dialog-arrow {
         display: block;
       }
-      &-dialog {
-        &-arrow {
-          display: block;
-        }
-      }
     }
+
     &-network {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: vars.$space-lg;
+
       &-wrapper {
-        margin: vars.toRem(25px) auto vars.toRem(30px);
+        justify-content: flex-end;
       }
     }
   }

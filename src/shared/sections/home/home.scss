@@ -1,81 +1,247 @@
 @use "../../../vars" as vars;
 
+// ---------------------------------------------------------------------------
+// Hero — full-bleed ink panel. The portrait uses a deliberate two-ink
+// misregistration (terracotta / sage offset rings) borrowed from riso print.
+// ---------------------------------------------------------------------------
 .Home {
-  height: calc(100vh - vars.toRem(50px));
+  min-height: calc(100dvh - #{vars.$header-height});
   align-items: center;
+  justify-content: center;
+  gap: clamp(#{vars.toRem(32px)}, 6vh, #{vars.toRem(72px)});
   background-color: vars.$color-primary;
   color: vars.$color-quinary;
-  gap: vars.toRem(50px);
+  overflow: hidden;
+  isolation: isolate;
+  text-align: center;
+
+  // Soft ink washes behind everything.
+  &-wash {
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    filter: blur(vars.toRem(90px));
+    pointer-events: none;
+    max-width: none;
+    margin: 0;
+
+    &--terracotta {
+      width: vars.toRem(460px);
+      height: vars.toRem(460px);
+      top: vars.toRem(-140px);
+      left: vars.toRem(-120px);
+      background: radial-gradient(
+        circle,
+        rgba(vars.$color-secondary, 0.5),
+        transparent 68%
+      );
+      animation: wash-drift 18s ease-in-out infinite alternate;
+    }
+
+    &--sage {
+      width: vars.toRem(520px);
+      height: vars.toRem(520px);
+      bottom: vars.toRem(-180px);
+      right: vars.toRem(-140px);
+      background: radial-gradient(
+        circle,
+        rgba(vars.$color-tertiary, 0.42),
+        transparent 68%
+      );
+      animation: wash-drift 22s ease-in-out infinite alternate-reverse;
+    }
+  }
 
   &-intro {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 60%;
+    width: 100%;
+    max-width: vars.toRem(620px);
     text-align: center;
 
+    // -- Portrait with offset ink rings ---------------------------------
+    &-portrait {
+      position: relative;
+      width: clamp(#{vars.toRem(140px)}, 20vw, #{vars.toRem(190px)});
+      aspect-ratio: 1;
+      margin-bottom: vars.$space-xl;
+      animation: hero-in 0.9s vars.$ease-out backwards;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        border: vars.toRem(1.5px) solid;
+      }
+
+      // Terracotta plate, nudged up-left.
+      &::before {
+        border-color: rgba(vars.$color-secondary, 0.85);
+        transform: translate(vars.toRem(-9px), vars.toRem(-9px));
+      }
+
+      // Sage plate, nudged down-right.
+      &::after {
+        border-color: rgba(vars.$color-tertiary, 0.85);
+        transform: translate(vars.toRem(9px), vars.toRem(9px));
+      }
+    }
+
     &-avatar {
-      border-radius: 100%;
-      width: 20vw;
-      min-width: vars.toRem(150px);
-      margin: vars.toRem(30px);
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      background-color: rgba(vars.$color-quinary, 0.06);
+      box-shadow: 0 vars.toRem(20px) vars.toRem(44px)
+        vars.toRem(-22px) rgba(#000, 0.55);
+    }
+
+    &-eyebrow {
+      color: vars.$color-quaternary;
+      opacity: 0.9;
+      animation: hero-in 0.9s vars.$ease-out 0.1s backwards;
     }
 
     &-name {
-      margin: vars.toRem(10px);
+      margin: vars.$space-sm 0 vars.$space-xs;
+      font-size: clamp(#{vars.toRem(40px)}, 8vw, #{vars.toRem(78px)});
+      font-variation-settings: "SOFT" 30, "WONK" 1;
+      font-weight: 500;
+      animation: hero-in 0.9s vars.$ease-out 0.18s backwards;
+    }
+
+    &-job {
+      color: rgba(vars.$color-quinary, 0.72);
+      min-height: vars.toRem(28px);
+      animation: hero-in 0.9s vars.$ease-out 0.26s backwards;
+
+      .cursor {
+        color: vars.$color-secondary;
+      }
+    }
+
+    &-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: vars.$space-sm;
+      margin-top: vars.$space-xl;
+      animation: hero-in 0.9s vars.$ease-out 0.34s backwards;
     }
   }
 
-  &-scroll {
+  // Outlined CTA that reads correctly on the ink panel.
+  .isButton--onInk {
     color: vars.$color-quinary;
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1px rgba(vars.$color-quinary, 0.45);
+
+    &::before {
+      background-color: vars.$color-quinary;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: vars.$color-primary;
+      box-shadow: inset 0 0 0 1px vars.$color-quinary;
+    }
+  }
+
+  // -- Scroll cue ------------------------------------------------------
+  &-scroll {
+    // Absolute so the intro can stay centred in the panel instead of being
+    // pushed up by the cue.
+    position: absolute;
+    bottom: clamp(#{vars.toRem(20px)}, 4vh, #{vars.toRem(40px)});
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
+    gap: vars.$space-xs;
+    width: auto;
+    max-width: none;
+    margin: 0;
+    color: rgba(vars.$color-quinary, 0.68);
+    background: transparent;
+    transition: color 0.3s vars.$ease-out;
+    animation: hero-in 0.9s vars.$ease-out 0.5s backwards;
+
+    &:hover,
+    &:focus-visible {
+      color: vars.$color-quinary;
+    }
+
     &-mouse {
-      border: 2px vars.$color-quinary solid;
-      border-radius: vars.toRem(16px);
-      width: vars.toRem(20px);
-      height: vars.toRem(26px);
-      margin: vars.toRem(10px);
+      display: block;
+      position: relative;
+      border: vars.toRem(1.5px) solid currentColor;
+      border-radius: vars.$radius-pill;
+      width: vars.toRem(21px);
+      height: vars.toRem(32px);
+
       &-wheel {
-        color: transparent;
-        border-radius: 100%;
-        background-color: vars.$color-quinary;
-        position: relative;
-        top: 8px;
+        position: absolute;
         left: 50%;
+        top: vars.toRem(6px);
+        width: vars.toRem(3px);
+        height: vars.toRem(7px);
+        border-radius: vars.$radius-pill;
+        background-color: vars.$color-secondary;
         transform: translateX(-50%);
-        height: 4px;
-        width: 4px;
-        animation: ani-wheel 2s linear infinite;
+        animation: ani-wheel 1.9s vars.$ease-out infinite;
       }
     }
   }
 
-  @media screen and (min-width: vars.$breakpoint-sm-tablet) {
-    gap: vars.toRem(100px);
-  }
   @media screen and (min-width: vars.$breakpoint-lg-tablet) {
-    height: 100vh;
+    min-height: 100dvh;
   }
 }
 
 @keyframes ani-wheel {
   0% {
-    top: 30%;
+    transform: translate(-50%, 0);
+    opacity: 0;
   }
-
-  15% {
-    top: 40%;
+  25% {
+    opacity: 1;
   }
-
-  50% {
-    top: 40%;
+  70% {
+    transform: translate(-50%, #{vars.toRem(12px)});
+    opacity: 0;
   }
-
   100% {
-    top: 30%;
+    transform: translate(-50%, #{vars.toRem(12px)});
+    opacity: 0;
+  }
+}
+
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(#{vars.toRem(18px)});
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes wash-drift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(#{vars.toRem(40px)}, #{vars.toRem(30px)}, 0)
+      scale(1.12);
   }
 }

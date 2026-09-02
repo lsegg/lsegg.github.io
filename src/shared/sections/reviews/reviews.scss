@@ -1,102 +1,171 @@
 @use "../../../vars" as vars;
 
+// ---------------------------------------------------------------------------
+// Testimonials — quote-led, with the attribution demoted beneath the words.
+// The original had no way to navigate; controls are now explicit.
+// ---------------------------------------------------------------------------
 .Reviews {
-  justify-content: flex-start;
-
+  // Height-animated frame — see the measuring effect in reviews.sec.tsx.
+  // Block, not flex: a stretched inner would resize with the frame and the
+  // ResizeObserver would chase its own tail.
   &-carousel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: vars.toRem(30px) 0;
-    width: 100%;
+    display: block;
+    overflow: hidden;
+
+    // [data-reveal] declares its own transition at equal specificity over in
+    // the global layer, so this has to out-rank it — otherwise whether the
+    // height animates at all would depend on stylesheet order.
+    &[data-reveal] {
+      transition: height 0.55s vars.$ease-out, opacity 0.7s vars.$ease-out,
+        transform 0.7s vars.$ease-out;
+    }
+
+    &-inner {
+      display: flex;
+      justify-content: center;
+      // Clearance for the quote mark, which overhangs the card by 18px, and
+      // for the card's 4px offset shadow. Both then sit inside the measured
+      // box, so overflow:hidden has nothing of theirs to clip.
+      padding: vars.toRem(22px) vars.toRem(5px) vars.toRem(6px);
+    }
   }
 
   &-review {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    text-align: center;
-    padding: vars.toRem(20px);
-    max-width: vars.toRem(900px);
-    width: 100%;
-    color: vars.$color-primary;
+    position: relative;
+    max-width: vars.toRem(760px);
+    padding: clamp(#{vars.toRem(28px)}, 4vw, #{vars.toRem(48px)});
+    border-radius: vars.$radius-lg;
+    border: 1px solid var(--color-rule);
+    background-color: var(--color-paper-raised);
+    box-shadow: var(--shadow-print);
+    color: var(--color-ink);
+    animation: review-in 0.45s vars.$ease-out;
 
-    &-image {
-      width: vars.toRem(150px);
-      height: vars.toRem(150px);
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: vars.toRem(20px);
+    // Oversized display quote mark, bled off the top-left corner.
+    &-quote {
+      position: absolute;
+      top: vars.toRem(-18px);
+      left: clamp(#{vars.toRem(16px)}, 3vw, #{vars.toRem(32px)});
+      font-family: vars.$font-display;
+      font-size: vars.toRem(96px);
+      line-height: 1;
+      color: vars.$color-secondary;
+      opacity: 0.28;
+      pointer-events: none;
+      user-select: none;
     }
 
-    &-name {
-      font-size: vars.toRem(24px);
-      font-weight: bold;
-      margin-bottom: vars.toRem(5px);
-    }
-
-    &-role {
-      font-size: vars.toRem(16px);
-      color: vars.$color-neutral-2;
-      margin-bottom: vars.toRem(20px);
-    }
-
-    &-dialog {
-      position: relative;
-      padding: vars.toRem(20px);
-      margin-top: vars.toRem(20px);
-
-      &-arrow {
-        content: "";
-        width: vars.toRem(15px);
-        height: vars.toRem(15px);
-        background-color: white;
-        position: absolute;
-        top: vars.toRem(-7px);
-        left: 50%;
-        transform: translateX(-50%) rotate(45deg);
-      }
-
-      &-text {
-        font-size: vars.toRem(16px);
-        line-height: 1.6;
-      }
-
+    &-body {
       &-paragraph {
-        margin-bottom: vars.toRem(15px);
+        color: var(--color-ink-muted);
+        font-size: clamp(#{vars.toRem(15px)}, 1.6vw, #{vars.toRem(17px)});
+        line-height: 1.75;
 
-        &:last-child {
-          margin-bottom: 0;
+        + .Reviews-review-body-paragraph {
+          margin-top: vars.$space-md;
         }
+      }
+    }
+
+    // -- Attribution -------------------------------------------------------
+    &-attribution {
+      display: flex;
+      align-items: center;
+      gap: vars.$space-md;
+      margin-top: vars.$space-xl;
+      padding-top: vars.$space-lg;
+      border-top: 1px solid var(--color-rule);
+
+      &-image {
+        flex: 0 0 auto;
+        width: vars.toRem(54px);
+        height: vars.toRem(54px);
+        border-radius: 50%;
+        object-fit: cover;
+        border: 1px solid var(--color-rule);
+        background-color: rgba(vars.$color-primary, 0.05);
+      }
+
+      &-meta {
+        min-width: 0;
+      }
+
+      &-name {
+        display: block;
+        font-style: normal;
+        color: var(--color-ink);
+      }
+
+      &-role {
+        margin-top: vars.toRem(3px);
+        color: vars.$color-tertiary-deep;
       }
     }
   }
 
-  @media screen and (min-width: vars.$breakpoint-sm-tablet) {
-    &-carousel {
-      margin: 0;
+  // -- Controls -------------------------------------------------------------
+  &-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: vars.$space-md;
+    margin-top: vars.$space-xl;
+
+    &-arrow {
+      display: grid;
+      place-items: center;
+      width: vars.toRem(38px);
+      height: vars.toRem(38px);
+      border-radius: vars.$radius-pill;
+      border: 1px solid var(--color-rule);
+      color: var(--color-ink-subtle);
+      font-size: vars.toRem(12px);
+      background-color: transparent;
+      transition: color 0.28s vars.$ease-out, border-color 0.28s vars.$ease-out,
+        background-color 0.28s vars.$ease-out;
+
+      &:hover,
+      &:focus-visible {
+        color: vars.$color-quinary;
+        background-color: vars.$color-primary;
+        border-color: vars.$color-primary;
+      }
     }
 
-    &-review {
-      &-image {
-        width: vars.toRem(160px);
-        height: vars.toRem(160px);
+    &-dots {
+      display: flex;
+      align-items: center;
+      gap: vars.toRem(7px);
+    }
+
+    &-dot {
+      display: block;
+      width: vars.toRem(7px);
+      height: vars.toRem(7px);
+      padding: 0;
+      border-radius: vars.$radius-pill;
+      background-color: var(--color-rule-strong);
+      transition: width 0.35s vars.$ease-out,
+        background-color 0.3s vars.$ease-out;
+
+      &:hover {
+        background-color: var(--color-ink-subtle);
       }
 
-      &-name {
-        font-size: vars.toRem(24px);
-      }
-
-      &-role {
-        font-size: vars.toRem(16px);
-      }
-
-      &-dialog {
-        &-text {
-          font-size: vars.toRem(14px);
-        }
+      // The active dot stretches into a short bar.
+      &.isActive {
+        width: vars.toRem(22px);
+        background-color: vars.$color-secondary-deep;
       }
     }
+  }
+}
+
+@keyframes review-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
