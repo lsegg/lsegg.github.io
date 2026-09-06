@@ -15,8 +15,11 @@
 
 html {
   scroll-behavior: smooth;
-  // Anchor targets clear the sticky mobile bar.
-  scroll-padding-top: vars.$header-height;
+  // Clearance for the sticky mobile bar lives on the sections themselves, as
+  // scroll-margin-top in _global.scss — it is breakpoint-aware (there is no
+  // top bar to clear once the header becomes a side rail) and scrollIntoView
+  // honours it more reliably than scroll-padding on the root. Setting both
+  // here stacked the two offsets and left every anchor 56px short.
 }
 
 // Slim, palette-matched scrollbars.

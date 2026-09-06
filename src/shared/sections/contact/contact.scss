@@ -5,6 +5,11 @@
 // same dark plate. The email address is the largest thing on it.
 // ---------------------------------------------------------------------------
 .Contact {
+  // Full plate, matching the hero — the page shuts the way it opens. Below
+  // lg-tablet the sticky bar covers the top of the viewport, so the same
+  // header offset the hero uses applies here too.
+  min-height: calc(100dvh - #{vars.$header-height});
+  justify-content: center;
   background-color: vars.$color-primary;
   color: vars.$color-quinary;
   overflow: hidden;
@@ -128,5 +133,11 @@
       width: 100%;
       max-width: vars.toRem(400px);
     }
+  }
+
+  @media screen and (min-width: vars.$breakpoint-lg-tablet) {
+    // The header is a side rail from here up, so nothing overlays the top
+    // and the panel can take the whole viewport.
+    min-height: 100dvh;
   }
 }
